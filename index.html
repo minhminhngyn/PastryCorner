@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Located in the South End and Fort Point Channel. Includes a menu, catering information, and staff profiles." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="style.css" /><!--link 2 sheet-->
-    <link rel="stylesheet2" href="style.scss"/>
+    <!---link icons------------------------------------------------------------------------------------------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!---link sheet css, scss, js----------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="style.css" /><!--link 2 sheet-->
+    <link rel="stylesheet2" href="style.scss"/>
+    <!-------------------------------------------------------------------------------------------------------------->
   <head></head>
   <body>
-    <header>
-      <a href="#" class="logo">Pastry Corner</a>
-      <div class="navbar">
-        <ul>
-          <li><a href="#home">Trang chủ</a></li>
+    <!-----navigation bar-->
+      <header>
+        <a href="#" class="logo">Pastry Corner</a>
+        <div class="navbar">
+          <ul>
+          <span id="close-menu-btn" class="fa fa-close">close</span>
+            <li><a href="#home">Trang chủ</a></li>
           <!--<li><div class="dropdown">
             <button class="dropbtn">Sản phẩm
               <i class="fa fa-caret-down"></i>
@@ -28,11 +33,12 @@
               <a href="#">Link 3</a>
             </div>
           </div></li>-->
-          <li><a href="#products">Sản phẩm</a></li>
-          <li><a href="#sale">Khuyến mại</a></li>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#blog">Blog</a></li>
-        </ul>
+            <li><a href="#products">Sản phẩm</a></li>
+            <li><a href="#sale">Khuyến mại</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+          <span id="menu-btn" class="fa-solid fa-bars" style="font-size:36px">menu</span>
       </div>
       <div class="icons">
         <a href="#" class="fa fa-user-circle-o"></a>
@@ -40,6 +46,7 @@
         <a href="#" class="fa fa-search"></a>
       </div>
     </header>
+    <!------------------------------------------------------------------------------------------>
     <!--<section class="home" id="home">
       <div class="swiper-container home-slider">
         <div class="swiper-wrapper wrapper">
@@ -84,10 +91,69 @@
       <h3>Let's take a look about our menu</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eius facere dicta aliquam consequatur ratione incidunt magni illum natus velit molestias est amet quis, ea ab sunt, vero, praesentium soluta.</p>
     </div> 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-  -->
-    <footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <!---------------first page-------------------------------------------------------------------------------------------------------->
+    <!--<section class="hero-section">
+      <div class="content">
+        <h1 class="anim">Start your day with fresh bread</h1><br></br>
+        <p class="anim">Ngập tràn hương vị Châu Âu giữa lòng phố cổ, tiệm bánh vintage của chúng tôi mang đến những ổ bánh mì giòn rụm, thơm lừng, chạm khẽ là nhớ mãi. Bước vào là say đắm, nếm thử là yêu ngay!</p>
+      </div>
+      <img src="images/croissant2.png" class="feature-img anim">
+    </section>-->
+    <div class="container">
+      <div class="slide">
+        <div class="item" style="background-image: url(images/bg11.jpg);">
+          <div class="content">
+            <div class="name">Bánh mì thơm ngon mỗi ngày</div>
+            <div class="des">Từ những nguyên liệu đắt giá và giàu dinh dưỡng nhất</div>
+            <button class="CTAbutton">Mua ngay</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/bg6.jpg);">
+          <div class="content">
+            <div class="name">Background2</div>
+            <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam qui, vero sed possimus accusantium error commodi numquam, autem officia, ipsam quas saepe sapiente. Quas vero accusantium debitis ullam dolore atque.</div>
+            <button class="CTAbutton">See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/bg8.jpg);">
+          <div class="content">
+            <div class="name">Background3</div>
+            <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam qui, vero sed possimus accusantium error commodi numquam, autem officia, ipsam quas saepe sapiente. Quas vero accusantium debitis ullam dolore atque.</div>
+            <button class="CTAbutton">See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/bg9.jpg);">
+          <div class="content">
+            <div class="name">Background4</div>
+            <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam qui, vero sed possimus accusantium error commodi numquam, autem officia, ipsam quas saepe sapiente. Quas vero accusantium debitis ullam dolore atque.</div>
+            <button class="CTAbutton">See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/bg10.jpg);">
+          <div class="content">
+            <div class="name">Background5</div>
+            <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam qui, vero sed possimus accusantium error commodi numquam, autem officia, ipsam quas saepe sapiente. Quas vero accusantium debitis ullam dolore atque.</div>
+            <button class="CTAbutton">See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/bg12.jpg);">
+          <div class="content">
+            <div class="name">Background6</div>
+            <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam qui, vero sed possimus accusantium error commodi numquam, autem officia, ipsam quas saepe sapiente. Quas vero accusantium debitis ullam dolore atque.</div>
+            <button class="CTAbutton">See More</button>
+          </div>
+        </div>
+      </div>
+      <div class="button">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+
+    <!----------------footer----------------------------------------------------------------------------------------------------------------->
+    <!--<footer>
       <div class="row">
         <div class="col">
           <a href="#" class="logo">Pastry Corner</a>
@@ -119,13 +185,25 @@
               <li><a href="#">Chính sách đổi trả</a></li>
             </ul>
           <div class="social-icons">
-            <i class='fa fa-facebook' style='font-size:24px'></i>
-            <i class='fa fa-instagram' style='font-size:24px'></i>
+            <i class="fa fa-facebook" style='font-size:24px'></i>
+            <i class="fa fa-instagram" style='font-size:24px'></i>
           </div>
         </div>
       </div>
       <hr>
       <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
     </footer>
+    <script>
+      const header=document.querySelector("header");
+      const menubtn=document.querySelector("#menu-btn");
+      const closemenubtn=document.querySelector("#close-menu-btn");
+      menubtn.addEventListener("click",()=>{
+        header.classList.toggle("show-mobile-menu");
+      });
+      closemenubtn.addEventListener("click",()=>{
+        menubtn.click();
+      });
+    </script>-->
+    <!----------------------------------------------------------------------------------------------------------------------------------------->
   </body>
 </html>
