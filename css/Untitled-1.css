@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+*{
+    /* padding:0;margin:0 */
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+html 
+{
+    font-size: 72.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+header.header 
+{
+    font-family: "Raleway", sans-serif;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /*Căn lề nav-text sang phải*/
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
+   
+}
+
+header .navbar ul li 
+{
+    list-style: none;
+    display: inline;
+    margin: 0 20px;
+    position: relative;
+}
+header .navbar ul li a
+{
+    color: var(--white);
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+header .logo 
+{
+    font-size: 1.85rem;
+    color: var(--white);
+    font-weight: bolder;
+    cursor: pointer;
+    margin-right: auto;
+}
+header .icons a 
+{
+    color: var(--white);
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+header .toggler
+{
+    display: none;
+}
+
+
+
+header.headline
+{
+    text-align: center;
+    margin-top: 8rem;
+    font-size: 2rem;
+    font-family: "Raleway", sans-serif;
+}
+h3
+{
+    display: inline-block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+#wrapper
+{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 1rem; /*tạo khoảng cách từ headline đến wrapper (sản phẩm)*/
+}
+ul.products
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+ul.products li 
+{
+    flex-basis: 25%;  
+    /* flex basis điều chỉnh bố cục flexbox. n%=> kích thước bằng n% container */
+    box-sizing: border-box;
+    list-style: none;
+    padding: 10px;
+}
+ul.products li img
+{
+    width: 100%;
+    height: 300px; /* Chiều cao của khung chứa */
+    overflow: hidden; /*ảnh vừa khung chứa*/
+}
+ul.products li .product-top
+{
+    position: relative;
+    overflow: hidden;
+}
+ul.products li .product-top a.product-image
+{
+    display: block;
+    object-fit: cover;
+}
+ul.products li :hover .product-top a.product-image img
+{
+    filter: opacity(70%);
+    /*lia chuột vào thì ảnh mờ đi 30%*/
+}
+ul.products li .product-top a.product-image img
+{
+    display: block;
+}
+ul.products li .product-top a.buy-now
+{
+    text-align: center;
+    text-decoration: none;
+    background-color: #4f3222;
+    color: #fff;
+    display: block;
+    padding: 10px 0px;
+    position: absolute; 
+    width: 100%;
+    bottom: -42px;
+    transition: 0.25s ease-in-out;
+    font-size: 1.5em;
+}
+
+ul.products li :hover a.buy-now
+{
+    bottom:0px;
+}
+
+
+ul.products li .product-infor a
+{
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #dbceb0; 
+}
+
+ul.products li .product-infor a.product-name
+{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+ul.products li .product-infor a.product-price
+{
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+ul.products ul.product-button
+{
+    display: block;
+    background-color: #dbceb0;
+}
+ul.products ul.product-button li
+{
+    display: inline-block;
+    padding-left: 50px;
+}
+ul.products ul.product-button i
+{
+    display: block;
+    font-size: 1.5em;
+    color: #4f3222;
+    background-color: #dbceb0;
+}
+
+
+/* ........................cart................................... */
+.cart
+{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    color: #4f3222;
+}
+.cart h2
+{
+    font-size: 40px;
+
+}
+.cart table
+{
+    align-items: center;
+    width: 100%;
+    font-size: 1.5em;
+    color: #4f3222;
+}
+.cart table td
+{
+    border-bottom: 1px solid #dbceb0;
+}
+.cart table thead th:last-child
+{
+    text-align: right;
+}
+
+.cart table tbody tr td
+{
+    align-items: center;
+}
+.cart table tbody tr td:last-child
+{
+    text-align: right;
+}
+
+.cart table tbody tr td input
+{
+    width: 30%;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.cart .cost-total
+{
+    font-size: 1.5em;
+    text-align: right;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
