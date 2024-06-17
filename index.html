@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
     <meta
       name="description"
@@ -28,13 +28,15 @@
     <!-------------------------------------------------------------------------------------------------------------->
   </head>
   <body>
+    <div id="body-container">
+      <div id="main">
     <!-----navigation bar-->
     <header>
-      <a href="#" class="logo">Pastry Corner</a>
+      <a href="index.html" class="logo">Pastry Corner</a>
       <div class="navbar">
         <ul>
           <span id="close-menu-btn" class="fa fa-close">close</span>
-          <li><a href="#home">Trang chủ</a></li>
+          <li><a href="index.html">Trang chủ</a></li>
           <!--<li><div class="dropdown">
             <button class="dropbtn">Sản phẩm
               <i class="fa fa-caret-down"></i>
@@ -45,10 +47,10 @@
               <a href="#">Link 3</a>
             </div>
           </div></li>-->
-          <li><a href="#products">Sản phẩm</a></li>
-          <li><a href="#sale">Khuyến mại</a></li>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a target="_self" href="#products">Sản phẩm</a></li>
+          <li><a target="_self" href="#sale">Khuyến mại</a></li>
+          <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
+          <li><a target="_self" href="#blog">Blog</a></li>
         </ul>
         <span id="menu-btn" class="fa-solid fa-bars" style="font-size: 36px"
           >menu</span
@@ -232,11 +234,68 @@
       </div>
       <script src="test.js"></script>
     </section>
+    <!-----------------------------Blogs-------------------->
+    <section id="blog">
+      <div class="blog-heading">
+        <div class="name">
+          <span> Tin tức mới nhất </span>
+          <p>Những thông tin cập nhật của Pastry Corner</p>
+        </div>
+        <div class="blog-container">
+          <div class="blog-box">
+            <div class="blog-img">
+              <img src="images/bg1.jpg" alt="">
+            </div>
+            <div class="blog-text">
+              <span>20 Tháng 4, 2024</span>
+              <a href="#" class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repudiandae, quod odio alias magni at dolore dicta! Excepturi ex iste distinctio, rem corporis animi inventore delectus recusandae sit adipisci quasi.</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque, eos repellat autem alias placeat iure neque non nobis asperiores maiores, labore expedita, ad nulla iste? Recusandae quos magnam non.</p>
+              <button href= "#" class="blog-button">Xem thêm</button>
+            </div>
+          </div>
+          <div class="blog-box">
+            <div class="blog-img">
+              <img src="images/bg1.jpg" alt="">
+            </div>
+            <div class="blog-text">
+              <span>20 Tháng 4, 2024</span>
+              <a href="#" class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repudiandae, quod odio alias magni at dolore dicta! Excepturi ex iste distinctio, rem corporis animi inventore delectus recusandae sit adipisci quasi.</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque, eos repellat autem alias placeat iure neque non nobis asperiores maiores, labore expedita, ad nulla iste? Recusandae quos magnam non.</p>
+              <button href= "#" class="blog-button">Xem thêm</button>
+            </div>
+          </div>
+          <div class="blog-box">
+            <div class="blog-img">
+              <img src="images/bg1.jpg" alt="">
+            </div>
+            <div class="blog-text">
+              <span>20 Tháng 4, 2024</span>
+              <a href="#" class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repudiandae, quod odio alias magni at dolore dicta! Excepturi ex iste distinctio, rem corporis animi inventore delectus recusandae sit adipisci quasi.</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque, eos repellat autem alias placeat iure neque non nobis asperiores maiores, labore expedita, ad nulla iste? Recusandae quos magnam non.</p>
+              <button href= "#" class="blog-button">Xem thêm</button>
+            </div>
+          </div>
+          <div class="blog-box">
+            <div class="blog-img">
+              <img src="images/bg1.jpg" alt="">
+            </div>
+            <div class="blog-text">
+              <span>20 Tháng 4, 2024</span>
+              <a href="#" class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repudiandae, quod odio alias magni at dolore dicta! Excepturi ex iste distinctio, rem corporis animi inventore delectus recusandae sit adipisci quasi.</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque, eos repellat autem alias placeat iure neque non nobis asperiores maiores, labore expedita, ad nulla iste? Recusandae quos magnam non.</p>
+              <button href= "#" class="blog-button">Xem thêm</button>
+            </div>
+          </div>
+          </div>
+        </div>
+    </section>
+  </div>
+</div>
     <!----------------footer----------------------------------------------------------------------------------------------------------------->
-    <footer>
+    <footer id="footer">
       <div class="row">
         <div class="col">
-          <a href="#" class="logo">Pastry Corner</a>
+          <a href="index.html" class="logo">Pastry Corner</a>
           <p>Did you know? Serving you is our bread and butter</p>
         </div>
         <div class="col">
@@ -248,21 +307,21 @@
         <div class="col">
         <h3>Về chúng tôi<div class="underline"><span></span></h3>
         <ul>
-          <li><a href="#home">Trang chủ</a></li>
-          <li><a href="#products">Sản phẩm</a></li>
-          <li><a href="#sale">Khuyến mại</a></li>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a target="_self" href="index.html">Trang chủ</a></li>
+          <li><a target="_self" href="#products">Sản phẩm</a></li>
+          <li><a target="_self" href="#sale">Khuyến mại</a></li>
+          <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
+          <li><a target="_self" href="#blog">Blog</a></li>
         </ul>
       </div>
         <div class="col">
           <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
             <ul>
-              <li><a href="#">Điều khoản dịch vụ</a></li>
-              <li><a href="#">Chính sách bảo mật</a></li>
-              <li><a href="#">Chính sách thanh toán</a></li>
-              <li><a href="#">Chính sách giao hàng</a></li>
-              <li><a href="#">Chính sách đổi trả</a></li>
+              <li><a target="_self" href="#">Điều khoản dịch vụ</a></li>
+              <li><a target="_self" href="#">Chính sách bảo mật</a></li>
+              <li><a target="_self" href="#">Chính sách thanh toán</a></li>
+              <li><a target="_self" href="#">Chính sách giao hàng</a></li>
+              <li><a target="_self" href="#">Chính sách đổi trả</a></li>
             </ul>
           <div class="social-icons">
             <i class="fa fa-facebook" style='font-size:24px'></i>
