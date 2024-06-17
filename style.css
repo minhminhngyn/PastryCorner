@@ -29,11 +29,11 @@ html {
 html,body{
   height: 100%;
 }
-body{
-  /*display: flex;
+/*body{
+  display: flex;
   flex-direction: column;
-  min-height: 100vh;*/
-}
+  min-height: 100vh;
+}*/
 #body-container{
   min-height: 100vh;
   flex-direction: column;
