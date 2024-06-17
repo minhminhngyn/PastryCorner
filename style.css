@@ -34,9 +34,6 @@ body{
   flex-direction: column;
   min-height: 100vh;*/
 }
-body::-webkit-scrollbar {
-  display: none; /* Ẩn thanh cuộn */
-}
 #body-container{
   min-height: 100vh;
   flex-direction: column;
@@ -647,6 +644,7 @@ body {
   width: 90%;
   margin: auto 65px;
   height: 600px;
+  margin-bottom: 5px;
 }
 @media screen and(max-width: 768px){
   #aboutus{
@@ -697,6 +695,132 @@ body {
     opacity: 1;
     transform: translateY(0px);
   }
+}
+/*-------------contact us------------------------------------------------*/
+.contact-container{
+  margin-top: 5px;
+  width: 80%;
+  margin: 50px auto;
+}
+.contact-box{
+  background: var(--white);
+  color: var(--white);
+  display: flex;
+}
+.contact-left{
+  background-color: var(--vintage2);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  flex-basis: 60%;
+  padding: 40px 60px;
+  font-family: "Raleway", sans-serif;
+  color: var(--vintage4);
+}
+.contact-left h3{
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  color: var(--white);
+}
+label{
+  font-size: 14px;
+  color: var(--white);
+}
+.contact-right{
+  flex-basis: 40%;
+  padding: 40px;
+  background: var(--vintage);
+  color: var(--vintage4);
+  font-family: "Raleway", sans-serif;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.contact-right h3{
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+}
+table{
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+}
+.contact-container h1{
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Dancing Script", sans-serif;
+  font-size: 40px;
+  color: var(--vintage4);
+}
+.contact-container p{
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-family: "Dancing Script", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+.input-row{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.input-row .input-group{
+  flex-basis: 45%;
+}
+input{
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1px solid #f1f0f0;
+  outline: none;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  color: #a39b9b;
+}
+textarea{
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+label{
+  margin-bottom: 6px;
+  display: block;
+}
+.contact-left button{
+  margin-top: 15px;
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--vintage4);
+  padding: 10px 50px;
+  border-radius: 15px;
+  font-size: 14px;
+  border: 0.1px solid var(--vintage4);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: "Raleway", sans-serif;
+  box-shadow: 0px 5px 15px 0px #ccc;
+}
+.contact-left button:hover {
+  background-color: var(--vintage3);
+  transform: scale(1.1);
+  color: var(--white);
+  border: none;
+}
+.contact-left h3{
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.contact-right h3{
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+tr td:first-child{
+  padding-right: 20px;
+}
+tr td{
+  padding-top: 20px;
 }
 /*-------footer-----------------------------------------------------------------*/
 footer {
