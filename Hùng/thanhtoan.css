@@ -153,3 +153,180 @@ body {
 .shipping-fee {
   padding: 5px 0;
 }
+
+#store-address {
+  margin: 10px 0;
+  font-weight: bold;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+#selected-district, #selected-ward {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#bank-account-info {
+  margin-top: 10px;
+  font-weight: bold;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+#bank-account-info p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.notes {
+  border-left: 5px solid #ffab00; /* Đường viền màu nổi bật */
+  padding: 10px 15px; /* Khoảng cách bên trong */
+  margin-top: 20px; /* Khoảng cách phía trên */
+  font-style: italic; /* Chữ in nghiêng */
+  font-size: 14px; /* Kích thước chữ */
+  color: #333; /* Màu chữ */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  border-radius: 4px; /* Bo góc */
+  max-width: 600px; /* Độ rộng tối đa */
+  margin-left: auto;
+  margin-right: auto; /* Căn giữa */
+}
+
+/* Popup css */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+  background-color: #f7f4f1;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup-title {
+  text-align: center;
+}
+
+.general-info {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  width: 100%;
+}
+
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-list td {
+  padding: 8px;
+  text-align: left;
+} 
+
+table td {
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle; /* Canh giữa theo chiều dọc */
+}
+
+.price-summary, .total, .thank-you {
+  width: 100%;
+}
+
+.price-summary p, .total p {
+  margin: 5px 0;
+}
+
+.thank-you {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.thank-you em {
+  font-weight: bold;
+}
+
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-list .product-quantity {
+  margin-right: 20px; /* Điều chỉnh khoảng cách giữa số lượng và tên sản phẩm */
+}
+
+.product-list .product-name {
+  margin-left: 20px; /* Điều chỉnh khoảng cách giữa số lượng và tên sản phẩm */
+}
+
+.price-summary, .total {
+  margin-top: 20px;
+  text-align: right; /* Đảm bảo các thông tin khác được hiển thị sang lề phải của popup */
+}
+
+.price-summary table, .total table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-summary td, .total td {
+  padding: 8px;
+  text-align: right; /* Căn phải nội dung */
+}
+
+.price-summary td:first-child, .total td:first-child {
+  text-align: left; /* Căn trái cho tiêu đề */
+}
+
+.total {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8em;
+}
