@@ -46,43 +46,43 @@
     </div>
     <div class="icons">
       <a href="#" class="fa fa-user-circle-o" style="color: black;"></a>
-      <a href="#" class="fa fa-shopping-cart" style="color: black;"></a>
+      <a href="#" class="fa fa-shopping-cart" id="cart-icon" style="color: black;"></a>
       <a href="#" class="fa fa-search" style="color: black;"></a>
     </header>
 
     <!-----Account Info Section-->
     <section id="account-info">
       <div class="left">
-        <h2>Lịch sử mua hàng</h2>
-        
-        <!-- Bộ lọc -->
-        <div class="filters">
-          <label for="status-filter">Trạng thái:</label>
-          <select id="status-filter" onchange="applyFilters()">
-            <option value="all">Tất cả</option>
-            <option value="completed">Đã hoàn thành</option>
-            <option value="in-progress">Đang đến</option>
-          </select>
-
-          <label for="date-filter">Thời gian:</label>
-          <input type="date" id="start-date" onchange="applyFilters()" placeholder="Từ ngày">
-          <input type="date" id="end-date" onchange="applyFilters()" placeholder="Đến ngày">
-        </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Đơn hàng</th>
-              <th>Ngày</th>
-              <th>Giá trị đơn hàng</th>
-              <th>Trạng thái thanh toán</th>
-              <th>Trạng thái giao hàng</th>
-            </tr>
-          </thead>
-          <tbody id="order-history">
-            <!-- Thông tin đơn hàng sẽ được chèn vào đây bởi JavaScript -->
-          </tbody>
-        </table>
+          <h2>Lịch sử mua hàng</h2>
+          
+          <!-- Bộ lọc -->
+          <div class="filters">
+              <label for="status-filter">Trạng thái:</label>
+              <select id="status-filter" onchange="applyFilters()">
+                  <option value="all">Tất cả</option>
+                  <option value="completed">Đã hoàn thành</option>
+                  <option value="in-progress">Đang đến</option>
+              </select>
+  
+              <label for="date-filter">Thời gian:</label>
+              <input type="date" id="start-date" onchange="applyFilters()" placeholder="Từ ngày">
+              <input type="date" id="end-date" onchange="applyFilters()" placeholder="Đến ngày">
+          </div>
+  
+          <table>
+              <thead>
+                  <tr>
+                      <th>Đơn hàng</th>
+                      <th>Ngày</th>
+                      <th>Giá trị đơn hàng</th>
+                      <th>Trạng thái thanh toán</th>
+                      <th>Trạng thái giao hàng</th>
+                  </tr>
+              </thead>
+              <tbody id="order-history">
+                  <!-- Thông tin đơn hàng sẽ được chèn vào đây bởi JavaScript -->
+              </tbody>
+          </table>
       </div>
       <div class="right">
         <h2>Thông tin tài khoản</h2>
@@ -164,5 +164,12 @@
       <hr>
       <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
     </footer>
+    <script>
+      // JavaScript để điều hướng đến trang thanh toán khi nhấp vào biểu tượng giỏ hàng
+      document.getElementById('cart-icon').addEventListener('click', function(event) {
+          event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+          window.location.href = 'thanhtoan.html'; // Điều hướng đến trang thanhtoan.html
+      });
+  </script>
   </body>
 </html>

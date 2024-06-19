@@ -103,4 +103,27 @@ const orders = [
     const editIcon = document.querySelector(`#${field} .edit-icon`);
     editIcon.style.display = 'inline';
   }
-  
+
+  //Lấy thông tin đơn hàng để cập nhật lên bảng Lịch sử mua hàng
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lấy thông tin đơn hàng từ localStorage
+    const order = JSON.parse(localStorage.getItem('latestOrder'));
+
+    if (order) {
+        // Tạo một hàng mới trong bảng thông tin đơn hàng
+        const orderHistoryTable = document.getElementById('order-history');
+        const newRow = orderHistoryTable.insertRow();
+
+        const cellOrderNumber = newRow.insertCell(0);
+        const cellOrderDate = newRow.insertCell(1);
+        const cellTotalPrice = newRow.insertCell(2);
+        const cellPaymentStatus = newRow.insertCell(3);
+        const cellShippingStatus = newRow.insertCell(4);
+
+        cellOrderNumber.textContent = order.invoiceNumber;
+        cellOrderDate.textContent = order.orderDate;
+        cellTotalPrice.textContent = order.totalPrice + 'VNĐ';
+        cellPaymentStatus.textContent = order.paymentStatus;
+        cellShippingStatus.textContent = order.shippingStatus;
+    }
+});

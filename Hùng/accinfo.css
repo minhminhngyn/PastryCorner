@@ -522,7 +522,7 @@ footer .logo {
   }
   
   /* Giãn dòng cho bảng */
-table th, table td {
+  table th, table td {
     padding: 12px 15px;
     text-align: left;
   }

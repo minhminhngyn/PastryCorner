@@ -86,12 +86,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const wardSelect = document.getElementById('ward');
     const paymentPopup = document.getElementById('payment-popup');
     const closeBtn = document.querySelector('.close');
+    const bankAccountInfo = document.getElementById('bank-account-info');
+    const notes = document.querySelector('.notes');
+    const phoneInput = document.getElementById('phone');
+    const fullnameInput = document.getElementById('fullname');
+    const addressInput = document.getElementById('address');
+    const codRadio = document.getElementById('cod');
+    const bankTransferRadio = document.getElementById('bank_transfer');
 
     // Thiết lập mặc định là "Nhận tại cửa hàng"
     pickupRadio.checked = true;
     storeAddress.style.display = 'block';
     deliveryDetails.style.display = 'none';
     let shippingFee = 0; // Phí vận chuyển mặc định là 0
+
+    // Biến toàn cục để lưu mã hóa đơn
+    let invoiceNumber = generateInvoiceNumber();
+
+    // Sinh mã hóa đơn ngẫu nhiên
+    function generateInvoiceNumber() {
+        const randomNum = Math.floor(100000 + Math.random() * 900000);
+        return `#${randomNum}`;
+    }
+
+    // Hàm lấy số điện thoại từ textbox
+    function getPhoneNumber() {
+        return phoneInput.value.trim() || 'SĐT khách hàng';
+    }
+
+    // Cập nhật nội dung chuyển khoản
+    function updateBankAccountInfo() {
+        const phoneNumber = getPhoneNumber();
+        const bankAccountInfoContent = `
+            <p>Pastry Corner</p>
+            <p>Ngân hàng ABC</p>
+            <p>Số tài khoản: 1234567890</p>
+            <p>Nội dung chuyển khoản: ${phoneNumber}_${invoiceNumber}</p>
+        `;
+        bankAccountInfo.innerHTML = bankAccountInfoContent;
+        // Cập nhật mã hóa đơn trên popup
+        document.getElementById('popup-invoice-number').textContent = invoiceNumber;
+    }
+
+    // Gọi hàm updateBankAccountInfo khi trang load
+    updateBankAccountInfo();
+
+    // Ẩn thông báo khi không chọn chuyển khoản ngân hàng
+    notes.style.display = 'none';
 
     // Xử lý khi thay đổi phương thức vận chuyển
     pickupRadio.addEventListener('change', () => {
@@ -115,10 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleAddressChange() {
         const selectedDistrict = districtSelect.value;
         const selectedWard = wardSelect.value;
-        if (deliveryRadio.checked && selectedDistrict && selectedWard) {
-            shippingFee = 20000;
-        } else {
+        if (deliveryRadio.checked && (!addressInput.value.trim() || !selectedDistrict || !selectedWard)) {
             shippingFee = 0;
+        } else {
+            shippingFee = 20000;
         }
         updateTotalPrice();
     }
@@ -130,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let subtotal = 0;
     let discountAmount = 0;
 
+    //Lấy thông tin sản phẩm từ trang giỏ hàng để hiển thị lên trang thanh toán
     const cart = JSON.parse(localStorage.getItem('cart'));
     if (cart && cart.length > 0) {
         const productList = document.getElementById('product-list');
@@ -174,29 +216,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateTotalPrice() {
-        const totalPrice = subtotal - discountAmount + shippingFee;
-        document.getElementById('discount-amount').textContent = discountAmount.toLocaleString();
+        const totalPrice = subtotal + shippingFee - discountAmount;
+        const formattedDiscountAmount = (discountAmount > 0) ? `-${discountAmount.toLocaleString()}` : '0';
+        document.getElementById('discount-amount').textContent = formattedDiscountAmount;
         document.getElementById('shipping-fee').textContent = shippingFee.toLocaleString();
         document.getElementById('total-price').textContent = totalPrice.toLocaleString();
-    }
+    }    
 
     // Xử lý khi thay đổi phương thức thanh toán
-    const codRadio = document.getElementById('cod');
-    const bankTransferRadio = document.getElementById('bank_transfer');
-    const bankAccountInfo = document.getElementById('bank-account-info');
-
     codRadio.checked = true;
     bankAccountInfo.style.display = 'none';
 
     codRadio.addEventListener('change', () => {
         if (codRadio.checked) {
             bankAccountInfo.style.display = 'none';
+            notes.style.display = 'none';
         }
     });
 
     bankTransferRadio.addEventListener('change', () => {
         if (bankTransferRadio.checked) {
             bankAccountInfo.style.display = 'block';
+            notes.style.display = 'block';
         }
     });
 
@@ -204,10 +245,38 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'giohang.html';
     });
 
+    // Hàm kiểm tra dữ liệu form
+    function validateForm() {
+        const fullName = fullnameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const isPickup = pickupRadio.checked;
+        const isDelivery = deliveryRadio.checked;
+        const address = addressInput.value.trim();
+        const selectedDistrict = districtSelect.value;
+        const selectedWard = wardSelect.value;
+        const isCOD = codRadio.checked;
+        const isBankTransfer = bankTransferRadio.checked;
+
+        if (!fullName || !phone) {
+            alert('Vui lòng nhập đầy đủ họ tên và số điện thoại.');
+            return false;
+        }
+
+        if (isDelivery && (!address || !selectedDistrict || !selectedWard)) {
+            alert('Vui lòng nhập đầy đủ địa chỉ giao hàng, quận/huyện và phường/xã.');
+            return false;
+        }
+
+        return true;
+    }
+
     // Xử lý khi nhấn nút thanh toán
     document.getElementById('submit-checkout').addEventListener('click', (e) => {
         e.preventDefault(); // Ngăn chặn form gửi đi
     
+        if (!validateForm()) {
+            return;
+        }
         const fullName = document.getElementById('fullname').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
@@ -238,11 +307,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('popup-shipping-fee').textContent = shippingFee;
         document.getElementById('popup-discount-amount').textContent = discountAmount;
         document.getElementById('popup-total-price').textContent = totalPrice;
+        document.getElementById('popup-invoice-number').textContent = invoiceNumber; // Hiển thị mã hóa đơn
+        
+        // Hiển thị ngày đặt hàng
+    const orderDate = new Date();
+    const formattedOrderDate = new Intl.DateTimeFormat('vi-VN', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    }).format(orderDate);
 
+    document.getElementById('popup-order-date').textContent = formattedOrderDate;
+    
         // Lấy danh sách sản phẩm từ trang thanh toán và hiển thị trong popup
         const popupProductList = document.getElementById('popup-product-list');
         popupProductList.innerHTML = ''; // Xóa nội dung cũ
-
+    
         cart.forEach(product => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -252,26 +335,50 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             popupProductList.appendChild(row);
         });
-
+    
         // Hiển thị tạm tính, phí vận chuyển và giảm giá
         document.getElementById('popup-subtotal').textContent = subtotal.toLocaleString();
         document.getElementById('popup-shipping-fee').textContent = shippingFee.toLocaleString();
         document.getElementById('popup-discount-amount').textContent = discountAmount.toLocaleString();
-
+    
         // Hiển thị popup
         paymentPopup.style.display = 'block';
-    });
-
-    // Đóng popup
+    });    
+    
     closeBtn.addEventListener('click', () => {
         paymentPopup.style.display = 'none';
     });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === paymentPopup) {
-            paymentPopup.style.display = 'none';
-        }
+    
+    phoneInput.addEventListener('input', updateBankAccountInfo);
+    
+    // Đóng popup: Nhấn X để quay lại chỉnh sửa thông tin trang thanh toán nếu có
+    // Nhấn Xác nhận để xác nhận hóa đơn và chuyển hướng sang lịch sử mua hàng
+    // đồng thời lưu thông tin đơn hàng để cập nhật sang Lịch sử mua hàng
+    closeBtn.addEventListener('click', () => {
+        paymentPopup.style.display = 'none';
     });
+    document.getElementById('confirm-popup-btn').addEventListener('click', function() {
+        // Lấy thông tin đơn hàng từ popup
+        const invoiceNumber = document.getElementById('popup-invoice-number').textContent;
+        const orderDate = document.getElementById('popup-order-date').textContent;
+        const totalPrice = document.getElementById('popup-total-price').textContent;
+    
+        // Tạo đối tượng đơn hàng
+        const order = {
+            invoiceNumber: invoiceNumber,
+            orderDate: orderDate,
+            totalPrice: totalPrice,
+            paymentStatus: 'Đã thanh toán',
+            shippingStatus: 'Đang giao'
+        };
+    
+        // Lưu thông tin đơn hàng vào localStorage
+        localStorage.setItem('latestOrder', JSON.stringify(order));
+        
+        // Hiển thị thông báo đặt hàng thành công và chuyển hướng
+        alert('Hệ thống đã ghi nhận đơn hàng, vui lòng kiểm tra lại trong Lịch sử mua hàng!');
+        window.location.href = 'accinfo.html';
+    });    
 });
 
 //Xử lý notes
