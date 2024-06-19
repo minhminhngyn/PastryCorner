@@ -19,12 +19,14 @@ const linkAction = () =>{
 navLink.forEach(n=>n.addEventListener('click', linkAction))
 document.addEventListener("DOMContentLoaded", function() {
     const header = document.getElementById("header");
-  
+    const dropdown = document.getElementById("dropdown");
     window.addEventListener("scroll", function() {
       if (window.scrollY > 0) {
         header.classList.add("scrolled");
+        dropdown.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
+        dropdown.classList.remove("scrolled");
       }
     });
   });
