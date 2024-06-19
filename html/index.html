@@ -23,41 +23,48 @@
       rel="stylesheet"
     />
     <!---link sheet css, scss, js----------------------------------------------------------------------------------->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet2" href="style.scss" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet2" href="scss/style.scss" />
     <!-------------------------------------------------------------------------------------------------------------->
   </head>
   <body>
-    <div id="body-container">
-      <div id="main">
-    <!-----navigation bar-->
-    <header>
-      <a href="index.html" class="logo">Pastry Corner</a>
-      <div class="navbar">
-        <ul>
-          <li><a href="index.html">Trang chủ</a></li>
-          <!--<li><div class="dropdown">
-            <button class="dropbtn">Sản phẩm
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div></li>-->
-          <li><a target="_self" href="html/product_list.html">Sản phẩm</a></li>
-          <li><a target="_self" href="#sale">Khuyến mại</a></li>
-          <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
-          <li><a target="_self" href="#blog">Blog</a></li>
+   <header class="header" id="header">
+    <nav class="nav_container">
+      <a href="index.html" class="nav_logo">Pastry Corner</a>
+      <div  class="nav_menu" id="nav-menu">
+        <ul class="nav_list">
+          <li>
+            <a href="index.html" class="nav_link">Trang chủ</a>
+          </li>
+          <li>
+            <a href="product_list.html" class="nav_link">Sản phẩm</a>
+          </li>
+          <li>
+            <a href="#" class="nav_link">Khuyến mại</a>
+          </li>
+          <li>
+            <a href="aboutus.html" class="nav_link">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="#" class="nav_link">Blog</a>
+          </li>
         </ul>
-      </div>
-      <div class="icons">
-        <a href="#" class="fas fa-user"></a>
-        <a href="#" class="fa fa-shopping-cart"></a>
-        <a href="#" class="fa fa-search"></a>
-      </div>
-    </header>
+        <div class="nav_icons">
+          <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
+          <i href="#" class="fa-solid fa-magnifying-glass" id="nav_icon-link"></i>
+          <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
+          <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+        </div>
+        <div class="nav_close" id="nav-close">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        </div>
+      <div class="nav_toggle" id="nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <script src="js/header.js"></script>
+   </header>
     <!-----slider------------------------------------------------------------------------------------->
     <section>
       <div class="container">
@@ -137,8 +144,8 @@
           <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
+      <script src="js/app.js"></script>
     </section>
-    <script src="app.js"></script>
     <!-------------ingredients--------------------------------------------------------------------------------------------------------------->
     <section class="ingredients">
       <h1 class="heading">
@@ -174,7 +181,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></script>
     </section>
     <!------------------breadstype----------------------------------------------------------------------------------------------------------->
-    <section class="breadstype" style="--bg: url(images/bgsp.png)">
+    <section class="breadstype" style="--bg: url(images/list1.jpg)">
       <h1 class="heading2">
         <span> Danh </span><span> mục </span><span> sản </span><span> phẩm </span>
       </h1>
@@ -228,7 +235,7 @@
       </div>
   </div>
       </div>
-      <script src="test.js"></script>
+      <script src="js/test.js"></script>
     </section>
     <!-----------------------------Blogs-------------------->
     <section id="blog">
@@ -304,7 +311,7 @@
         <h3>Về chúng tôi<div class="underline"><span></span></h3>
         <ul>
           <li><a target="_self" href="index.html">Trang chủ</a></li>
-          <li><a target="_self" href="html/product_list.html">Sản phẩm</a></li>
+          <li><a target="_self" href="product_list.html">Sản phẩm</a></li>
           <li><a target="_self" href="#sale">Khuyến mại</a></li>
           <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
           <li><a target="_self" href="#blog">Blog</a></li>

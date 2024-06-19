@@ -10,6 +10,8 @@
   --vintage2: #8b6f47;
   --vintage3: #d4ac6e;
   --vintage4: #4f3222;
+  --z-fixed: 100;
+  --z-tooltip: 10;
 }
 * {
   margin: 0;
@@ -26,123 +28,118 @@ html {
   scroll-padding-top: 6rem;
   overflow-x: hidden;
 }
-html,body{
+html,
+body {
   height: 100%;
-}
-/*body{
+  /*body{
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}*/
-#body-container{
+  min-height: 100vh;*/
+}
+#body-container {
   min-height: 100vh;
   flex-direction: column;
   display: flex;
 }
-#main{
+#main {
   /*overflow: auto;
   padding-bottom: 0;*/
-  flex: 1
+  flex: 1;
 }
-#footer{
+#footer {
   position: relative;
   margin-top: auto;
   clear: both;
   padding: 20px;
 }
 /*navigationbar*/
-header {
+.header {
   font-family: "Raleway", sans-serif;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  /*background: var(--vintage4);*/
-  background: transparent;
-  padding: 2rem 9%;
+  background-color: transparent; /* Ban đầu là trong suốt */
+  padding: 2.5rem 2%; /* Điều chỉnh padding để gần lề phải hơn */
   display: flex;
   align-items: center;
-  justify-content: flex-end; /*Căn lề nav-text sang phải*/
+  justify-content: space-between; /* Căn giữa logo và menu */
   z-index: 1000;
-  box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s, padding 0.4s; /* Thêm hiệu ứng chuyển đổi màu nền */
 }
-/*header .navbar {
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0 0);
+.header.scrolled {
+  background-color: var(--vintage4); /* Đổi màu nền khi cuộn */
 }
-header #toggler:checked ~ .navbar {
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0 0);
-}*/
-/*.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  margin: 0;}*/ /* Important for vertical align on mobile phones */
-
-/* Add a red background color to navbar links on hover */
-/*.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: var(--vintage3);
-}*/
-
-/* Dropdown content (hidden by default) */
-/*.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+.nav_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}*/
-
-/* Add a grey background color to dropdown links on hover */
-/*.dropdown-content a:hover {
-  background-color: #ddd;
-}*/
-
-/* Show the dropdown menu on hover */
-/*.dropdown:hover .dropdown-content {
-  display: block;*/
-/*Tạo thanh nav_text ngang*/
-header .navbar ul li {
-  list-style: none;
-  display: inline;
-  margin: 0 20px;
-  position: relative;
-}
-header .navbar ul li a {
-  color: var(--white);
-  font-size: 1.25rem;
-  text-decoration: none;
-}
-header .logo {
+.nav_logo {
   font-size: 1.85rem;
   color: var(--white);
   font-weight: bolder;
   cursor: pointer;
-  margin-right: auto;
+  margin-right: auto; /* Giữ logo ở bên trái */
 }
-header .icons a {
+.nav_menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* Giãn khoảng cách giữa nav_link và nav_icons */
+  position: relative; /* Đảm bảo các phần tử bên trong có thể sử dụng position:absolute */
+}
+
+.nav_list {
+  display: flex;
+  gap: 2.5rem; /* Khoảng cách giữa các liên kết */
+  list-style: none; /* Bỏ dấu chấm đầu dòng */
+}
+.nav_icons {
   color: var(--white);
+  display: flex;
+  gap: 2rem; /* Khoảng cách giữa các biểu tượng */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
   font-size: 2rem;
-  margin-left: 1.5rem;
+  cursor: pointer;
 }
-header .toggler {
-  display: none;
+.nav_icons i {
+  line-height: 1; /* Đảm bảo biểu tượng không bị lệch khi nhúng vào flex container */
 }
-/*Tạo hiệu ứng dòng kẻ khi hover*/
-header .navbar ul li::after {
+.nav_login-btn {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--vintage4);
+  padding: 10px 20px;
+  border-radius: 35px;
+  font-size: 14px;
+  border: 0.2px solid var(--vintage4);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+.nav_login-btn:hover {
+  background-color: var(--vintage3);
+  transform: scale(1.1);
+  color: var(--white);
+  border: none;
+}
+.nav_link {
+  color: var(--white);
+  font-size: 14.5px;
+  font-weight: 400;
+  transition: color 0.4s;
+  text-decoration: none;
+  position: relative; /* Để sử dụng position:absolute cho ::after */
+}
+.nav_close,
+.nav_toggle {
+  display: none; /* Ẩn trên màn hình lớn */
+}
+.nav_link::after {
   content: "";
   height: 2px;
   border-radius: 0.5rem;
@@ -150,23 +147,64 @@ header .navbar ul li::after {
   background: white;
   position: absolute;
   left: 0;
-  bottom: -10px;
-  transition: 0.5s;
+  bottom: -5px; /* Điều chỉnh khoảng cách gạch chân với văn bản */
+  transition: width 0.5s;
 }
-header .navbar ul li:hover::after {
+.nav_link:hover::after {
   width: 100%;
 }
-#menu-btn {
-  color: var(--white);
-  cursor: pointer;
-  display: none;
-}
-#close-menu-btn {
-  display: none;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  cursor: pointer;
+@media screen and (max-width: 1150px) {
+  .header {
+    padding: 1rem 5%; /* Giảm padding để giới hạn chiều cao */
+  }
+  .nav_menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background-color: var(--vintage4);
+    width: 100%;
+    height: 100%;
+    padding: 7rem 1.5rem 2.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.4s;
+  }
+  .nav_list {
+    flex-direction: column;
+    gap: 3rem; /* Khoảng cách giữa các liên kết */
+  }
+  .nav_icons {
+    flex-direction: row;
+    align-self: flex-end;
+    margin-top: auto;
+  }
+  .nav_close,
+  .nav_toggle {
+    display: flex;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--white);
+  }
+  .nav_close {
+    position: absolute;
+    top: 1.15rem;
+    right: 1.5rem;
+  }
+  .nav_toggle {
+    margin-left: auto; /* Đẩy nav_toggle sang phải */
+  }
+  .show-menu {
+    left: 0;
+  }
+  #nav_icon-link {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.4s;
+  }
+  #nav_icon-link:hover {
+    color: var(--vintage3);
+  }
 }
 /*first page----------------------------------------------------------------*/
 body {
@@ -291,7 +329,7 @@ body {
   color: #fff;
 }
 /*-------------ingredients--------------------------------------------------------------------*/
-.heading{
+.heading {
   text-align: center;
   font-size: 4.5rem;
   color: var(--vintage4);
@@ -344,7 +382,7 @@ body {
   margin-top: 20px;
 }
 /*-----------------------------breadstype----------------------------------------------------------*/
-.breadstype{
+.breadstype {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,7 +393,7 @@ body {
   background: var(--bg);
   color: white;
 }
-.heading2{
+.heading2 {
   text-align: center;
   font-size: 4rem;
   color: var(--white);
@@ -363,17 +401,17 @@ body {
   margin-bottom: 20px;
   font-family: "Dancing Script", sans-serif;
 }
-.breadstype .cards{
+.breadstype .cards {
   display: flex;
   max-width: 1000px;
   width: calc(100% - 100px);
   height: 400px;
 }
-.cards .card .information .title{
+.cards .card .information .title {
   font-weight: bold;
   font-size: 3.2rem;
 }
-.cards .card .label .icon{
+.cards .card .label .icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -382,15 +420,15 @@ body {
   color: var(--vintage4);
   border-radius: 50%;
 }
-.cards .card .label .information{
+.cards .card .label .information {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
   white-space: pre;
-  transition: 1s cubic-bezier(.05, .61, .41, .95);
+  transition: 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
-.cards .card{
+.cards .card {
   position: relative;
   min-width: 60px;
   background: var(--bg);
@@ -399,29 +437,29 @@ body {
   background-size: auto 150%;
   background-position: center;
   cursor: pointer;
-  transition: 0.5s cubic-bezier(.05, .61, .41, .95);
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
   border-radius: 30px;
 }
-.cards .card .label{
+.cards .card .label {
   display: flex;
   position: absolute;
   right: 0;
   height: 40px;
-  transition: 0.5s cubic-bezier(.05, .61, .41, .95);
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
-.cards .card.active .label{
+.cards .card.active .label {
   bottom: 20px;
   left: 20px;
 }
-.cards .card.active{
+.cards .card.active {
   flex-grow: 10000;
   background-size: auto 100%;
 }
-.cards .card:not(.active) .label{
+.cards .card:not(.active) .label {
   bottom: 10px;
-  left:10px;
+  left: 10px;
 }
-.cards .card .shadow{
+.cards .card .shadow {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -429,45 +467,45 @@ body {
   height: 80px;
   background: linear-gradient(0, #0004, transparent);
 }
-.cards .card.active .information{
+.cards .card.active .information {
   opacity: 1;
 }
-.cards .card:not(.active) .information{
+.cards .card:not(.active) .information {
   opacity: 0;
 }
 @media (max-width: 480px) {
-  .cards{
+  .cards {
     width: 100vw;
     transition: opacity 0.3s ease-in 0.04s;
   }
-  .card:nth-of-type(3),.card:nth-of-type(4){
+  .card:nth-of-type(3),
+  .card:nth-of-type(4) {
     display: none;
   }
 }
 /*-------------------------------blog-------------------------------------*/
-#blog{
+#blog {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: var(--white);
   padding: 40px;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
-.blog-heading{
+.blog-heading {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.blog-heading .name span{
-
+.blog-heading .name span {
   color: var(--vintage4);
   text-align: center;
   font-size: 4rem;
   font-family: "Dancing Script", sans-serif;
 }
-.blog-heading .name p{
+.blog-heading .name p {
   font-size: 2rem;
   color: var(--vintage4);
   text-align: center;
@@ -475,7 +513,7 @@ body {
   font-weight: 600;
   margin: 10px 0;
 }
-.blog-container{
+.blog-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -483,38 +521,38 @@ body {
   flex-wrap: wrap;
   gap: 25px;
 }
-.blog-box{
+.blog-box {
   width: 300px;
   background-color: var(--white);
   border: 1px solid #4f3222;
   border-radius: 8px;
 }
-.blog-img{
+.blog-img {
   width: 100%;
   height: auto;
 }
-.blog-img img{
+.blog-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-.blog-text{
+.blog-text {
   padding: 30px;
   display: flex;
   flex-direction: column;
 }
-.blog-text span{
+.blog-text span {
   color: var(--vintage4);
   font-size: 1rem;
   margin-bottom: 10%;
 }
-.blog-text .blog-title{
+.blog-text .blog-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--vintage4);
 }
-.blog-text p{
+.blog-text p {
   color: var(--vintage4);
   font-size: 1.2rem;
   font-weight: 200;
@@ -541,39 +579,41 @@ body {
 .blog-text .blog-button:hover {
   background-color: var(--vintage4);
   transform: scale(1.1);
-  color: var(--white)
+  color: var(--white);
 }
-@media(max-width: 1250px)
-{
-  .blog-box{
+@media (max-width: 1250px) {
+  .blog-box {
     width: 300px;
   }
 }
-@media(max-with:1100px){
-  .blog-box{
+@media (max-with: 1100px) {
+  .blog-box {
     width: 70%;
   }
 }
-@media(max-width:550px){
-  .blog-box{
+@media (max-width: 550px) {
+  .blog-box {
     margin: 20px 10px;
     width: 100%;
   }
-  #blog{
+  #blog {
     padding: 20px;
   }
 }
 /*------------------about us-------------------------*/
-#aboutus .banner-card{
+#aboutus .banner-card {
   position: relative;
 }
-#aboutus .banner-card img{
+#aboutus .banner-card img {
   /*width: 1600px;*/
   height: 650px;
   width: 100%;
   object-fit: cover;
 }
-#aboutus .banner-text{
+#aboutus .banner-text {
+  transform: translate(0, -50%);
+  text-align: center;
+  transition: 0.5s;
   position: absolute;
   top: 25%;
   color: var(--white);
@@ -581,24 +621,29 @@ body {
   /*margin-left: 1000px;*/
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
 }
-#aboutus .banner-text h4{
+#aboutus .banner-text h4 {
+  text-align: center;
   font-size: 60px;
   font-weight: bold;
   margin-bottom: 5px;
   font-family: "Dancing Script", sans-serif;
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.2s 1 forwards;
 }
-#aboutus .banner-text p{
+#aboutus .banner-text p {
+  text-align: center;
   font-size: 15px;
   margin-top: 15px;
+  opacity: 0;
   font-family: "Raleway", sans-serif;
+  animation: animate 1.3s ease-in-out 0.2s 1 forwards;
 }
-.details{
+.details {
   background-color: var(--white);
   overflow: hidden;
 }
-.details-container{
+.details-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -606,176 +651,249 @@ body {
   margin: 65px auto;
   margin-bottom: 10px;
 }
-.details-content{
-  flex:1;
+.details-content {
+  flex: 1;
   width: 600px;
   margin: 0px 25px;
   animation: fadeInUp 5s ease;
 }
-.details-content h2{
+.details-content h2 {
   font-size: 50px;
   margin-bottom: 20px;
   color: var(--vintage4);
   font-family: "Dancing Script", sans-serif;
 }
-.details-content p{
+.details-content p {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 40px;
   color: var(--vintage2);
 }
-.details-image{
+.details-image {
   flex: 0.65;
   width: 600px;
   margin: auto;
   animation: fadeInRight 5s ease;
 }
-.details-image img{
+.details-image img {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
-.details-container2{
+.details-container2 {
   margin-top: 10px;
   flex-direction: row-reverse;
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   width: 90%;
   margin: auto 65px;
   height: 600px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
-@media screen and(max-width: 768px){
-  #aboutus{
+@media screen and(max-width: 768px) {
+  #aboutus {
     margin: 0px;
   }
-  .details{
+  .details {
     margin: 0px;
   }
-  .details-container, .details-container2{
+  .details-container,
+  .details-container2 {
     width: 100%;
     flex-direction: column;
     margin: 0px;
     padding: 0px 40px;
   }
-  .details-content{
+  .details-content {
     width: 100%;
     margin: 35px 0px;
     animation: fadeInUp 5s ease;
   }
-  .details-content h2{
+  .details-content h2 {
     font-size: 30px;
   }
-  .details-content p{
+  .details-content p {
     font-size: 18px;
     margin-bottom: 20px;
   }
-  .details-image{
+  .details-image {
     width: 100%;
     animation: fadeInRight 5s ease;
   }
 }
-@keyframes fadeInUp{
-  0%{
+@keyframes fadeInUp {
+  0% {
     opacity: 0;
     transform: translateY(50px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0px);
   }
 }
-@keyframes fadeInRight{
-  0%{
+@keyframes fadeInRight {
+  0% {
     opacity: 0;
     transform: translateX(-50px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0px);
   }
 }
-/*-------------contact us------------------------------------------------*/
-.contact-container{
-  margin-top: 5px;
-  width: 80%;
-  margin: 50px auto;
+/*-----------------Comments-------------------------*/
+.scroller {
+  background-color: var(--vintage3);
+  margin-top: 35px;
+  margin-bottom: 75px;
+  padding: 40px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  color: var(--vintage4);
 }
-.contact-box{
+.scroller[data-animated="true"] {
+  overflow: hidden;
+}
+.scroller[data-animated="true"] .scroller_inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+.scroller[data-speech="slow"] {
+  --_animation-duration: 60s;
+}
+.scroller[data-speech="fast"] {
+  --_animation-duration: 20s;
+}
+.scroller_inner {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.scroller-inner {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+.scroller-inner .inner {
+  padding: 1rem;
+}
+.scroller_heading h1 {
+  font-size: 40px;
+  font-family: "Dancing Script", sans-serif;
+  padding-bottom: 35px;
+}
+.scroller-inner .inner h2 {
+  max-width: 300px; /* Đặt độ rộng tối đa mà bạn mong muốn */
+  word-wrap: break-word; /* Hoặc sử dụng overflow-wrap: break-word; */
+  overflow-wrap: break-word; /* Đảm bảo từ dài sẽ được ngắt dòng */
+  white-space: normal; /* Đảm bảo văn bản xuống dòng bình thường */
+}
+@keyframes scroll {
+  to {
+    transform: translate(
+      calc(-50% - 0.5rem)
+    ); /*đổi hướng chạy của scroll bằng 100%/-100%*/
+  }
+}
+/*-------------contact us------------------------------------------------*/
+.contact-container {
+  width: 80%;
+  margin: 10px auto 70px auto;
+}
+.contact-box {
   background: var(--white);
-  color: var(--white);
   display: flex;
 }
-.contact-left{
-  background-color: var(--vintage2);
+.contact-left {
+  background-color: var(--vintage);
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   flex-basis: 60%;
   padding: 40px 60px;
   font-family: "Raleway", sans-serif;
-  color: var(--vintage4);
 }
-.contact-left h3{
+.contact-left h3 {
   font-size: 20px;
   font-family: "Raleway", sans-serif;
-  color: var(--white);
+  color: var(--vintage4);
+  font-weight: 600;
+  margin-bottom: 30px;
 }
-label{
+label {
   font-size: 14px;
-  color: var(--white);
+  color: var(--vintage4);
+  font-weight: 600;
 }
-.contact-right{
+.contact-right {
   flex-basis: 40%;
   padding: 40px;
-  background: var(--vintage);
-  color: var(--vintage4);
+  background: var(--vintage4);
+  color: var(--white);
+  font-weight: 600;
   font-family: "Raleway", sans-serif;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.contact-right h3{
+.contact-right h3 {
   font-size: 20px;
   font-family: "Raleway", sans-serif;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
-table{
+table {
   font-size: 14px;
   font-family: "Raleway", sans-serif;
 }
-.contact-container h1{
+.contact-container h1 {
   text-align: center;
   margin-bottom: 10px;
   font-family: "Dancing Script", sans-serif;
   font-size: 40px;
-  color: var(--vintage4);
 }
-.contact-container p{
+.contact-container p {
   margin-top: 10px;
   margin-bottom: 50px;
   font-family: "Dancing Script", sans-serif;
   font-size: 20px;
   text-align: center;
 }
-.input-row{
+.input-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin: 20px auto 20px auto;
 }
-.input-row .input-group{
+.input-row .input-group {
   flex-basis: 45%;
 }
-input{
+input {
   width: 100%;
   height: 45px;
   padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: none;
   border-bottom: 1px solid #f1f0f0;
   outline: none;
   padding-bottom: 5px;
   border-radius: 5px;
-  color: #a39b9b;
 }
-textarea{
+input text {
+  color: #ccc;
+}
+textarea {
   border-radius: 10px;
   width: 100%;
   border: 1px solid #ccc;
@@ -783,23 +901,23 @@ textarea{
   padding: 10px;
   box-sizing: border-box;
 }
-label{
+label {
   margin-bottom: 6px;
   display: block;
 }
-.contact-left button{
-  margin-top: 15px;
+.contact-left button {
+  margin-top: 25px;
   display: inline-block;
-  background-color: var(--white);
-  color: var(--vintage4);
+  background-color: var(--vintage4);
+  color: var(--white);
+  font-weight: 600;
   padding: 10px 50px;
   border-radius: 15px;
   font-size: 14px;
-  border: 0.1px solid var(--vintage4);
   cursor: pointer;
   transition: 0.3s ease;
   font-family: "Raleway", sans-serif;
-  box-shadow: 0px 5px 15px 0px #ccc;
+  box-shadow: 0px 1px 10px 0px #ccc;
 }
 .contact-left button:hover {
   background-color: var(--vintage3);
@@ -807,20 +925,17 @@ label{
   color: var(--white);
   border: none;
 }
-.contact-left h3{
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-.contact-right h3{
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-tr td:first-child{
+tr td:first-child {
   padding-right: 20px;
 }
-tr td{
+tr td {
   padding-top: 20px;
+  font-weight: 400;
+}
+iframe {
+  padding-top: 25px;
+  width: 100%;
+  height: 500px;
 }
 /*-------footer-----------------------------------------------------------------*/
 footer {

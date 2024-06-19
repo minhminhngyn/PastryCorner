@@ -26,52 +26,55 @@
       rel="stylesheet"
     />
     <!---link sheet css, scss, js----------------------------------------------------------------------------------->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet2" href="style.scss" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet2" href="scss/style.scss" />
     <!-------------------------------------------------------------------------------------------------------------->
   </head>
   <body>
-    <div id="body-container">
-        <div id="main">
-    <!-----navigation bar-->
-    <header>
-      <a href="index.html" class="logo">Pastry Corner</a>
-      <div class="navbar">
-        <ul>
-          <span id="close-menu-btn" class="fa fa-close">close</span>
-          <li><a target="_self" href="index.html">Trang chủ</a></li>
-          <!--<li><div class="dropdown">
-            <button class="dropbtn">Sản phẩm
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div></li>-->
-          <li><a target="_self" href="#products">Sản phẩm</a></li>
-          <li><a target="_self" href="#sale">Khuyến mại</a></li>
-          <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
-          <li><a target="_self" href="#blog">Blog</a></li>
-        </ul>
-        <span id="menu-btn" class="fa-solid fa-bars" style="font-size: 36px"
-          >menu</span
-        >
-      </div>
-      <div class="icons">
-        <a href="#" class="fa fa-user-circle-o"></a>
-        <a href="#" class="fa fa-shopping-cart"></a>
-        <a href="#" class="fa fa-search"></a>
-      </div>
-    </header>
+    <header class="header" id="header">
+      <nav class="nav_container">
+        <a href="index.html" class="nav_logo">Pastry Corner</a>
+        <div  class="nav_menu" id="nav-menu">
+          <ul class="nav_list">
+            <li>
+              <a href="index.html" class="nav_link">Trang chủ</a>
+            </li>
+            <li>
+              <a href="product_list.html" class="nav_link">Sản phẩm</a>
+            </li>
+            <li>
+              <a href="#" class="nav_link">Khuyến mại</a>
+            </li>
+            <li>
+              <a href="aboutus.html" class="nav_link">Giới thiệu</a>
+            </li>
+            <li>
+              <a href="#" class="nav_link">Blog</a>
+            </li>
+          </ul>
+          <div class="nav_icons">
+            <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
+            <i href="#" class="fa-solid fa-magnifying-glass" id="nav_icon-link"></i>
+            <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
+            <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+          </div>
+          <div class="nav_close" id="nav-close">
+            <i class="fa-solid fa-x"></i>
+          </div>
+          </div>
+        <div class="nav_toggle" id="nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+          </div>
+      </nav>
+      <script src="js/header.js"></script>
+     </header>
 <!-----imageheader------------------------------------------------------------------------------------->
 <section id="aboutus">
     <div class="banner-card">
         <img src="images/aboutus3.jpg">
         <div class="banner-text">
             <h4>Giới thiệu</h4>
-            <p>Câu chuyện của Pastry Cornet</p>
+            <p>Câu chuyện của Pastry Corner</p>
         </div>
     </div>
 </section>
@@ -96,6 +99,45 @@
         </div>
       </div>
 </section>
+<!-------------comments---------------------------------------------------------------------------------->
+<section id="comments">
+  <div class="scroller" data-direction="left" data-speech="slow">
+    <div class="scroller_heading">
+      <h1>Khách hàng của chúng tôi đã nói gì</h1>
+    </div>
+    <div class="scroller-inner scroller_inner">
+      <div class="inner">
+        <h2>"Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."</h2><br><br><br>
+        <h3>-Anh Nguyễn Phi Hùng</h3>
+      </div>
+      <div class="inner">
+        <h2>"Lorem, ipsum dolor sit amet consectetur adipisicing elit."</h2><br><br><br>
+        <h3>-Anh Nguyễn Phi Hùng</h3>
+      </div>
+      <div class="inner">
+        <h2>"Lorem, ipsum dolor sit amet consectetur adipisicing elit."</h2><br><br><br>
+        <h3>-Anh Nguyễn Phi Hùng</h3>
+      </div>
+      <div class="inner">
+        <h2>"Lorem, ipsum dolor sit amet consectetur adipisicing elit."</h2><br><br><br>
+        <h3>-Anh Nguyễn Phi Hùng</h3>
+      </div>
+      <div class="inner">
+        <h2>"Lorem, ipsum dolor sit amet consectetur adipisicing elit."</h2><br><br><br>
+        <h3>-Anh Nguyễn Phi Hùng</h3>
+      </div>
+      <div class="inner">
+        <h2>"Lorem, ipsum dolor sit amet consectetur adipisicing elit."</h2><br><br><br>
+        <h3>-Anh Nguyễn Phi Hùng</h3>
+      </div>
+      <div class="inner">
+        <h2>"Lorem, ipsum dolor sit amet consectetur adipisicing elit."</h2><br><br><br>
+        <h3>-Anh Nguyễn Phi Hùng</h3>
+      </div>
+    </div>
+  </div>
+  <script src="js/scroller.js"></script>
+</section>
 <!--------------------contact------------------------------------------------------------------------------>
 <section id="contactus">
     <div class="contact-container">
@@ -108,21 +150,21 @@
                 <div class="input-row">
                     <div class="input-group">
                         <label>Tên của bạn</label><br>
-                        <input type="text" placeholder="Nguyễn Phi Hùng">
+                        <input type="text" placeholder="Nhập tên của bạn">
                     </div>
                     <div class="input-group">
                         <label>Số điện thoại</label><br>
-                        <input type="text" placeholder="012 345 6789">
+                        <input type="text" placeholder="Nhập số điện thoại">
                     </div>
                 </div>
                 <div class="input-row">
                     <div class="input-group">
                         <label>Email</label><br>
-                        <input type="text" placeholder="hungnp@gmail.com">
+                        <input type="text" placeholder="Nhập email">
                     </div>
                     <div class="input-group">
                         <label>Nội dung</label><br>
-                        <input type="text" placeholder="Sản phẩm">
+                        <input type="text" placeholder="Nhập tên sản phẩm">
                     </div>
                 </div>
                 <label>Ghi chú</label><br>
@@ -146,6 +188,7 @@
                         <td>67 Cầu Giấy, Hà Nội</td>
                     </tr>
                 </table>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59587.26496568021!2d105.7629070846473!3d21.024519527703408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab61974f57b5%3A0x7c2bcd24766beed3!2sO&#39;Douceurs%20Pastry%20Cafe!5e0!3m2!1sen!2s!4v1718717352281!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
@@ -166,7 +209,7 @@
       <h3>Về chúng tôi<div class="underline"><span></span></h3>
       <ul>
         <li><a target="_self" href="index.html">Trang chủ</a></li>
-        <li><a target="_self" href="#products">Sản phẩm</a></li>
+        <li><a target="_self" href="product_list.html">Sản phẩm</a></li>
         <li><a target="_self" href="#sale">Khuyến mại</a></li>
         <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
         <li><a target="_self" href="#blog">Blog</a></li>
