@@ -175,11 +175,11 @@
     <div class="section topics">
       <h2 class="section-title">Topics</h2>
       <ul>
-        <li><a href="#">Bánh mì</a></li>
-        <li><a href="#">Bánh ngọt</a></li>
-        <li><a href="#">Lợi ích</a></li>
-        <li><a href="#">Sức khỏe</a></li>
-        <li><a href="#">Văn hóa</a></li>
+        <li><a href="#" data-topic="bánh mì">Bánh mì</a></li>
+        <li><a href="#" data-topic="bánh ngọt">Bánh ngọt</a></li>
+        <li><a href="#" data-topic="lợi ích">Lợi ích</a></li>
+        <li><a href="#" data-topic="sức khỏe">Sức khỏe</a></li>
+        <li><a href="#" data-topic="văn hóa">Văn hóa</a></li>
       </ul>
     </div>
 
@@ -240,5 +240,97 @@
     menubtn.click();
   });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[action="blogmain.html"]');
+    const searchInput = form.querySelector('input[name="search-term"]');
+    const posts = document.querySelectorAll('.post');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        if (searchTerm === '') {
+            return; // Không làm gì nếu không có từ khóa tìm kiếm
+        }
+
+        // Ẩn tất cả các bài viết
+        posts.forEach(post => post.style.display = 'none');
+
+        // Tìm trong các bài viết
+        let found = false;
+        posts.forEach(function(post) {
+            const title = post.querySelector('h1 a').textContent.toLowerCase();
+            const previewText = post.querySelector('.preview-text').textContent.toLowerCase();
+
+            if (title.includes(searchTerm) || previewText.includes(searchTerm)) {
+                // Nếu tìm thấy, hiển thị bài viết này
+                post.style.display = 'block';
+                found = true;
+            }
+        });
+
+        if (!found) {
+            alert('Không tìm thấy kết quả phù hợp.');
+            // Hiển thị lại tất cả bài viết nếu không tìm thấy kết quả
+            posts.forEach(post => post.style.display = 'block');
+        }
+    });
+});
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[action="blogmain.html"]');
+    const searchInput = form.querySelector('input[name="search-term"]');
+    const posts = document.querySelectorAll('.post');
+    const topicLinks = document.querySelectorAll('.section.topics a');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        filterPosts(searchTerm);
+    });
+
+    topicLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const topic = link.getAttribute('data-topic').toLowerCase();
+            filterPosts(topic);
+        });
+    });
+
+    function filterPosts(searchTerm) {
+        if (searchTerm === '') {
+            return; // Không làm gì nếu không có từ khóa tìm kiếm
+        }
+
+        // Ẩn tất cả các bài viết
+        posts.forEach(post => post.style.display = 'none');
+
+        // Tìm trong các bài viết
+        let found = false;
+        posts.forEach(function(post) {
+            const title = post.querySelector('h1 a').textContent.toLowerCase();
+            const previewText = post.querySelector('.preview-text').textContent.toLowerCase();
+
+            if (title.includes(searchTerm) || previewText.includes(searchTerm)) {
+                // Nếu tìm thấy, hiển thị bài viết này
+                post.style.display = 'block';
+                found = true;
+            }
+        });
+
+        if (!found) {
+            alert('Không tìm thấy kết quả phù hợp.');
+            // Hiển thị lại tất cả bài viết nếu không tìm thấy kết quả
+            posts.forEach(post => post.style.display = 'block');
+        }
+    }
+  });
+
+  
+</script>
+
+
 </body>
 </html>

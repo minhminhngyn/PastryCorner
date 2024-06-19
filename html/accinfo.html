@@ -32,77 +32,58 @@
 
 <body>
   <!-----navigation bar-->
-  <header class="header" id="header">
-    <nav class="nav_container">
-      <a href="index.html" class="nav_logo">Pastry Corner</a>
-      <div  class="nav_menu" id="nav-menu">
-        <ul class="nav_list">
-          <li>
-            <a href="index.html" class="nav_link">Trang chủ</a>
-          </li>
-          <li>
-            <a href="product_list.html" class="nav_link">Sản phẩm</a>
-          </li>
-          <li>
-            <a href="#" class="nav_link">Khuyến mại</a>
-          </li>
-          <li>
-            <a href="aboutus.html" class="nav_link">Giới thiệu</a>
-          </li>
-          <li>
-            <a href="#" class="nav_link">Blog</a>
-          </li>
-        </ul>
-        <div class="nav_icons">
-          <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
-          <i href="#" class="fa-solid fa-magnifying-glass" id="nav_icon-link"></i>
-          <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
-          <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
-        </div>
-        <div class="nav_close" id="nav-close">
-          <i class="fa-solid fa-x"></i>
-        </div>
-        </div>
-      <div class="nav_toggle" id="nav-toggle">
-        <i class="fa-solid fa-bars"></i>
-        </div>
-    </nav>
-    <script src="js/header.js"></script>
-   </header>
+  <header style="background-color: #bbab9b;" >
+    <a href="#" class="logo" style="color: black;">Pastry Corner</a>
+    <div class="navbar">
+      <ul>
+        <span id="close-menu-btn" class="fa fa-close" style="color: black;">close</span>
+        <li><a href="#home" style="color: black;">Trang chủ</a></li>
+        <li><a href="#products" style="color: black;">Sản phẩm</a></li>
+        <li><a href="#sale" style="color: black;">Khuyến mại</a></li>
+        <li><a href="#about" style="color: black;">Giới thiệu</a></li>
+        <li><a href="#blog" style="color: black;">Blog</a></li>
+      </ul>
+      <span id="menu-btn" class="fa-solid fa-bars" style="font-size: 36px">menu</span>
+    </div>
+    <div class="icons">
+      <a href="#" class="fa fa-user-circle-o" style="color: black;"></a>
+      <a href="#" class="fa fa-shopping-cart" style="color: black;"></a>
+      <a href="#" class="fa fa-search" style="color: black;"></a>
+    </header>
 
     <!-----Account Info Section-->
     <section id="account-info">
       <div class="left">
-        <h2>Lịch sử mua hàng</h2>
-        
-        <!-- Bộ lọc -->
-        <div class="filters">
-          <label for="status-filter">Trạng thái:</label>
-          <select id="status-filter" onchange="applyFilters()">
-            <option value="all">Tất cả</option>
-            <option value="completed">Đã hoàn thành</option>
-            <option value="in-progress">Đang đến</option>
-          </select>
-
-          <label for="date-filter">Thời gian:</label>
-          <input type="date" id="start-date" onchange="applyFilters()" placeholder="Từ ngày">
-          <input type="date" id="end-date" onchange="applyFilters()" placeholder="Đến ngày">
-        </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Đơn hàng</th>
-              <th>Ngày</th>
-              <th>Giá trị đơn hàng</th>
-              <th>Trạng thái thanh toán</th>
-              <th>Trạng thái giao hàng</th>
-            </tr>
-          </thead>
-          <tbody id="order-history">
-            <!-- Thông tin đơn hàng sẽ được chèn vào đây bởi JavaScript -->
-          </tbody>
-        </table>
+          <h2>Lịch sử mua hàng</h2>
+          
+          <!-- Bộ lọc -->
+          <div class="filters">
+              <label for="status-filter">Trạng thái:</label>
+              <select id="status-filter" onchange="applyFilters()">
+                  <option value="all">Tất cả</option>
+                  <option value="completed">Đã hoàn thành</option>
+                  <option value="in-progress">Đang đến</option>
+              </select>
+  
+              <label for="date-filter">Thời gian:</label>
+              <input type="date" id="start-date" onchange="applyFilters()" placeholder="Từ ngày">
+              <input type="date" id="end-date" onchange="applyFilters()" placeholder="Đến ngày">
+          </div>
+  
+          <table>
+              <thead>
+                  <tr>
+                      <th>Đơn hàng</th>
+                      <th>Ngày</th>
+                      <th>Giá trị đơn hàng</th>
+                      <th>Trạng thái thanh toán</th>
+                      <th>Trạng thái giao hàng</th>
+                  </tr>
+              </thead>
+              <tbody id="order-history">
+                  <!-- Thông tin đơn hàng sẽ được chèn vào đây bởi JavaScript -->
+              </tbody>
+          </table>
       </div>
       <div class="right">
         <h2>Thông tin tài khoản</h2>
@@ -184,16 +165,5 @@
       <hr>
       <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
     </footer>
-    <script>
-      const header=document.querySelector("header");
-      const menubtn=document.querySelector("#menu-btn");
-      const closemenubtn=document.querySelector("#close-menu-btn");
-      menubtn.addEventListener("click",()=>{
-        header.classList.toggle("show-mobile-menu");
-      });
-      closemenubtn.addEventListener("click",()=>{
-        menubtn.click();
-      });
-    </script>
   </body>
 </html>

@@ -206,8 +206,6 @@ header {
 .content .sidebar{
   width: 30%;
   float:left;
-  border: 1px dashed green;
-  height: 300px;
 }
 .clearfix::after{
   content:'';
@@ -265,4 +263,63 @@ header {
 .fa-classic, .fa-regular, .fa-solid, .far, .fas {
   font-family: "Font Awesome 6 Free";
   margin: 10px 0px;
+}
+.content .sidebar .section{
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.content .sidebar .section.search{
+  margin-top: 80px;
+}
+.text-input{
+  padding: .7rem 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  color: #444;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+.content .sidebar .section.topics ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  border-top: 1px solid #e0e0e0;
+}
+.content .sidebar .section.topics ul li a{
+  display: block;
+  padding: 15px 0px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #444;
+  font-size: 15px;
+}
+.content .sidebar .section.topics ul li a:hover{
+  padding-left: 20px;
+  transition: all 0.3s;
+  color: #006669;
+}
+.content .sidebar .section .section-title{
+  margin: 10px 0px 10px 0px;
+}
+/* CSS để đặt sidebar cố định và cuộn */
+.sidebar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Đảm bảo rằng phần nội dung chính cũng có thể cuộn */
+.content {
+  display: flex;
+}
+
+.main-content {
+  flex: 3;
 }
