@@ -331,198 +331,6 @@ body {
   }
 }
 /*------------login,setup-----------*/
-position: fixed; /* Đổi từ relative sang fixed 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Căn giữa phần tử 
-  width: 400px;
-  height: 440px;
-  background-color: var(--white);
-  border: 2px solid rgba(255, 255, 255, .5);
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  transform: scale(0); /* Thu nhỏ phần tử 
-  transition: transform .5s ease;
-  z-index: 1000;
-}
-.login.active-popup{
-  transform: translate(-50%, -50%) scale(1); /* Hiển thị phần tử 
-}
-.login.active{
-  height: 520px;
-}
-.login .login-close{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 45px;
-  height: 35px;
-  background: var(--vintage4);
-  font-size: 1.5rem;
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 20px;
-  cursor: pointer;
-  z-index: 1;
-}
-.login .form-box{
-   width: 100%;
-  height: 100%; /* Thêm chiều cao để khớp với .login 
-  padding: 20px; /* Đặt lại giá trị padding 
-  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng 
-  position: absolute; /* Thêm position absolute để căn chỉnh 
-  top: 0; /* Căn chỉnh từ đầu 
-  left: 0; /* Căn chỉnh từ đầu 
-  transition: transform .3s ease; /* Thêm transition cho mượt mà 
-}
-.login .form-box.login{
-  transform: translateX(0); /* Vị trí mặc định của form login 
-}
-.login.active .form-box.login{
-  transform: translateX(-100%); /* Đẩy form login ra ngoài 
-}
-.login .form-box.register{
-  transform: translateX(100%); /* Giấu form register 
-}
-.login.active .form-box.register{
-  transform: translateX(0); /* Hiển thị form register 
-}
-.login .form-box.reset{
-  transform: translateX(100%); /* Giấu form reset 
-}
-.login.active .form-box.reset{
-  transform: translateX(0); /* Hiển thị form reset 
-}
-.form-box h2{
-  font-size: 2rem;
-  color: var(--vintage4);
-  text-align: center;
-}
-.input-box{
-  position: relative;
-  width: 100%;
-  height: 50px;
-  border-bottom: 2px solid #162938;
-  margin: 20px 0; /* Giảm margin để tiết kiệm không gian 
-}
-.input-box label{
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  color: var(--vintage4);
-  font-weight: 500;
-  pointer-events: none;
-  transition: .5s;
-}
-.input-box input:focus~label,
-.input-box input:valid~label{
-  top: -5px;
-}
-.input-box input{
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 1.2rem;
-  color: var(--vintage4);
-  font-weight: 600;
-  padding: 0 35px 0 5px;
-}
-.input-box .login-icon{
-  position: absolute;
-  right: 8px;
-  font-size: 1.3rem;
-  color: var(--vintage4);
-  line-height: 57px;
-}
-.remember-forgot{
-  display: flex;
-  justify-content: space-between; /* Căn giữa các phần tử 
-  font-size: 1.2rem;
-  color: var(--vintage4);
-  font-weight: 500;
-  margin: -10px 0 15px;
-}
-.remember-forgot label {
-  display: flex;
-  align-items: center; /* Căn hàng ngang cho checkbox và text 
-}
-.remember-forgot label input{
-  accent-color: var(--vintage3);
-  margin-right: 3px;
-  transform: scale(0.5); /* Thu nhỏ checkbox 
-}
-.remember-forgot a{
-  color: var(--vintage4);
-  text-decoration: none;
-  margin-left: auto;
-}
-.remember-forgot a:hover{
-  text-decoration: underline;
-}
-.submit-btn{
-  display: inline-block;
-  background-color: var(--vintage4);
-  color: var(--white);
-  padding: 18px 20px;
-  border-radius: 35px;
-  font-size: 14px;
-  border: 0.1px solid var(--vintage);
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  width: 100%;
-}
-.submit-btn:hover{
-  background-color: var(--vintage4);
-  transform: scale(1.1);
-  color: var(--white);
-  border: none;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.877);
-}
-.login-register{
-  font-size: 1.2rem;
-  color: var(--vintage4);
-  text-align: center;
-  font-weight: 500;
-  margin: 25px 0 10px;
-}
-.login-register p a{
-  color: var(--vintage4);
-  text-decoration: none;
-  font-weight: 600;
-}
-.login-register p a:hover{
-  text-decoration: underline;
-}
-@media (max-width: 768px) {
-  .login {
-    width: 80%;
-    max-width: 300px; /* Giới hạn chiều rộng tối đa 
-  }
-}
-
-@media (max-width: 576px) {
-  .login {
-    width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .login {
-    width: 95%;
-  }
-}*/
 .overlay {
   position: fixed;
   top: 0;
@@ -903,35 +711,58 @@ body {
   margin-top: 20px;
 }
 /*-----------------------------breadstype----------------------------------------------------------*/
+/* Đặt font family chung cho toàn bộ section */
+/* Đặt font family chung cho toàn bộ section */
 .breadstype {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   overflow: hidden;
   height: 70vh;
-  font-family: "Dancing Script", sans-serif;
-  transition: 0.25s;
+  font-family: "Dancing Script", cursive;
   background: var(--bg);
   color: white;
+  margin: 20px 0; /* Khoảng cách với các section trước và sau */
+  padding: 20px; /* Khoảng cách bên trong section */
+  border: 2px solid #fff; /* Thêm border cho section */
+  border-radius: 10px; /* Tùy chọn: thêm border-radius cho đẹp */
 }
-.heading2 {
+
+/* Đặt style cho container của tiêu đề */
+.title-container {
   text-align: center;
-  font-size: 4rem;
-  color: var(--white);
-  padding: 1rem;
   margin-bottom: 20px;
-  font-family: "Dancing Script", sans-serif;
 }
+
+/* Style cho tiêu đề chính */
+.heading2 {
+  font-size: 4rem;
+  color: var(--vintage4);
+  padding: 1rem;
+  margin: 0;
+}
+
+/* Style cho tiêu đề phụ */
+.subheading {
+  font-size: 2rem;
+  color: var(--vintage4);
+  margin: 10px 0 30px 0; /* Giãn khoảng cách giữa tiêu đề và các card */
+}
+
+/* Đặt style cho các thẻ card */
 .breadstype .cards {
   display: flex;
   max-width: 1000px;
   width: calc(100% - 100px);
   height: 400px;
+  gap: 10px;
 }
+
 .cards .card .information .title {
   font-weight: bold;
   font-size: 3.2rem;
 }
+
 .cards .card .label .icon {
   display: flex;
   justify-content: center;
@@ -941,26 +772,29 @@ body {
   color: var(--vintage4);
   border-radius: 50%;
 }
+
 .cards .card .label .information {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
   white-space: pre;
-  transition: 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
+
 .cards .card {
   position: relative;
-  min-width: 60px;
+  flex-grow: 1;
   background: var(--bg);
   overflow: hidden;
   margin: 5px;
   background-size: auto 150%;
   background-position: center;
   cursor: pointer;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: flex-grow 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), background-size 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
   border-radius: 30px;
 }
+
 .cards .card .label {
   display: flex;
   position: absolute;
@@ -968,18 +802,22 @@ body {
   height: 40px;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
+
 .cards .card.active .label {
   bottom: 20px;
   left: 20px;
 }
+
 .cards .card.active {
-  flex-grow: 10000;
+  flex-grow: 10;
   background-size: auto 100%;
 }
+
 .cards .card:not(.active) .label {
   bottom: 10px;
   left: 10px;
 }
+
 .cards .card .shadow {
   position: absolute;
   bottom: 0;
@@ -988,12 +826,15 @@ body {
   height: 80px;
   background: linear-gradient(0, #0004, transparent);
 }
+
 .cards .card.active .information {
   opacity: 1;
 }
+
 .cards .card:not(.active) .information {
   opacity: 0;
 }
+
 @media (max-width: 480px) {
   .cards {
     width: 100vw;
@@ -1004,75 +845,91 @@ body {
     display: none;
   }
 }
+
 /*-------------------------------blog-------------------------------------*/
-#blog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: var(--white);
-  padding: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-}
 .blog-heading {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%; /* Ensure the .name div takes the full width */
+  margin: 80px 0;
 }
+
+.blog-heading .name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .blog-heading .name span {
   color: var(--vintage4);
   text-align: center;
   font-size: 4rem;
-  font-family: "Dancing Script", sans-serif;
+  font-family: "Dancing Script", cursive;
 }
+
 .blog-heading .name p {
   font-size: 2rem;
   color: var(--vintage4);
   text-align: center;
-  font-family: "Dancing Script", sans-serif;
+  font-family: "Dancing Script", cursive;
   font-weight: 600;
   margin: 10px 0;
+  margin: 20px 0 60px 0;
 }
 .blog-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 30px 0px;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 25px;
 }
+
 .blog-box {
   width: 300px;
   background-color: var(--white);
   border: 1px solid #4f3222;
   border-radius: 8px;
+  overflow: hidden;
 }
+
 .blog-img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Đặt chiều cao cố định cho hình ảnh */
+  overflow: hidden;
 }
+
 .blog-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
+
 .blog-text {
-  padding: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  height: 320px; /* Đặt chiều cao cố định cho phần text */
+  justify-content: space-between; /* Căn đều khoảng cách giữa các phần */
 }
+
 .blog-text span {
   color: var(--vintage4);
-  font-size: 1rem;
-  margin-bottom: 10%;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 400;
 }
+
 .blog-text .blog-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--vintage4);
+  text-decoration: none;
+  margin-bottom: 10px;
 }
+
 .blog-text p {
   color: var(--vintage4);
   font-size: 1.2rem;
@@ -1082,8 +939,9 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 20px 0px;
+  margin: 20px 0;
 }
+
 .blog-text .blog-button {
   display: inline-block;
   background-color: var(--white);
@@ -1102,16 +960,19 @@ body {
   transform: scale(1.1);
   color: var(--white);
 }
+
 @media (max-width: 1250px) {
   .blog-box {
     width: 300px;
   }
 }
-@media (max-with: 1100px) {
+
+@media (max-width: 1100px) {
   .blog-box {
     width: 70%;
   }
 }
+
 @media (max-width: 550px) {
   .blog-box {
     margin: 20px 10px;
@@ -1121,6 +982,7 @@ body {
     padding: 20px;
   }
 }
+
 /*------------------about us-------------------------*/
 #aboutus .banner-card {
   position: relative;

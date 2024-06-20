@@ -1,18 +1,21 @@
-const cards = document.querySelectorAll(".card");
-cards.forEach((card) => {
-  card.addEventListener("click", () => {
-    removeActiveClasses();
-    card.classList.add("active");
-  });
-});
-function removeActiveClasses() {
+document.addEventListener("DOMContentLoaded", function() {
+  const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    card.classList.remove("active");
+    card.addEventListener("click", () => {
+      removeActiveClasses();
+      card.classList.add("active");
+    });
   });
-}
-const navLink=document.querySelectorAll('.nav_link')
-const linkAction = ()=>{
-  const navMenu=document.getElementById('nav-menu')
-  navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n=>n.addEventListener('click', linkAction))
+
+  function removeActiveClasses() {
+    cards.forEach((card) => {
+      card.classList.remove("active");
+    });
+  }
+
+  const navLinks = document.querySelectorAll('.nav_link');
+  navLinks.forEach(navLink => navLink.addEventListener('click', () => {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.remove('show-menu');
+  }));
+});
