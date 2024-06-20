@@ -154,8 +154,82 @@
   </form>
 </div>
 <script src="../js/login.js"></script>
+   <!-----login------------------------------------------------------------------------------------------>
+   <div class="overlay"></div>
+<div class="form-box login">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng nhập</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <div class="remember-forgot">
+      <label><input type="checkbox">Nhớ mật khẩu</label>
+      <a href="#" class="reset-link">Quên mật khẩu?</a>
+    </div>
+    <button type="submit" class="submit-btn">Đăng nhập</button>
+    <div class="login-register">
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box register">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng ký</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-user"></i></span>
+      <input type="text" required>
+      <label>Tên đăng nhập</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <button type="submit" class="submit-btn">Đăng ký</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box reset">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Quên mật khẩu</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></i></span>
+      <input type="number" required>
+      <label>Mã OTP</label>
+    </div>
+    <button type="submit" class="submit-btn">Lấy lại mật khẩu</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p><br>
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<script src="../js/login.js"></script>
+
+
 <div class="blog-section">
-  <img src="images/blog_1.png">
   <div class="section-content blog">
     <div class="title">
       <h2>Bài viết nổi bật</h2>
@@ -218,7 +292,7 @@
       <img src="../images/blog5_bg.jpg" alt="" class="post-image">
       <div class="post-preview">
         <h1><a href="blog5.html">Lợi Ích của Việc Ăn Bánh Mì Đen Nguyên Cám</a></h1>
-        <i class="far fa-calendar">📅15/06/2024</i>
+        <i class="far fa-calendar">📅  15/06/2024</i>
         <p class="preview-text">Bánh mì đen nguyên cám, với nguyên liệu chính là bột mì nguyên cám, đã ngày càng được biết đến và ưa chuộng bởi những lợi ích sức khỏe mà nó mang lại. Đây không chỉ là món ăn ngon miệng mà còn là một phần của chế độ ăn uống cân bằng và lành mạnh. Dưới đây là những lợi ích chính của việc ăn bánh mì đen nguyên cám mà bạn nên biết...
         </p>
         <a href="blog5.html" class="btn read-more">Chi tiết bài viết</a>
@@ -229,7 +303,7 @@
       <img src="../images/blog1_bg2.png" alt="" class="post-image">
       <div class="post-preview">
         <h1><a href="blog1.html">Khám Phá Văn Hóa Bánh Ngọt Pháp: Sự Kết Hợp Tinh Tế Giữa Nghệ Thuật Và Ẩm Thực</a></h1>
-        <i class="far fa-calendar">📅10/06/2024</i>
+        <i class="far fa-calendar">📅  10/06/2024</i>
         <p class="preview-text">Bánh ngọt Pháp không chỉ đơn thuần là món tráng miệng, mà còn là một phần không thể thiếu trong văn hóa ẩm thực của nước Pháp...
         </p>
         <a href="blog1.html" class="btn read-more">Chi tiết bài viết</a>
@@ -240,7 +314,7 @@
       <img src="../images/blog2_bg2.jpg" alt="" class="post-image">
       <div class="post-preview">
         <h1><a href="blog2.html">Bước Vào Thế Giới Làm Bánh: Sự Hài Hòa Giữa Nghệ Thuật và Khoa Học</a></h1>
-        <i class="far fa-calendar">📅15/04/2024</i>
+        <i class="far fa-calendar">📅  15/04/2024</i>
         <p class="preview-text">Việc làm bánh không chỉ đơn thuần là một hoạt động nấu nướng mà nó còn là một nghệ thuật thú vị kết hợp giữa sự sáng tạo và kỹ thuật. Từ những viên bột mịn màng đến hương vị tinh tế của kem và nhân, mọi thứ đều cần phải được cân đối tỉ mỉ để tạo ra một chiếc bánh hoàn hảo. Đây là một hành trình tưởng chừng như đơn giản nhưng lại vô cùng phức tạp và thú vị ...
         </p>
         <a href="blog2.html" class="btn read-more">Chi tiết bài viết</a>
@@ -251,7 +325,7 @@
       <img src="../images/blog3-bg3.jpg" alt="" class="post-image">
       <div class="post-preview">
         <h1><a href="blog3.html">Bánh Ngọt Tốt Cho Sức Khỏe: Sự Lựa Chọn Thông Minh cho Bữa Ăn Nhẹ</a></h1>
-        <i class="far fa-calendar">📅30/03/2024</i>
+        <i class="far fa-calendar">📅  30/03/2024</i>
         <p class="preview-text">Bánh ngọt, mặc dù thường được xem là không tốt cho sức khỏe vì chúng thường giàu đường và chất béo, nhưng sự lựa chọn các loại bánh thông minh có thể mang lại nhiều lợi ích cho sức khỏe hơn bạn nghĩ. Hãy cùng khám phá những loại bánh ngọt tốt cho sức khỏe sau đây ...
         </p>
         <a href="blog3.html" class="btn read-more">Chi tiết bài viết</a>
@@ -262,7 +336,7 @@
       <img src="../images/blog4_bg1.jpg" alt="" class="post-image">
       <div class="post-preview">
         <h1><a href="blog4.html">Bánh Ngọt - Món Quà Ý Nghĩa Mang Đến Niềm Hạnh Phúc</a></h1>
-        <i class="">📅25/02/2024</i>
+        <i class="far fa-calendar">📅  25/02/2024</i>
         <p class="preview-text">Việc tặng bánh ngọt không chỉ đơn thuần là việc làm thường ngày mà còn chứa đựng nhiều ý nghĩa sâu sắc đối với người nhận. Những chiếc bánh được làm từ tâm huyết và tình yêu thương không chỉ làm giàu thêm bữa tiệc mà còn là dấu hiệu của sự quan tâm, sự chia sẻ từ người tặng đến người nhận  ...
         </p>
         <a href="blog4.html" class="btn read-more">Chi tiết bài viết</a>
@@ -289,6 +363,15 @@
         <li><a href="#" data-topic="văn hóa">Văn hóa</a></li>
       </ul>
     </div>
+
+    <div id="myPopup" class="popup">
+      <div class="popup-content">
+          <span class="close">&times;</span>
+          <img src="../images/popup1.png" alt="Popup Image">
+          <span id="promo-code" onclick="copyPromoCode()">Sao chép mã</span>
+
+      </div>
+  </div>
 
   </div>
 </div>
@@ -332,6 +415,7 @@
   <hr>
   <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
 </footer>
+
 <script>
   const header = document.querySelector("header");
   const menubtn = document.querySelector("#menu-btn");
@@ -432,7 +516,37 @@
 
   
 </script>
+<script>
+  var popup = document.getElementById("myPopup");
 
+  var span = document.getElementsByClassName("close")[0];
+
+
+  window.onload = function() {
+      popup.style.display = "flex";
+  }
+
+
+  span.onclick = function() {
+      popup.style.display = "none";
+  }
+
+
+  window.onclick = function(event) {
+      if (event.target == popup) {
+          popup.style.display = "none";
+      }
+  }
+
+  function copyPromoCode() {
+        const promoCode = "CUOITHANG6";
+        navigator.clipboard.writeText(promoCode).then(() => {
+          alert("Mã khuyến mãi đã được sao chép: " + promoCode);
+        }).catch(err => {
+          console.log('Something went wrong', err);
+        });
+      }
+</script>
 
 </body>
 </html>
