@@ -152,7 +152,7 @@ padding: 6px 15px;
   .container2{
     width: 100vw;
     height: 100vh;
-    background-image: url(images/km_bg3.png);
+    background-image: url(../images/km_bg3.png);
     background-position: center;
     background-size: cover;
     padding: 0 8%;
@@ -387,6 +387,7 @@ padding: 6px 15px;
     display: block; 
     margin: 0 auto; 
   }
+
 
   
   
