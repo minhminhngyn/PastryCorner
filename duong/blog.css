@@ -254,6 +254,10 @@ header {
   color: sienna;
   font-family: "Raleway", sans-serif;
 }
+
+.content .main-content .post .post-preview  a:hover{
+  color:brown;
+}
 .btn{
   padding: .5rem 1rem;
   background: sienna;
