@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
     <meta
       name="description"
@@ -26,52 +23,140 @@
       rel="stylesheet"
     />
     <!---link sheet css, scss, js----------------------------------------------------------------------------------->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet2" href="scss/style.scss" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet2" href="../scss/style.scss" />
     <!-------------------------------------------------------------------------------------------------------------->
   </head>
   <body>
-    <header class="header" id="header">
-      <nav class="nav_container">
-        <a href="index.html" class="nav_logo">Pastry Corner</a>
-        <div  class="nav_menu" id="nav-menu">
-          <ul class="nav_list">
-            <li>
-              <a href="index.html" class="nav_link">Trang chủ</a>
-            </li>
-            <li>
-              <a href="product_list.html" class="nav_link">Sản phẩm</a>
-            </li>
-            <li>
-              <a href="#" class="nav_link">Khuyến mại</a>
-            </li>
-            <li>
-              <a href="aboutus.html" class="nav_link">Giới thiệu</a>
-            </li>
-            <li>
-              <a href="#" class="nav_link">Blog</a>
-            </li>
-          </ul>
-          <div class="nav_icons">
-            <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
-            <i href="#" class="fa-solid fa-magnifying-glass" id="nav_icon-link"></i>
-            <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
-            <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+   <header class="header" id="header">
+    <nav class="nav_container">
+      <a href="index.html" class="nav_logo">Pastry Corner</a>
+      <div  class="nav_menu" id="nav-menu">
+        <ul class="nav_list">
+          <li>
+            <a href="index.html" class="nav_link">Trang chủ</a>
+          </li>
+          <li class="dropdown-wrapper">
+            <a href="product_list.html" class="nav_link">Sản phẩm</a>
+            <ul class="dropdown" id="dropdown">
+              <li><a href="#" class="dropdown_link">Bánh ngọt kiểu Âu</a></li>
+              <li><a href="#" class="dropdown_link">Bánh mì</a></li>
+              <li><a href="#" class="dropdown_link">Bánh lạnh</a></li>
+              <li><a href="#" class="dropdown_link">Bánh mặn</a></li>
+              <li><a href="#" class="dropdown_link">Bánh quy</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="nav_link">Khuyến mại</a>
+          </li>
+          <li>
+            <a href="aboutus.html" class="nav_link">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="blogmain.html" class="nav_link">Blog</a>
+          </li>
+        </ul>
+        <div class="nav_icons">
+          <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
+          <div class="search">
+            <span class="search-icon">
+              <i href="#" class="fa-solid fa-magnifying-glass searchbtn"></i>
+              <i class="fa-solid fa-x closebtn"></i>
+            </span>
           </div>
-          <div class="nav_close" id="nav-close">
-            <i class="fa-solid fa-x"></i>
+          <div class="searchbox">
+            <input type="text" placeholder="Nhập tên bánh bạn muốn tìm kiếm">
           </div>
-          </div>
-        <div class="nav_toggle" id="nav-toggle">
-          <i class="fa-solid fa-bars"></i>
-          </div>
-      </nav>
-      <script src="js/header.js"></script>
-     </header>
+          <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
+          <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+        </div>
+        <div class="nav_close" id="nav-close">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        </div>
+      <div class="nav_toggle" id="nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <script src="../js/header.js"></script>
+   </header>
+   <!-----login------------------------------------------------------------------------------------------>
+   <div class="overlay"></div>
+<div class="form-box login">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng nhập</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <div class="remember-forgot">
+      <label><input type="checkbox">Nhớ mật khẩu</label>
+      <a href="#" class="reset-link">Quên mật khẩu?</a>
+    </div>
+    <button type="submit" class="submit-btn">Đăng nhập</button>
+    <div class="login-register">
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box register">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng ký</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-user"></i></span>
+      <input type="text" required>
+      <label>Tên đăng nhập</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <button type="submit" class="submit-btn">Đăng ký</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box reset">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Quên mật khẩu</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></i></span>
+      <input type="number" required>
+      <label>Mã OTP</label>
+    </div>
+    <button type="submit" class="submit-btn">Lấy lại mật khẩu</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p><br>
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<script src="../js/login.js"></script>
 <!-----imageheader------------------------------------------------------------------------------------->
 <section id="aboutus">
     <div class="banner-card">
-        <img src="images/aboutus3.jpg">
+        <img src="../images/aboutus3.png">
         <div class="banner-text">
             <h4>Giới thiệu</h4>
             <p>Câu chuyện của Pastry Corner</p>
@@ -86,7 +171,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ab aliquid eos in. Minus neque quae vero fuga, doloribus assumenda pariatur nam possimus, culpa illo, ea cupiditate porro ab voluptatibus.</p>
       </div>  
       <div class="details-image">
-        <img class="image1" src="images/aboutus.jpg">
+        <img class="image1" src="../images/aboutus.jpg">
       </div>
     </div>
     <div class="details-container2">
@@ -95,7 +180,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ab aliquid eos in. Minus neque quae vero fuga, doloribus assumenda pariatur nam possimus, culpa illo, ea cupiditate porro ab voluptatibus.</p>
         </div>  
         <div class="details-image">
-          <img class= "image2" src="images/aboutus5.jpg">
+          <img class= "image2" src="../images/aboutus5.jpg">
         </div>
       </div>
 </section>
@@ -136,7 +221,7 @@
       </div>
     </div>
   </div>
-  <script src="js/scroller.js"></script>
+  <script src="../js/scroller.js"></script>
 </section>
 <!--------------------contact------------------------------------------------------------------------------>
 <section id="contactus">
@@ -212,7 +297,7 @@
         <li><a target="_self" href="product_list.html">Sản phẩm</a></li>
         <li><a target="_self" href="#sale">Khuyến mại</a></li>
         <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
-        <li><a target="_self" href="#blog">Blog</a></li>
+        <li><a target="_self" href="blogmain.html">Blog</a></li>
       </ul>
     </div>
       <div class="col">
