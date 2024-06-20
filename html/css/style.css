@@ -102,7 +102,7 @@ body {
   display: flex;
   gap: 2rem; /* Khoảng cách giữa các biểu tượng */
   align-items: center; /* Căn giữa các phần tử theo chiều dọc */
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
 }
 .nav_icons i {
@@ -112,7 +112,7 @@ body {
   display: inline-block;
   background-color: var(--white);
   color: var(--vintage4);
-  padding: 10px 20px;
+  padding: 15px 30px;
   border-radius: 35px;
   font-size: 14px;
   border: 0.2px solid var(--vintage4);
@@ -120,6 +120,7 @@ body {
   transition: 0.3s ease;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
+  white-space: nowrap;
 }
 .nav_login-btn:hover {
   background-color: var(--vintage3);
@@ -169,7 +170,7 @@ body {
   transition: opacity 0.3s, visibility 0.3s, top 0.3s;
   transition: background-color 0.4s, padding 0.4s;
 }
-.dropdown.scrolled{
+.dropdown.scrolled {
   background-color: var(--vintage4);
 }
 .dropdown li {
@@ -204,13 +205,79 @@ body {
 .dropdown_link:hover::after {
   width: 100%;
 }
-
 /* Hiển thị dropdown khi hover */
 .dropdown-wrapper:hover .dropdown {
   top: 100%;
   opacity: 1;
   visibility: visible;
 }
+.search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  z-index: 10;
+  cursor: pointer;
+  width: 100%;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+}
+
+.searchbtn,
+.closebtn {
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-right: 10px; /* Adjust spacing between buttons */
+  display: inline-block; /* Ensure buttons are inline */
+}
+
+.closebtn {
+  display: none; /* Initially hidden */
+}
+
+.searchbtn.active,
+.closebtn.active {
+  color: var(--vintage4);
+  display: block;
+  margin-right: 20px;
+  font-size: 1.5rem;
+}
+
+.searchbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  display: none; /* Initially hidden */
+  align-items: center;
+  padding: 0 20px;
+  background-color: var(--white);
+  transition: 0.5s ease-in-out;
+  border-radius: 15px;
+  border-bottom: 2px solid var(--vintage4); /* Add underline */
+}
+
+.searchbox.active {
+  display: flex; /* Show when active */
+}
+
+.searchbox input {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 1.2rem;
+  color: var(--vintage4);
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
 @media screen and (max-width: 760px) {
   .header {
     padding: 2rem 5%; /* Giảm padding để giới hạn chiều cao */
@@ -265,8 +332,7 @@ body {
   }
 }
 /*------------login,setup-----------*/
-/*.login{
-  position: fixed; /* Đổi từ relative sang fixed 
+position: fixed; /* Đổi từ relative sang fixed 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Căn giữa phần tử 
@@ -481,7 +547,7 @@ body {
   height: auto;
   max-height: 440px;
   background-color: var(--white);
-  border: 2px solid rgba(255, 255, 255, .5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
@@ -489,7 +555,7 @@ body {
   align-items: center;
   overflow: hidden;
   transform: scale(0);
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
   z-index: 1000;
   display: none; /* Initially hidden */
   padding: 20px; /* Thêm padding để tạo khoảng cách đều bên trong form */
@@ -538,11 +604,11 @@ body {
   color: var(--vintage4);
   font-weight: 500;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
   top: -5px;
 }
 
@@ -578,12 +644,13 @@ body {
 .remember-forgot label {
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .remember-forgot label input {
   accent-color: var(--vintage3);
-  margin-right: 3px;
-  transform: scale(0.5);
+  margin-right: 15px;
+  transform: scale(1.2);
 }
 
 .remember-forgot a {
