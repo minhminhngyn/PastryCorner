@@ -59,4 +59,50 @@ header {
     font-size: 16px; /* Cỡ chữ đoạn văn bản */
     margin: 0; /* Loại bỏ khoảng trống giữa các đoạn văn bản */
   }
+
+
+.sidebar {
+    background-color: white;
+    height: 350px;
+    width: 250px; /* Điều chỉnh chiều rộng của sidebar */
+    position: fixed;
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung dài hơn kích thước sidebar */
+    padding-top: 20px;
   
+}
+
+.sidebar h3 {
+    text-align: center;
+}
+
+.sidebar ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    text-align: left;
+    margin-left: 60px;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 15px 0px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #444;
+  font-size: 15px;
+}
+
+.sidebar ul li a:hover {
+      padding-left: 20px;
+  transition: all 0.3s;
+  color: #006669;
+}
+
+.content {
+    margin-left: 250px; /* Điều chỉnh margin để phù hợp với chiều rộng của sidebar */
+    padding: 20px;
+}

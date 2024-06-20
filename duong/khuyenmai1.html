@@ -13,10 +13,11 @@
     <!---link sheet css, scss, js----------------------------------------------------------------------------------->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet2" href="style.scss" />
-    <link rel="stylesheet" href="chinhsach.css" />
+    <link rel="stylesheet" href="khuyenmai.css" />
     <!-------------------------------------------------------------------------------------------------------------->
 
   </head>
+  
   <body>
     <!-----navigation bar-->
     <header>
@@ -48,61 +49,70 @@
         <a href="#" class="fa fa-search"></a>
       </div>
     </header>
-
+    
     <div class="banner">
       <img src="images/bgsp.png" alt="Banner Image">
       <div class="banner-content">
-        <h2>Chính sách đổi trả</h2>
-        <p><a href="#home">Trang chủ</a> / Chính sách đổi trả</p>
+        <h2>Khuyến mãi</h2>
+        <p><a href="#home">Trang chủ</a> / <a href="khuyenmaimain.html">Khuyến mãi</a>/ Ưu Đãi Cuối Tháng 6 - Giảm Giá 20% Tối Đa 100.000đ</p>
       </div>
     </div>
 
-    <div class="sidebar">
-      <h3>Chính sách</h3>
-      <ul>
-          <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
-          <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
-          <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>
-          <li><a href="chinhsachdoitra.html">Chính sách đổi trả</a></li>
-      </ul>
-  </div>
+    <section id="privacy-policy">
+        <h2>Ưu Đãi Cuối Tháng 6 - Giảm Giá 20% Tối Đa 100.000đ</h2>
+        <div class="image-container">
+            <img src="images/km_1.png" alt="Macaron">
+            </div>
+        <h3>
+            Chào mừng quý khách đến với tiệm bánh Pastry Corner!
+        </h3>
+        <p>
+            Để tri ân khách hàng đã luôn ủng hộ và đồng hành cùng Pastry Corner, tiệm bánh vui mừng thông báo chương trình Ưu Đãi Cuối Tháng 6 với nhiều phần quà hấp dẫn.
+        </p>
+        <p>
+            Chỉ trong thời gian từ ngày 20/06 đến hết ngày 30/06, khi quý khách mua sắm tại website của Pastry Corner với tổng hóa đơn từ 300.000đ trở lên, quý khách sẽ được giảm ngay 20% (tối đa 100.000đ) trên tổng giá trị đơn hàng. Đây là cơ hội tuyệt vời để quý khách thỏa sức thưởng thức những chiếc bánh thơm ngon với mức giá vô cùng ưu đãi.
+        </p>
+        <h3>
+            Chi tiết chương trình
+        </h3>
+        <ul>
+            <li>Thời gian áp dụng: Từ ngày 20/06 đến ngày 30/06.</li>
+            <li>Mức giảm giá: Giảm 20% trên tổng giá trị đơn hàng.</li>
+            <li>Giá trị giảm tối đa: 100.000đ.</li>
+            <li>Áp dụng cho đơn hàng: Tổng hóa đơn từ 300.000đ trở lên.</li>
+        </ul>
+        <h3>
+            Cách thức tham gia
+        </h3>
+        <ol>
+            <li>Chọn bánh yêu thích: Truy cập vào website của chúng tôi và chọn những chiếc bánh mà quý khách yêu thích.</li>
+            <li>Thêm vào giỏ hàng: Đảm bảo tổng giá trị đơn hàng từ 300.000đ trở lên.</li>
+            <li>Nhập mã ưu đãi: Nhập mã <span id="promo-code" onclick="copyPromoCode()">CUOITHANG6</span> tại trang thanh toán để được giảm giá.</li>
+        </ol>
+        <h3>
+            Lưu ý
+        </h3>
+        <ul>
+            <li>Chương trình không áp dụng đồng thời với các chương trình khuyến mãi khác.</li>
+            <li>Chỉ áp dụng cho các đơn hàng mua trực tuyến trên website của Pastry Corner.</li>
+        </ul>
+        <h3>
+            Đặt hàng ngay hôm nay!
+        </h3>
+        <p>Hãy truy cập website của chúng tôi và tận hưởng những ưu đãi đặc biệt trong chương trình Ưu Đãi Cuối Tháng 6. Chúng tôi cam kết mang đến cho quý khách những chiếc bánh chất lượng, an toàn và thơm ngon nhất.</p>
+        <p>Chúc quý khách có những trải nghiệm mua sắm tuyệt vời và thưởng thức những chiếc bánh ngon miệng cùng gia đình và bạn bè!</p>
+        <h3>Cảm ơn quý khách đã luôn tin tưởng và ủng hộ Pastry Corner. Chúc quý khách một tháng 6 thật vui vẻ và ngọt ngào!</h3>
 
-   <section id="privacy-policy">
-    <h2>Chính Sách Đổi Trả</h2>
-    <h3>Điều kiện đổi trả</h3>
-    <p>Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay tại thời điểm giao/nhận hàng trong những trường hợp sau:</p>
-    <ul>
-        <li>Sản phẩm bị hỏng hoặc bị thiếu khi nhận hàng.</li>
-        <li>Sản phẩm không đáp ứng được yêu cầu về chất lượng đã cam kết.</li>
-        <li>Sản phẩm không phù hợp với mô tả trên trang web.</li>
-    </ul>
-    
-    <h3>Thời hạn đổi trả</h3>
-    <p>Quý khách có thể yêu cầu đổi trả trong vòng 48h kể từ ngày nhận hàng. Để yêu cầu đổi trả, quý khách vui lòng liên hệ với chúng tôi qua email hoặc số điện thoại được cung cấp trên trang web.</p>
-    
-    <h3>Điều kiện sản phẩm đổi trả</h3>
-    <p>Để đảm bảo việc đổi trả được chấp nhận, sản phẩm cần phải:</p>
-    <ul>
-        <li>Chụp hình/quay video về trạng thái sản phẩm khi nhận hàng.</li>
-        <li>Được giữ trong tình trạng ban đầu và chưa qua sử dụng.</li>
-    </ul>
-    
-    <h3>Phương thức đổi trả</h3>
-    <p>Sau khi yêu cầu đổi trả được chấp nhận, chúng tôi sẽ cung cấp hướng dẫn cụ thể về cách trả lại sản phẩm. Quý khách có thể chọn đổi lại sản phẩm khác hoặc được hoàn tiền.</p>
-    
-    <h3>Phương thức hoàn tiền</h3>
-    <p>Hoàn tiền sẽ được thực hiện qua phương thức thanh toán ban đầu của quý khách trong vòng 7 ngày làm việc.</p>
-    
-    <h3>Các trường hợp không được đổi trả</h3>
-    <p>Chúng tôi không chấp nhận đổi trả trong các trường hợp sau:</p>
-    <ul>
-        <li>Sản phẩm đã qua sử dụng hoặc bị hư hỏng do người sử dụng.</li>
-        <li>Không áp dụng đổi trả đối với các sản phẩm bánh ngọt đã được mua và sử dụng mà không có vấn đề chất lượng.</li>
-    </ul>
+        </section>
 
-    <h3>Hỗ Trợ Thêm</h3>
-    <p>Nếu quý khách có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi qua email <a href="mailto:pastrycorner@gmail.com">pastrycorner@gmail.com</a> hoặc số điện thoại (+84)-39-213-156.</p>
-    </section>
+        <section id="subscribe-section">
+            <h3>Đăng ký nhận thông tin khuyến mãi</h3>
+            <p>Nhập email của bạn để nhận những thông tin mới nhất về các chương trình khuyến mãi từ Pastry Corner 😊</p>
+            <form>
+                <input type="email" placeholder="Nhập email của bạn" required>
+                <button type="submit">Đăng ký</button>
+            </form>
+        </section>
 
     <footer>
       <div class="row">
@@ -154,7 +164,24 @@
       closemenubtn.addEventListener("click", () => {
         menubtn.click();
       });
+
+      function copyPromoCode() {
+        const promoCode = "CUOITHANG6";
+        navigator.clipboard.writeText(promoCode).then(() => {
+          alert("Mã khuyến mãi đã được sao chép: " + promoCode);
+        }).catch(err => {
+          console.log('Something went wrong', err);
+        });
+      }
     </script>
-    <!----------------------------------------------------------------------------------------------------------------------------------------->
+   
+   <script>
+    // Hàm kiểm tra định dạng email
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+</script>
+
   </body>
 </html>

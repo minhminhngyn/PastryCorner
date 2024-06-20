@@ -70,14 +70,14 @@ header {
     max-width: 400px;
 }
 .full-width-image {
-    max-width: 100%; /* Đảm bảo ảnh không bị vượt quá kích thước thật */
+    max-width: 100%; 
     justify-content: center;
   }
   .full-width-image img {
     height:500 px;
-    width: 100%; /* Đảm bảo ảnh không bị vượt quá kích thước thật */
-    display: block; /* Loại bỏ khoảng trống dưới của phần tử img */
-    margin: 0 auto; /* Để căn giữa ảnh */
+    width: 100%; 
+    display: block; 
+    margin: 0 auto; 
   }
 
 .blog-section{
@@ -96,7 +96,7 @@ header {
 .blog-section .section-content .title h2{
   font-size: 40px;
   color: black;
-  text-transform: uppercase;
+  font-family: "Dancing Script", sans-serif;
 }
 
 .blog-section .section-content .title p{
@@ -189,11 +189,11 @@ header {
 }
 .cards {
   display: flex;
-  overflow-x: auto; /* Cho phép cuộn ngang */
-  gap: 20px; /* Khoảng cách giữa các card */
-  padding: 20px; /* Lề bên trong để các card không bị lặp lại */
-  scroll-behavior: smooth; /* Làm mượt cuộn */
-  width: 100%; /* Đảm bảo chiều rộng đầy đủ */
+  overflow-x: auto; 
+  gap: 20px; 
+  padding: 20px; 
+  scroll-behavior: smooth; 
+  width: 100%; 
 }
 .content{
   width:90%;
@@ -215,6 +215,7 @@ header {
 .content .main-content .all-post-title{
   margin: 20px;
   font-size: 30px;
+  font-family: "Dancing Script", sans-serif;
 }
 .content .main-content .post{
   width: 95%;
@@ -306,16 +307,15 @@ header {
 .content .sidebar .section .section-title{
   margin: 10px 0px 10px 0px;
 }
-/* CSS để đặt sidebar cố định và cuộn */
+
 .sidebar {
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky; 
   position: sticky;
   top: 0;
   max-height: 100vh;
   overflow-y: auto;
 }
 
-/* Đảm bảo rằng phần nội dung chính cũng có thể cuộn */
 .content {
   display: flex;
 }
@@ -323,3 +323,5 @@ header {
 .main-content {
   flex: 3;
 }
+
+
