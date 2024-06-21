@@ -1,0 +1,136 @@
+.categories {
+    padding: 2em;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .categories h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em; /* Tăng kích thước font cho tiêu đề */
+    font-weight: bold;
+    color: #3f2d01;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5em; /* Tạo khoảng cách giữa gạch dưới và văn bản */
+  }
+  
+  .categories h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3f2d01; /* Màu gạch dưới */
+  }
+  
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 0.5em; /* Khoảng cách phần danh sách sản phẩm với tiêu đề */
+  }
+  
+  .category-item {
+    width: 18%;
+    text-align: center;
+    margin-bottom: 1em;
+    position: relative;
+    overflow: hidden; /* Ẩn phần nội dung vượt ra khỏi phần tử */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho mỗi phần tử */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động */
+  }
+  
+  .category-item:hover {
+    transform: translateY(-5px); /* Đẩy lên khi di chuột vào */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tăng độ sáng đổ bóng */
+  }
+  
+  .category-item a {
+    display: block;
+    text-decoration: none;
+    color: #3f2d01;
+  }
+  
+  .category-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng cho hình ảnh */
+  }
+  
+  .category-item:hover img {
+    transform: scale(1.1); /* Phóng to hình ảnh khi di chuột vào */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng khi hover */
+  }
+  
+  .category-item span {
+    display: block;
+    margin-top: 0.5em;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5em;
+    border-radius: 5px;
+    font-size: 1.5em;
+  }
+  .popup {
+    display: none; 
+    position: fixed; 
+    z-index: 1000;
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  .popup-content {
+    position: relative;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 700px; 
+    max-width: 90%; 
+    text-align: center; 
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    z-index: 1001; 
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1002;
+  }
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+  }
+  img {
+    width: 100%; /* Make image fit within the popup-content */
+    height: auto; /* Maintain aspect ratio */
+  }
+  #promo-code {
+    font-weight: bold;
+    color: sienna;
+    background-color: white;
+    border: 1px solid #9E7B54;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
+  }
+  #promo-code:hover {
+    background-color: sienna;
+    color: white;
+  }
+  
