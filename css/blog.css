@@ -14,10 +14,6 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 18px; /* Increase font size for privacy policy */
   }
-  #privacy-policy p{
-    line-height: 1.5;
-    text-align: justify;
-  }
   /* Center align the h2 element */
   h2 {
     text-align: center;
@@ -85,7 +81,9 @@ header {
     margin: 0 auto; /* Để căn giữa ảnh */
   }
 
-
+.blog-section{
+  width:100%;
+}
 .blog-section .section-content{
   width: 85%;
   margin: 20px auto;
@@ -221,7 +219,6 @@ header {
   border-radius: 5px;
   background: white;
   position: relative;
-  padding: 10px;
 }
 .content .main-content .post .read-more{
   position: absolute;
@@ -241,7 +238,6 @@ header {
   width: 40%;
   height: 100%;
   float: left;
-  border-radius: 10px;
 }
 .content .main-content .post .post-preview{
   width:60%;
@@ -284,7 +280,6 @@ header {
   line-height: 1.5rem;
   font-size: 1.2rem;
   font-family: 'Times New Roman', Times, serif;
-  margin-left: 10px;
 }
 .content .sidebar .section.topics ul{
   margin: 0px;
@@ -406,6 +401,9 @@ header {
     margin: 0 auto; 
   }
 
+.blog-section{
+  width:100%;
+}
 .blog-section .section-content{
   width: 85%;
   margin: 20px auto;
@@ -450,17 +448,12 @@ header {
 .blog-section .section-content .blog-cards .blogcard .article h4{
   font-size: 24px;
   color: white;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 .blog-section .section-content .blog-cards .blogcard .article p{
   font-size: 16px;
-  letter-spacing: 0.5px;
-    color:#000;
-    line-height: 1.5;
-    text-align: justify;
-    padding-bottom: 10px;
-
+  margin: 10px 0px;
+  color: black;
 }
 .blog-section .section-content .blog-cards .blogcard a{
   text-decoration: none;
@@ -581,13 +574,12 @@ header {
   padding: 10px;
   float: right;
 }.content .main-content .post .post-preview  a{
-  color: #4f3222;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  padding: 10px;
+  color: sienna;
+  font-family: "Raleway", sans-serif;
 }
 
 .content .main-content .post .post-preview  a:hover{
-  color:#d4ac6e;
+  color:brown;
 }
 .btn{
   padding: .5rem 1rem;
@@ -600,14 +592,9 @@ header {
 .preview-text{
   font-size: 14px;
   margin-bottom: 10px;
-  letter-spacing: 0.5px;
-  color:#4f3222;
-  line-height: 1.5;
-  text-align: justify;
 }
 .fa-classic, .fa-regular, .fa-solid, .far, .fas {
   margin: 10px 0px;
-  padding: 10px;
 }
 .content .sidebar .section{
   background: white;
@@ -676,8 +663,8 @@ header {
   display: none;
 }
 .blog-section{
-    height: 650px;
-    width: 100%;
+  width: 100vw;
+  height: 100vh;
   background-image: url(../images/blog_1.png);
   background-position: center;
   background-size: cover;
@@ -746,42 +733,109 @@ img {
   background-color: sienna;
   color: white;
 }
-#aboutus .banner-card {
-  position: relative;
+
+/* Bổ sung CSS cho tính tương thích */
+/* Ensure proper stacking and spacing of sections on smaller screens */
+@media (max-width: 768px) {
+  .content {
+    display: flex;
+    flex-direction: column; /* Ensure sections stack vertically */
+  }
+
+  .blog-section {
+    order: 1;
+    width: 100%;
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .main-content {
+    order: 2;
+    width: 100%;
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .sidebar {
+    order: 3;
+    width: 100%;
+  }
+
+  .blog-section .section-content .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar .section {
+    margin-top: 20px;
+  }
+
+  .post-preview h1 {
+    font-size: 1.5rem;
+  }
+
+  .post-preview p {
+    font-size: 1rem;
+  }
 }
-#aboutus .banner-card img {
-  width: 1600px;
-  height: 650px;
-  width: 100%;
-  object-fit: cover;
+
+/* Adjust the layout for medium screens */
+@media (min-width: 769px) and (max-width: 992px) {
+  .content {
+    display: flex;
+    flex-direction: column; /* Ensure sections stack vertically */
+  }
+
+  .blog-section {
+    order: 1;
+    width: 100%;
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .main-content {
+    order: 2;
+    width: 100%;
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .sidebar {
+    order: 3;
+    width: 100%;
+  }
+
+  .blog-section .section-content .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar .section {
+    margin-top: 20px;
+  }
+
+  .post-preview h1 {
+    font-size: 1.75rem;
+  }
+
+  .post-preview p {
+    font-size: 1.125rem;
+  }
 }
-#aboutus .banner-text {
-  transform: translate(0, -50%);
-  text-align: center;
-  transition: 0.5s;
-  position: absolute;
-  top: 25%;
-  color: var(--white);
-  padding: 20px;
-  /*margin-left: 1000px;*/
-  left: 50%;
-  transform: translateX(-50%);
-}
-#aboutus .banner-text h4 {
-  text-align: center;
-  font-size: 60px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  font-family: "Dancing Script", sans-serif;
-  opacity: 0;
-  animation: animate 1s ease-in-out 0.2s 1 forwards;
-  margin-top:70px;
-}
-#aboutus .banner-text p {
-  text-align: center;
-  font-size: 15px;
-  margin-top: 15px;
-  opacity: 0;
-  font-family: "Raleway", sans-serif;
-  animation: animate 1.3s ease-in-out 0.2s 1 forwards;
+
+/* Adjust the layout for large screens */
+@media (min-width: 993px) {
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .blog-section {
+    order: 1;
+    width: 100%;
+  }
+
+  .main-content {
+    order: 2;
+    width: 70%;
+  }
+
+  .sidebar {
+    order: 3;
+    width: 30%;
+  }
 }
