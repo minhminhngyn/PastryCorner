@@ -460,5 +460,41 @@ padding: 6px 15px;
   font-family: "Raleway", sans-serif;
   animation: animate 1.3s ease-in-out 0.2s 1 forwards;
 }
-  
-  
+ 
+/* Bổ sung cho tính tương thích */
+/* Điều chỉnh font size của tiêu đề khi màn hình có độ rộng nhỏ hơn 768px (độ rộng của tablet và di động) */
+@media screen and (max-width: 768px) {
+  .title h1 {
+    font-size: 30px; /* Điều chỉnh font size tiêu đề */
+  }
+  .coupon-card h1, .coupon-card h3 {
+    font-size: 20px; /* Điều chỉnh font size tiêu đề trong card */
+  }
+}
+
+/* Điều chỉnh font size của phần nội dung trong card khi màn hình có độ rộng nhỏ hơn 768px */
+@media screen and (max-width: 768px) {
+  .coupon-card p {
+    font-size: 12px; /* Điều chỉnh font size của phần nội dung */
+  }
+}
+.title {
+  text-align: center;
+  padding: 10px; /* Điều chỉnh padding cho các tiêu đề */
+}
+
+.coupon-card {
+  width: 90%; /* Điều chỉnh độ rộng của card */
+  margin: 10px auto; /* Canh giữa card */
+  padding: 10px; /* Điều chỉnh padding cho card */
+}
+.coupon-row {
+  display: flex;
+  flex-wrap: wrap; /* Đảm bảo các card sẽ xuống dòng khi không đủ không gian */
+  justify-content: space-around; /* Canh giữa các card */
+}
+
+.coupon-card {
+  width: 45%; /* Điều chỉnh độ rộng của card để hiển thị nhiều hơn trên màn hình nhỏ */
+}
+
