@@ -234,7 +234,7 @@ bankTransferRadio.addEventListener('change', () => {
 });
 
 document.getElementById('back-to-cart').addEventListener('click', () => {
-    window.location.href = 'giohang.html';
+    window.location.href = '../html/danhsachsanpham.html';
 });
 
 
@@ -324,7 +324,7 @@ document.getElementById('back-to-cart').addEventListener('click', () => {
             row.innerHTML = `
                 <td><img src="${product.image}" alt="${product.name}" width="50"></td>
                 <td><span class="product-quantity">${product.quantity}x</span> <span class="product-name">${product.name}</span></td>
-                <td>${product.price.toLocaleString()} VNĐ</td>
+                <td>${product.price.toLocaleString()} </td>
             `;
             popupProductList.appendChild(row);
         });
