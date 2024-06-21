@@ -313,3 +313,103 @@ body {
   text-align: center;
   font-size: 0.8em;
 }
+
+/* Tương thích cho màn hình laptop, ipad và mobile phone */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-pane,
+  .right-pane {
+    width: 100%;
+  }
+
+  .right-pane {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1, h2, h3, p, label, button, input, select, textarea {
+    font-size: 1em;
+  }
+
+  .left-pane {
+    padding: 10px;
+  }
+
+  .right-pane {
+    padding: 10px;
+  }
+
+  .product-list table,
+  .summary-info p {
+    font-size: 0.9em;
+  }
+
+  fieldset {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .left-pane {
+    padding: 10px;
+  }
+
+  .right-pane {
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .address-selects {
+    flex-direction: column;
+  }
+
+  .address-selects select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .summary-info p {
+    font-size: 0.9em;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .popup-content {
+    padding: 10px;
+  }
+
+  .popup-content h2,
+  .popup-content h3,
+  .popup-content p {
+    font-size: 0.9em;
+  }
+
+  .popup-content table {
+    font-size: 0.8em;
+  }
+}

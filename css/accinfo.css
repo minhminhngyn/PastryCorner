@@ -576,3 +576,85 @@ footer .logo {
     border: none;
     cursor: pointer;
   }
+
+  /* CSS cho tương thích thiết bị */
+  /* Tương thích cho màn hình laptop, ipad và mobile phone */
+@media (max-width: 1200px) {
+  header .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .icons {
+    display: none;
+  }
+
+  #account-info {
+    flex-direction: column;
+  }
+
+  #account-info .left,
+  #account-info .right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  header .navbar ul {
+    display: none;
+  }
+
+  header .navbar ul.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .navbar #menu-btn {
+    display: block;
+    cursor: pointer;
+  }
+
+  header .navbar #close-menu-btn {
+    display: none;
+    cursor: pointer;
+  }
+
+  header .icons {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #account-info {
+    padding: 10px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters label,
+  .filters input,
+  .filters select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .edit-mode input {
+    width: 100%;
+  }
+}
+
+/* Hiển thị menu trên di động */
+#menu-btn.show + ul {
+  display: flex;
+}
+
+#menu-btn.show + ul #close-menu-btn {
+  display: block;
+}
