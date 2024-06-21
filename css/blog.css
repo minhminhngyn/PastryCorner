@@ -14,6 +14,10 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 18px; /* Increase font size for privacy policy */
   }
+  #privacy-policy p{
+    line-height: 1.5;
+    text-align: justify;
+  }
   /* Center align the h2 element */
   h2 {
     text-align: center;
