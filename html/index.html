@@ -60,11 +60,11 @@
               <input type="text" placeholder="Nhập tên bánh bạn muốn tìm kiếm">
             </div>
             <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
-            <div class="dropdown-user" id="dropdown-user">
+            <div class="dropdown-user" id="dropdown-user" style="display: none; position: relative;">
               <i id="user-icon" class="fa-solid fa-user"></i>
-              <ul class="dropdownuser" id="dropdownuser">
-                <li><a href="accinfo.html" class="dropdown_link">Thông tin tài khoản</a></li>
-                <li><a href="#" class="dropdown_link">Đăng xuất</a></li>
+              <ul class="dropdownuser" id="dropdownuser" style="display: none;">
+                <li><a href="accinfo.html" id="account-info" class="dropdown_link">Thông tin tài khoản</a></li>
+                <li><a href="#" id="logout" class="dropdown_link">Đăng xuất</a></li>
               </ul>
             </div>
             <div class="nav_close" id="nav-close">
@@ -78,6 +78,7 @@
       </nav>
       <script src="../js/header.js"></script>
     </header>
+    
      
 <!-----login------------------------------------------------------------------------------------------>
 <div class="overlay"></div>
