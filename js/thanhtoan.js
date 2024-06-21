@@ -134,121 +134,109 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ẩn thông báo khi không chọn chuyển khoản ngân hàng
     notes.style.display = 'none';
 
-    // Xử lý khi thay đổi phương thức vận chuyển
-    pickupRadio.addEventListener('change', () => {
-        if (pickupRadio.checked) {
-            storeAddress.style.display = 'block';
-            deliveryDetails.style.display = 'none';
-            shippingFee = 0;
-            updateTotalPrice();
-        }
+    // Lấy thông tin sản phẩm từ trang giỏ hàng để hiển thị lên trang thanh toán
+// Lấy thông tin sản phẩm từ giỏ hàng
+let subtotal = 0;
+const cart = JSON.parse(localStorage.getItem('cart'));
+if (cart && cart.length > 0) {
+    const productList = document.getElementById('product-list');
+    let totalPrice = 0;
+    let totalQuantity = 0;
+
+    cart.forEach(product => {
+        var price_new = product.price.substring(0, product.price.length - 1);
+        price_new = price_new.replace('.', '');
+        price_new = parseFloat(price_new);
+
+        var quan_new = parseInt(product.quantity);
+        const itemTotalPrice = price_new * quan_new;
+        totalPrice += itemTotalPrice;
+        totalQuantity += quan_new;
+
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        productDiv.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <p>${product.price.toLocaleString()} x ${product.quantity}</p>
+            </div>
+        `;
+        productList.appendChild(productDiv);
     });
 
-    deliveryRadio.addEventListener('change', () => {
-        if (deliveryRadio.checked) {
-            storeAddress.style.display = 'none';
-            deliveryDetails.style.display = 'block';
-            handleAddressChange(); // Kiểm tra xem quận/huyện và phường/xã đã được chọn chưa
-        }
-    });
+    subtotal = totalPrice;
+    discountAmount = JSON.parse(localStorage.getItem('discountAmount')) || 0;
+    document.getElementById('total-quantity').textContent = totalQuantity;
+    document.getElementById('subtotal').textContent = subtotal.toLocaleString();
+    document.getElementById('discount-amount').textContent = `-${discountAmount.toLocaleString()}`;
+    document.getElementById('total-price').textContent = (subtotal + shippingFee - discountAmount).toLocaleString();
+    document.getElementById('shipping-fee').textContent = shippingFee.toLocaleString();
+}
 
-    // Xử lý khi thay đổi quận/huyện hoặc phường/xã
-    function handleAddressChange() {
-        const selectedDistrict = districtSelect.value;
-        const selectedWard = wardSelect.value;
-        if (deliveryRadio.checked && (!addressInput.value.trim() || !selectedDistrict || !selectedWard)) {
-            shippingFee = 0;
-        } else {
-            shippingFee = 20000;
-        }
+// Xử lý khi thay đổi phương thức vận chuyển
+pickupRadio.addEventListener('change', () => {
+    if (pickupRadio.checked) {
+        storeAddress.style.display = 'block';
+        deliveryDetails.style.display = 'none';
+        shippingFee = 0;
         updateTotalPrice();
     }
+});
 
-    districtSelect.addEventListener('change', handleAddressChange);
-    wardSelect.addEventListener('change', handleAddressChange);
-
-    // Xử lý tổng giá
-    let subtotal = 0;
-    let discountAmount = 0;
-
-    //Lấy thông tin sản phẩm từ trang giỏ hàng để hiển thị lên trang thanh toán
-    const cart = JSON.parse(localStorage.getItem('cart'));
-    if (cart && cart.length > 0) {
-        const productList = document.getElementById('product-list');
-        let totalPrice = 0;
-        let totalQuantity = 0;
-
-        cart.forEach(product => {
-            var price_new=product.price.substring(0, product.price.length - 1)
-            price_new=price_new.replace('.','')
-            price_new=parseFloat(price_new)
-
-            var quan_new=parseInt(product.quantity)
-            const itemTotalPrice = price_new*quan_new;
-            totalPrice += itemTotalPrice;
-            totalQuantity += quan_new;
-            
-            const productDiv = document.createElement('div');
-            productDiv.classList.add('product');
-            productDiv.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <div class="product-info">
-                    <h3>${product.name}</h3>
-                    <p>${product.price.toLocaleString()}  x ${product.quantity}</p>
-                </div>
-            `;
-            productList.appendChild(productDiv);
-        });
-
-        subtotal = totalPrice;
-        document.getElementById('total-quantity').textContent = totalQuantity;
-        document.getElementById('subtotal').textContent = subtotal.toLocaleString();
-        document.getElementById('discount-amount').textContent = discountAmount.toLocaleString();
-        document.getElementById('total-price').textContent = (subtotal + shippingFee - discountAmount).toLocaleString();
-        document.getElementById('shipping-fee').textContent = shippingFee.toLocaleString();
+deliveryRadio.addEventListener('change', () => {
+    if (deliveryRadio.checked) {
+        storeAddress.style.display = 'none';
+        deliveryDetails.style.display = 'block';
+        handleAddressChange(); // Kiểm tra xem quận/huyện và phường/xã đã được chọn chưa
     }
+});
 
-    document.getElementById('apply-coupon').addEventListener('click', () => {
-        const couponCode = document.getElementById('coupon-code').value;
-        if (couponCode === 'DISCOUNT10') {
-            const discount = 0.1;
-            discountAmount = subtotal * discount;
-            updateTotalPrice();
-            alert('Mã giảm giá hợp lệ! Bạn được giảm 10% tổng giá trị đơn hàng.');
-        } else {
-            alert('Mã giảm giá không hợp lệ!');
-        }
-    });
+// Xử lý khi thay đổi quận/huyện hoặc phường/xã
+function handleAddressChange() {
+    const selectedDistrict = districtSelect.value;
+    const selectedWard = wardSelect.value;
+    if (deliveryRadio.checked && (!addressInput.value.trim() || !selectedDistrict || !selectedWard)) {
+        shippingFee = 0;
+    } else {
+        shippingFee = 20000;
+    }
+    updateTotalPrice();
+}
 
-    function updateTotalPrice() {
-        const totalPrice = subtotal + shippingFee - discountAmount;
-        const formattedDiscountAmount = (discountAmount > 0) ? `-${discountAmount.toLocaleString()}` : '0';
-        document.getElementById('discount-amount').textContent = formattedDiscountAmount;
-        document.getElementById('shipping-fee').textContent = shippingFee.toLocaleString();
-        document.getElementById('total-price').textContent = totalPrice.toLocaleString();
-    }    
+districtSelect.addEventListener('change', handleAddressChange);
+wardSelect.addEventListener('change', handleAddressChange);
 
-    // Xử lý khi thay đổi phương thức thanh toán
-    codRadio.checked = true;
-    bankAccountInfo.style.display = 'none';
+function updateTotalPrice() {
+    const totalPrice = subtotal + shippingFee - discountAmount;
+    const formattedDiscountAmount = (discountAmount > 0) ? `-${discountAmount.toLocaleString()}` : '0';
+    document.getElementById('discount-amount').textContent = formattedDiscountAmount;
+    document.getElementById('shipping-fee').textContent = shippingFee.toLocaleString();
+    document.getElementById('total-price').textContent = totalPrice.toLocaleString();
+}
 
-    codRadio.addEventListener('change', () => {
-        if (codRadio.checked) {
-            bankAccountInfo.style.display = 'none';
-            notes.style.display = 'none';
-        }
-    });
+// Xử lý khi thay đổi phương thức thanh toán
+codRadio.checked = true;
+bankAccountInfo.style.display = 'none';
 
-    bankTransferRadio.addEventListener('change', () => {
-        if (bankTransferRadio.checked) {
-            bankAccountInfo.style.display = 'block';
-            notes.style.display = 'block';
-        }
-    });
+codRadio.addEventListener('change', () => {
+    if (codRadio.checked) {
+        bankAccountInfo.style.display = 'none';
+        notes.style.display = 'none';
+    }
+});
 
-    document.getElementById('back-to-cart').addEventListener('click', () => {
-        window.location.href = 'giohang.html';
-    });
+bankTransferRadio.addEventListener('change', () => {
+    if (bankTransferRadio.checked) {
+        bankAccountInfo.style.display = 'block';
+        notes.style.display = 'block';
+    }
+});
+
+document.getElementById('back-to-cart').addEventListener('click', () => {
+    window.location.href = 'giohang.html';
+});
+
 
     // Hàm kiểm tra dữ liệu form
     function validateForm() {

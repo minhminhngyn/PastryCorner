@@ -1,118 +1,207 @@
-/*import font text*/
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
-/*------------------------------------------------------------------------------------------------------------------*/
-:root {
-  --white: #ffff;
-  --vintage: #bbab9b;
-  --vintage2: #8b6f47;
-  --vintage3: #d4ac6e;
-  --vintage4: #4f3222;
-  --z-fixed: 100;
-  --z-tooltip: 10;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-decoration: none;
-  transition: all 0.2s linear;
-}
-html {
-  font-size: 72.5%;
-  scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
-  overflow-x: hidden;
-}
-html,
-body {
-  height: 100%;
-  /*body{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;*/
-}
-header.help {
-    /* Đặt vị trí của sort và filter ngang hàng và ở giữa trang */
-    display: flex;
-    justify-content: center; /* Đưa nội dung vào giữa */
-    align-items: center; /* Canh giữa theo trục ngang */
-    margin: 25px 0; /* Khoảng cách trên và dưới */
-    background-color: var(--white);
+*{
+    /* padding:0;margin:0 */
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
 }
 
-header.help .filter, header.help .sort {
-    /* Đặt khoảng cách giữa filter và sort */
+html 
+{
+    font-size: 72.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+header.header 
+{
+    font-family: "Raleway", sans-serif;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 2rem 9%;
     display: flex;
     align-items: center;
-    margin-right: 20px; /* Khoảng cách giữa filter và sort */
-    position: relative;
+    justify-content: flex-end; /*Căn lề nav-text sang phải*/
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
+   
 }
 
-header.help .filter p, header.help .sort p {
+header .navbar ul li 
+{
+    list-style: none;
+    display: inline;
+    margin: 0 20px;
+    position: relative;
+}
+header .navbar ul li a 
+{
+    color: var(--white);
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+header .logo 
+{
+    font-size: 1.85rem;
+    color: var(--white);
+    font-weight: bolder;
+    cursor: pointer;
+    margin-right: auto;
+}
+header .icons i 
+{
+    color: var(--white);
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+header .toggler
+{
+    display: none;
+}
+
+
+
+header.headline
+{
+    text-align: center;
+    margin-top: 8rem;
+    font-size: 2rem;
+    font-family: "Raleway", sans-serif;
+}
+header.headline h3
+{
+    display: inline-block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+
+header .help 
+{   
+    /* định dạng cho sort và filter ở cột dọc (flext-direction) */
+    /* vị trí ở đầu phần help :flex-start */
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    margin-left: 10px;
+    background-color: aqua;
+}
+
+header.help p
+{
     font-size: 1.5em;
     font-weight: bold;
     color: #4f3222;
-    margin-right: 10px; /* Khoảng cách giữa tiêu đề và nội dung */
 }
 
-header.help .sort .select-sort {
+header.help .filter, .sort 
+{
+    /* đặt position:relative, khoảng cách filter và sort là 20px */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+    position: relative; 
+}
+
+header.help .filter
+{
+    flex-direction: row;
+   
+}
+header.help .sort
+{
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+header.help .sort .select-sort 
+{
+    margin-left: 0;
+    margin-top: 10px;
     font-size: 1.2em;
     color: #4f3222;
     border: solid 1px #4f3222;
     border-radius: 8px;
     padding: 10px 15px;
 }
+header.help .sort .select-sort option
+{
+    color: #4f3222;
+}
 
-header.help .filter .button-filter {
+
+header.help .filter .button-filter 
+{
+    /* z-index=2 để đảm bảo icon lọc ở trên option  */
     color: #4f3222;
     padding: 8px 12px;
     font-size: 2em;
     cursor: pointer;
     margin-left: 10px;
-    z-index: 2;
+    z-index: 2; 
 }
 
-header.help .filter .options {
+
+header.help .filter .options 
+{
+    /* display để mặc định ẩn, max-heigt=0: mặc định là height=0 trước khi click icon */
+    /* transition: chuyển mượt trong 0.3s */
+    /* z-index: đảm bảo trên phần tử khác, dưới icon lọc */
     display: none;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.3s ease-out;
-    width: 200px;
+    width: 200px; 
     position: absolute;
-    top: 100%;
+    top: 100%; 
     left: 0;
-    z-index: 1;
+    z-index: 1; 
 }
-
-header.help .filter .options a {
-    color: #3a2b07;
+header.help .filter .options a 
+{
+    color:#3a2b07;
     padding: 12px 16px;
-    background-color: #f7f1e3;
+    background-color:#f7f1e3;
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
     display: block;
     border-radius: 8px;
 }
-
-header.help .filter a:hover {
-    background-color: #f6a77d;
+header.help .filter a:hover 
+{
+    background-color:#f6a77d;
 }
 
-#toggleFilter {
+#toggleFilter 
+{
+    /* tạo một check để kích hoạt transition của option */
+    /* ẩn check */
     display: none;
 }
 
-#toggleFilter:checked + label + .options {
+#toggleFilter:checked + label + .options 
+{
+    /* nếu check có trạng thái checked thì max-height từ 0 chuyển thành 200px */
     display: block;
-    max-height: 150px;
+    max-height: 150px; 
 }
-
 
 
 
@@ -431,6 +520,12 @@ ul.products ul.product-button i.fa-solid
 .cart .icon-thanhtoan .thanhtoan:hover
 {
     background-color: #fff;
+}
+
+.product-img {
+    width: 50px; /* Điều chỉnh kích thước chiều rộng của ảnh */
+    height: auto; /* Giữ tỷ lệ khung hình */
+    margin-right: 10px; /* Để lại khoảng cách giữa ảnh và nội dung khác */
 }
 
 

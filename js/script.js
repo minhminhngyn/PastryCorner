@@ -18,43 +18,43 @@ btncartclose.addEventListener('click',function(){
     saveCart();
 })
 //.................................sự kiện kích hoạt khi click.................................
-const btnaddcart=document.querySelectorAll('.add-to-cart')
+const btnaddcart = document.querySelectorAll('.add-to-cart');
 btnaddcart.forEach(button => {
-    button.addEventListener('click',function(event){
-        var btn=event.target
-        var productitem=btn.closest('.product-item')
+    button.addEventListener('click', function(event) {
+        var btn = event.target;
+        var productitem = btn.closest('.product-item');
 
-        var price=productitem.querySelector('.product-price').textContent
-        var name=productitem.querySelector('.product-name').textContent
-        
-        if(check(name)==true)
-            {
-                alert("Đã có sản phẩm trong giỏ hàng");
-                return;
-            }
+        var price = productitem.querySelector('.product-price').textContent;
+        var name = productitem.querySelector('.product-name').textContent;
+        var image = productitem.querySelector('.product-image img').src;
 
+        if (check(name) == true) {
+            alert("Đã có sản phẩm trong giỏ hàng");
+            return;
+        }
 
-        addtocart(name,price)//thêm sản phẩm vào giỏ hàng
-        total()//tính tổng
-        delproduct()//xóa sản phẩm khỏi giỏ hàng
-        changeinput()//thay đổi số lượng
-        saveCart()
-    })
+        addtocart(name, price, image); // Thêm sản phẩm vào giỏ hàng với thông tin ảnh
+        total(); // Tính tổng
+        delproduct(); // Xóa sản phẩm khỏi giỏ hàng
+        changeinput(); // Thay đổi số lượng
+        saveCart();
+    });
 });
 
+
+
 //...........................................thêm vào giỏ hàng.....................................
+function addtocart(productname, productprice, productimage) {
+    var tr = document.createElement('tr');
 
-function addtocart(productname,productprice){
-    var tr=document.createElement('tr')
-
-    var trcontent='<tr><td><span class="tl">'+productname+'</span></td>'+
-    '<td><p class="product-price">'+productprice+'</p></td>'+
-    '<td><input type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="del">Xóa</span></td>'
-    tr.innerHTML=trcontent
-    var tb=document.querySelector("tbody")
-    tb.append(tr)
-
+    var trcontent = '<tr><td><img src="' + productimage + '" alt="' + productname + '" class="product-img"><span class="tl">' + productname + '</span></td>' +
+    '<td><p class="product-price">' + productprice + '</p></td>' +
+    '<td><input type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="del">Xóa</span></td>';
+    tr.innerHTML = trcontent;
+    var tb = document.querySelector("tbody");
+    tb.append(tr);
 }
+
 //.................................kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa.......................
 function check(productname)
 {
@@ -159,10 +159,12 @@ function saveCart() {
         var productname = row.querySelector(".tl").textContent;
         var productprice = row.querySelector('.product-price').textContent;
         var quantity = row.querySelector('input').value;
-        cartData.push({ name: productname, price: productprice, quantity: quantity });
+        var productimage = row.querySelector('.product-img').src; // Lấy thông tin ảnh sản phẩm
+        cartData.push({ name: productname, price: productprice, quantity: quantity, image: productimage });
     });
     localStorage.setItem('cart', JSON.stringify(cartData));
 }
+
 
 // .........................Hàm tải dữ liệu giỏ hàng từ localStorage....................................
 function loadCart() {
@@ -379,3 +381,52 @@ sortid.addEventListener("change",function(){
         ul.append(li)
 }
 })
+
+function total() {
+    var item = document.querySelectorAll('tbody tr');
+    var total = 0;
+
+    for (var i = 0; i < item.length; i++) {
+        var quant = item[i].querySelector('input').value;
+        var price = item[i].querySelector('.product-price').textContent;
+        price = price.substring(0, price.length - 1);
+        price = price.replace('.', '');
+        price = parseFloat(price);
+
+        var tt = quant * price;
+        total = total + tt;
+    }
+
+    var totalformat;
+    if (total != 0) {
+        totalformat = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+    } else {
+        totalformat = '0đ';
+    }
+    var cost_total = document.querySelector('.cost-total span');
+    cost_total.innerHTML = totalformat;
+
+    const btn_apply = document.querySelector("#apply-promo");
+    btn_apply.addEventListener("click", function() {
+        const promoCode = document.getElementById('promo-code').value;
+        var discount_apply = 0;
+        for (let i = 0; i < promoCodes.length; i++) {
+            if (promoCode === promoCodes[i].value) {
+                discount_apply = promoCodes[i].dis;
+                break;
+            }
+        }
+        var cost_pay = addpromotion(total, discount_apply);
+        var cost_pay_final = document.querySelector('.cost-final span');
+        cost_pay_final.innerHTML = cost_pay;
+
+        // Tính và lưu giá trị giảm giá vào localStorage
+        var discountAmount = total * discount_apply;
+        localStorage.setItem('discountAmount', JSON.stringify(discountAmount));
+    });
+
+    var promoSelect = document.getElementById('promo-code');
+    promoSelect.addEventListener('change', function() {
+        calculateDiscountedTotal();
+    });
+}
