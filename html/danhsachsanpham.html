@@ -113,7 +113,7 @@
     
 
     <div class="icon-thanhtoan">
-        <a class="thanhtoan" href="">Thanh toán</a>
+        <a class="thanhtoan" href="../html/thanhtoan.html">Thanh toán</a>
     </div>
     
 </section>
@@ -129,7 +129,7 @@
     <script>
         const product_infor=
         [
-            {id:'1',name:'Almond Biscotti',price:'50.000đ',image:'../image/Almond Biscotti.jpg',alt:'Almond Biscotti',promo:false,dis:''},
+            {id:'1',name:'Almond Biscotti',price:'50.000đ',image:'../images/Paleo bread.jpg',alt:'Almond Biscotti',promo:false,dis:'',linkmuangay:'../html/chitietsp.html'},
             {id:'2',name:'Almond Croissant',price:'45.000đ',image:'../image/Almond Croissant.jpg ',alt:'Almond Biscotti',promo:true,dis:'10%'},
             {id:'3',name:'Apple Danish',price:'38.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti',promo:false,dis:''},
             {id:'4',name:'Blueberry Cream Cheese',price:'60.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti',promo:false},
@@ -145,9 +145,9 @@
         for(var i=0;i<product_infor.length;i++)
             {
                 product_ele=product_infor[i]
-                addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis)
+                addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis,product_ele.linkmuangay)
             }
-        function addproduct(name,price,img,alt,promo,dis){
+        function addproduct(name,price,img,alt,promo,dis,linkmuangay){
             var promotion
             if(promo==true)
                 promotion='<div class="product-promotion">'+dis+'</div>'
@@ -158,9 +158,9 @@
                         promotion+
                         '<div class="product-top">'+
                             '<a href="" class="product-image">'+
-                                '<img src="'+img+'" alt="'+alt+'">'+
+                               '<img src="'+img+'" alt="'+alt+'">'+
                             '</a>'+
-                            '<a href="" class="buy-now">Mua ngay</a>'+
+                            '<a href="'+linkmuangay+'" class="buy-now">Mua ngay</a>'+
                         '</div>'+
                         '<div class="product-infor">'+
                             '<!-- tên sản phẩm + giá -->'+
