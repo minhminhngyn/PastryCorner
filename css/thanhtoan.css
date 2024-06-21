@@ -5,26 +5,26 @@ body {
 }
 .container {
   display: flex;
+  flex-wrap: wrap;
   min-height: 100vh;
-  overflow: hidden;
 }
+
 .left-pane, .right-pane {
-  width: 50%;
+  flex: 1;
   padding: 20px;
   box-sizing: border-box;
 }
- 
-  .left-pane {
-    flex: 1;
-    background-color: #f0f0f0; /* Màu nền cho phần bên trái */
-    padding: 20px;
-  }
-  
-  .right-pane {
-    flex: 1;
-    background-color: #e0e0e0; /* Màu nền cho phần bên phải */
-    padding: 20px;
-  }
+
+.left-pane {
+  background-color: #f0f0f0;
+}
+
+.right-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #e0e0e0;
+}
   
   fieldset {
     border: 1px solid #ccc;
@@ -57,6 +57,12 @@ body {
     margin-right: 10px; /* Khoảng cách giữa các select */
   }
   
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
   button {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -68,6 +74,15 @@ body {
   button:hover {
     background-color: #45a049;
   }
+  
+  button#back-to-cart {
+    background-color: #f44336;
+  }
+  
+  button#back-to-cart:hover {
+    background-color: #e53935;
+  }
+  
 .product-list {
     flex: 1;
     padding: 20px;
@@ -103,28 +118,6 @@ body {
     margin-left: auto; /* Di chuyển phần giá tiền sang bên phải */
 }
 
-.coupon {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.coupon input {
-  flex: 1;
-  padding: 10px;
-  font-size: 1rem;
-}
-.coupon button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.coupon button:hover {
-  background-color: #45a049;
-}
 .summary-info {
   border: 1px solid #ddd;
   padding: 15px;
@@ -152,6 +145,13 @@ body {
 }
 .shipping-fee {
   padding: 5px 0;
+}
+
+.divider {
+  border: none; 
+  border-top: 1px solid #ccc; 
+  margin: 20px 0; 
+  font-weight: 200;
 }
 
 #store-address {
@@ -327,4 +327,33 @@ body {
 .copyright {
   text-align: center;
   font-size: 0.8em;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-pane, .right-pane {
+    width: 100%;
+  }
+
+  .right-pane {
+    margin-top: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .action-buttons button:last-child {
+    margin-bottom: 0;
+  }
 }
