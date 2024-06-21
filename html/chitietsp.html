@@ -1,223 +1,263 @@
-<!-- <<<<<<< HEAD -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Chi tiết sản phẩm</title>
-        <meta charset="utf-8" >
-        <style>
-            @import url(../css/chitietsp.css);
-        </style>
-        <!-- <script src="../js/script.js"></script> -->
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-        <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <header class="header">
-            <a href="" class="logo">Pastry Corner</a>
-            <div class="navbar">
-                <ul>
-                <!-- <span id="close-menu-btn" class="fa fa-close">close</span> -->
-                <li><a href="">Trang chủ</a></li>
-                <li><a href="">Sản phẩm</a></li>
-                <li><a href="">Khuyến mại</a></li>
-                <li><a href="">Giới thiệu</a></li>
-                <li><a href="">Blog</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="description"
+      content="Located in the South End and Fort Point Channel. Includes a menu, catering information, and staff profiles."
+    />
+    <!---link icons------------------------------------------------------------------------------------------------>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!---link sheet css, scss, js----------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet2" href="../scss/style.scss" />
+    <link rel="stylesheet" href="../css/chitietsp.css" />
+    <!-------------------------------------------------------------------------------------------------------------->
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav_container">
+        <a href="index.html" class="nav_logo">Pastry Corner</a>
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list">
+            <li><a href="index.html" class="nav_link">Trang chủ</a></li>
+            <li class="dropdown-wrapper">
+              <a href="tatcasp.html" class="nav_link">Sản phẩm</a>
+              <ul class="dropdown" id="dropdown">
+                <li><a href="#" class="dropdown_link">Bánh ngọt kiểu Âu</a></li>
+                <li><a href="#" class="dropdown_link">Bánh mì</a></li>
+                <li><a href="#" class="dropdown_link">Bánh lạnh</a></li>
+                <li><a href="#" class="dropdown_link">Bánh mặn</a></li>
+                <li><a href="#" class="dropdown_link">Bánh quy</a></li>
+              </ul>
+            </li>
+            <li><a href="khuyenmaimain.html" class="nav_link">Khuyến mại</a></li>
+            <li><a href="aboutus.html" class="nav_link">Giới thiệu</a></li>
+            <li><a href="blogmain.html" class="nav_link">Blog</a></li>
+          </ul>
+          <div class="nav_icons">
+            <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
+            <div class="search">
+              <span class="search-icon">
+                <i href="#" class="fa-solid fa-magnifying-glass searchbtn"></i>
+                <i class="fa-solid fa-x closebtn"></i>
+              </span>
+            </div>
+            <div class="searchbox">
+              <input type="text" placeholder="Nhập tên bánh bạn muốn tìm kiếm">
+            </div>
+            <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+            <div class="dropdown-user" id="dropdown-user" style="display: none; position: relative;">
+              <i id="user-icon" class="fa-solid fa-user"></i>
+              <ul class="dropdownuser" id="dropdownuser" style="display: none;">
+                <li><a href="accinfo.html" id="account-info" class="dropdown_link">Thông tin tài khoản</a></li>
+                <li><a href="#" id="logout" class="dropdown_link">Đăng xuất</a></li>
+              </ul>
+            </div>
+            <div class="nav_close" id="nav-close">
+              <i class="fa-solid fa-x"></i>
+            </div>
+          </div>
+          <div class="nav_toggle" id="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+      <script src="../js/header.js"></script>
+    </header>
+    <section id="aboutus">
+      <div class="banner-card">
+        <img src="../images/banhmi.png" />
+        <div class="banner-text">
+          <h4>Bánh mì</h4>
+          <p>Những loại bánh mì ngon nhất chúng tôi có</p>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="box">
+        <div class="left">
+          <div class="img-big">
+            <img src="../images/Paleo bread.jpg" />
+          </div>
+          <div class="img-replace">
+            <div class="img-small">
+              <img src="../images/White Baguette.jpg" alt="" />
+            </div>
+            <div class="img-small">
+              <img src="../images/Whole Wheat Baguette.JPG" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="product-name">
+            <p>Paleo bread</p>
+          </div>
+          <div class="product-infor">
+            <div class="product-info-short">
+              <table>
+                <tr>
+                  <td>Thương hiệu: Pastry Corner</td>
+                  <td>Tình trạng: Còn hàng</td>
+                </tr>
+              </table>
+            </div>
+            <div class="product-price">
+              <p>Price: <span class="main-product-price">41.000đ</span></p>
+            </div>
+            <div class="product-infor-detail">
+              <ul>
+                <li class="material">
+                  <span>Thành phần: </span> Hạt macca, hạt óc chó, hạt điều, hạt
+                  hạnh nhân, hạt bí, hạt hướng dương, vừng...
+                </li>
+                <li class="intro">
+                  <span>Giới thiệu: </span>Paleo Bread còn gọi là bánh siêu hạt,
+                  không chứa ngũ cốc và gluten - món bánh lý tưởng cho người
+                  nhạy cảm với tinh bột, cần kiêng đường hay chỉ đơn giản là
+                  người đang ăn kiêng. Được làm từ các loại hạt dinh dưỡng, kết
+                  dính bằng lòng trắng trứng.
+                </li>
+                <ul class="hdsd">
+                  <li class="tl">Hướng dẫn sử dụng:</li>
+                  <li>Cắt lát, dùng trực tiếp</li>
+                  <li>Dùng cùng các sản phẩm ăn kèm</li>
+                  <li>Ngon hơn khi ăn kèm với sữa chua hoa quả, ...</li>
                 </ul>
-                <!-- <span id="menu-btn" class="fa-solid fa-bars" style="font-size: 36px">menu</span> -->
+                <li>
+                  <span>Cách thức bảo quản: </span> Gói kín, bảo quản nơi thoáng
+                  mát, tránh ánh nắng trực tiếp.
+                </li>
+              </ul>
             </div>
-            <div class="icons">
-                <a href="" class="fa fa-user-circle-o"></a>
-                <!-- <a href="" class="fa fa-shopping-cart"></a> -->
-                <button class="icon-cart"><i class="fa fa-shopping-cart"></i></button>
-                <!-- <a href="" class="fa fa-search"></a> -->
-                <button class="icon-search"><i class="fa fa-search"></i></button>
+          </div>
+          <div class="quantity">
+            <p>Số lượng:</p>
+            <div id="buy-amount">
+              <button class="btn-minus">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <input type="text" name="Quantity" id="amount" value="1" />
+              <button class="btn-plus"><i class="fa-solid fa-plus"></i></button>
             </div>
-            
-        </header>
+          </div>
+          <div class="order">
+            <a class="btn-order" href="">Mua ngay</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="content">
-            <div class="box">
-                <div class="left">
-                    <div class="img-big">
-                        <img src="../image/Paleo bread.jpg">
-                    </div>
-                    <div class="img-replace">
-                        <div class="img-small">
-                            <img src="../image/White Baguette.jpg" alt="">
-                        </div>
-                        <div class="img-small">
-                            <img src="../image/Whole Wheat Baguette.JPG" alt="">
-                        </div>
-                    </div>
-                </div>
+    <section class="products-relate">
+      <div class="headline">
+        <p>Có thể bạn cũng thích</p>
+      </div>
+      <div class="product">
+        <ul class="list_pro"></ul>
+        <script>
+          const product_infor_relate = [
+            {
+              name: "Almond Biscotti",
+              price: "50.000đ",
+              image: "../image/Almond Biscotti.jpg",
+              alt: "Almond Biscotti",
+            },
+            {
+              name: "Almond Croissant",
+              price: "45.000đ",
+              image: "../image/Almond Croissant.jpg ",
+              alt: "Almond Biscotti",
+            },
+            {
+              name: "Apple Danish",
+              price: "38.000đ",
+              image: "../image/Apple Danish.jpg",
+              alt: "Almond Biscotti",
+            },
+            {
+              name: "Palmier",
+              price: "25.000đ",
+              image: "../image/Palmier.jpg",
+              alt: "Almond Biscotti",
+            },
+            {
+              name: "Blueberry Cream Cheese",
+              price: "60.000đ",
+              image: "../image/Blueberry Cream Cheese Bread.jpg",
+              alt: "Almond Biscotti",
+            },
+          ];
+          for (var i = 0; i < product_infor_relate.length; i++) {
+            product_ele = product_infor_relate[i];
+            addproduct(
+              product_ele.name,
+              product_ele.price,
+              product_ele.image,
+              product_ele.alt
+            );
+          }
+          function addproduct(name, price, img, alt) {
+            var li = document.createElement("li");
+            var li_content =
+              '<div class="product-item">' +
+              '<div class="product-top">' +
+              '<a href="" class="product-image">' +
+              '<img src="' +
+              img +
+              '" alt="' +
+              alt +
+              '">' +
+              "</a>" +
+              '<a href="" class="buy-now">Mua ngay</a>' +
+              "</div>" +
+              '<div class="product-infor">' +
+              "<!-- tên sản phẩm + giá -->" +
+              '<a href="" class="product-name">' +
+              name +
+              "</a>" +
+              '<a href="" class="product-price">' +
+              price +
+              "</a> " +
+              "</div>" +
+              '<ul class="product-button">' +
+              "<li>" +
+              '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>' +
+              "</li>" +
+              "<li>" +
+              '<a class="search-product" href="">' +
+              '<i class="fa fa-search"></i></button>' +
+              "</li>" +
+              "</ul>" +
+              "</div>";
+            li.innerHTML = li_content;
+            var ul = document.querySelector(".list_pro");
+            ul.append(li);
+          }
+        </script>
+      </div>
+    </section>
+    <script src="../js/product_details.js"></script>
+  </body>
 
-                <div class="right">
-                    <div class="product-name">
-                        <p>Paleo bread</p>
-                    </div>
-                    <div class="product-infor">
-                        <div class="product-info-short">
-                            <table>
-                                <tr>
-                                    <td>Thương hiệu: Pastry Corner </td>
-                                    <td>Tình trạng: Còn hàng </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="product-price">
-                            <p>Price: <span class="main-product-price">41.000đ</span></p>
-                        </div>
-                        <div class="product-infor-detail">
-                            <ul>
-                                <li class="material"><span>Thành phần: </span> Hạt macca, hạt óc chó, hạt điều, hạt hạnh nhân, hạt bí, hạt hướng dương, vừng...</li>
-                                <li class="intro"><span>Giới thiệu: </span>Paleo Bread còn gọi là bánh siêu hạt, không chứa ngũ cốc và gluten - 
-                                    món bánh lý tưởng cho người nhạy cảm với tinh bột, cần kiêng đường hay chỉ đơn giản là người đang ăn kiêng. 
-                                    Được làm từ các loại hạt dinh dưỡng, kết dính bằng lòng trắng trứng.</li>
-                                <ul class="hdsd">
-                                    <li class="tl">Hướng dẫn sử dụng: </li>
-                                    <li>Cắt lát, dùng trực tiếp</li>
-                                    <li>Dùng cùng các sản phẩm ăn kèm </li>
-                                    <li>Ngon hơn khi ăn kèm với sữa chua hoa quả, ...</li>
-                                </ul>
-                                <li><span>Cách thức bảo quản: </span> Gói kín, bảo quản nơi thoáng mát, tránh ánh nắng trực tiếp.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="quantity">
-                        <p>Số lượng:</p>
-                        <div id="buy-amount">
-                            <button class="btn-minus"><i class="fa-solid fa-minus"></i></button>
-                            <input type="text" name="Quantity" id="amount" value="1">
-                            <button class="btn-plus"><i class="fa-solid fa-plus"></i></button>
-                            
-                        </div>
-                    </div>
-                    <div class="order">
-                        <a class="btn-order" href="">Mua ngay</a>
-                    </div>
-                </div>
+  <!-- ======= -->
+  
 
-            </div>
-        </section>
-
-        <section class="products-relate">
-            <div class="headline">
-                <p>Có thể bạn cũng thích</p>
-            </div>
-            <div class="product">
-                <ul class="list_pro">
-                </ul>
-                <script>
-                const product_infor_relate=
-                [
-                    {name:'Almond Biscotti',price:'50.000đ',image:'../image/Almond Biscotti.jpg',alt:'Almond Biscotti'},
-                    {name:'Almond Croissant',price:'45.000đ',image:'../image/Almond Croissant.jpg ',alt:'Almond Biscotti'},
-                    {name:'Apple Danish',price:'38.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti'},
-                    {name:'Palmier',price:'25.000đ',image:'../image/Palmier.jpg',alt:'Almond Biscotti'},
-                    {name:'Blueberry Cream Cheese',price:'60.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti'}
-                ];
-                for(var i=0;i<product_infor_relate.length;i++)
-                    {
-                        product_ele=product_infor_relate[i]
-                        addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt)
-                    }
-                function addproduct(name,price,img,alt){
-                
-                    var li=document.createElement('li')
-                    var li_content='<div class="product-item">'+
-                                '<div class="product-top">'+
-                                    '<a href="" class="product-image">'+
-                                        '<img src="'+img+'" alt="'+alt+'">'+
-                                    '</a>'+
-                                    '<a href="" class="buy-now">Mua ngay</a>'+
-                                '</div>'+
-                                '<div class="product-infor">'+
-                                    '<!-- tên sản phẩm + giá -->'+
-                                    '<a href="" class="product-name">'+name+'</a>'+
-                                    '<a href="" class="product-price">'+price+'</a> '+
-                                '</div>'+
-                                '<ul class="product-button">'+
-                                    '<li>'+
-                                        '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>'+
-                                    '</li>'+
-                                    '<li>'+
-                                        '<a class="search-product" href="">'+
-                                            '<i class="fa fa-search"></i></button>'+
-                                    '</li>'+
-                                '</ul>'+
-                            '</div>'
-                    li.innerHTML=li_content
-                    var ul=document.querySelector(".list_pro")
-                    ul.append(li)
-                }
-                </script>
-            </div>
-        </section>
-        <script src="../js/product_details.js"></script>
-
-    </body>
-    
-<!-- ======= -->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Chi tiết sản phẩm</title>
-        <meta charset="utf-8" >
-        <style>
-            @import url(../css/chitietsp.css);
-        </style>
-        <!-- <script src="../js/script.js"></script> -->
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-        <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <header class="header">
-            <a href="" class="logo">Pastry Corner</a>
-            <div class="navbar">
-                <ul>
-                <!-- <span id="close-menu-btn" class="fa fa-close">close</span> -->
-                <li><a href="">Trang chủ</a></li>
-                <li><a href="">Sản phẩm</a></li>
-                <li><a href="">Khuyến mại</a></li>
-                <li><a href="">Giới thiệu</a></li>
-                <li><a href="">Blog</a></li>
-                </ul>
-                <!-- <span id="menu-btn" class="fa-solid fa-bars" style="font-size: 36px">menu</span> -->
-            </div>
-            <div class="icons">
-                <a href="" class="fa fa-user-circle-o"></a>
-                <!-- <a href="" class="fa fa-shopping-cart"></a> -->
-                <button class="icon-cart"><i class="fa fa-shopping-cart"></i></button>
-                <!-- <a href="" class="fa fa-search"></a> -->
-                <button class="icon-search"><i class="fa fa-search"></i></button>
-            </div>
-            
-        </header>
-
-<!-- .....................................cart............................................. -->
-<!-- 
+      <!-- .....................................cart............................................. -->
+      <!-- 
    
         <section class="cart">
             <form action="">
@@ -265,131 +305,60 @@
             
         </section>
              -->
-<!-- ....................................................................................................................... -->
+      <!-- ....................................................................................................................... -->
 
-
-
-        <section class="content">
-            <div class="box">
-                <div class="left">
-                    <div class="img-big">
-                        <img src="../image/Paleo bread.jpg">
-                    </div>
-                    <div class="img-replace">
-                        <div class="img-small">
-                            <img src="../image/White Baguette.jpg" alt="">
-                        </div>
-                        <div class="img-small">
-                            <img src="../image/Whole Wheat Baguette.JPG" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right">
-                    <div class="product-name">
-                        <p>Paleo bread</p>
-                    </div>
-                    <div class="product-infor">
-                        <div class="product-info-short">
-                            <table>
-                                <tr>
-                                    <td>Thương hiệu: Pastry Corner </td>
-                                    <td>Tình trạng: Còn hàng </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="product-price">
-                            <p>Price: <span class="main-product-price">41.000đ</span></p>
-                        </div>
-                        <div class="product-infor-detail">
-                            <ul>
-                                <li class="material"><span>Thành phần: </span> Hạt macca, hạt óc chó, hạt điều, hạt hạnh nhân, hạt bí, hạt hướng dương, vừng...</li>
-                                <li class="intro"><span>Giới thiệu: </span>Paleo Bread còn gọi là bánh siêu hạt, không chứa ngũ cốc và gluten - 
-                                    món bánh lý tưởng cho người nhạy cảm với tinh bột, cần kiêng đường hay chỉ đơn giản là người đang ăn kiêng. 
-                                    Được làm từ các loại hạt dinh dưỡng, kết dính bằng lòng trắng trứng.</li>
-                                <ul class="hdsd">
-                                    <li class="tl">Hướng dẫn sử dụng: </li>
-                                    <li>Cắt lát, dùng trực tiếp</li>
-                                    <li>Dùng cùng các sản phẩm ăn kèm </li>
-                                    <li>Ngon hơn khi ăn kèm với sữa chua hoa quả, ...</li>
-                                </ul>
-                                <li><span>Cách thức bảo quản: </span> Gói kín, bảo quản nơi thoáng mát, tránh ánh nắng trực tiếp.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="quantity">
-                        <p>Số lượng:</p>
-                        <div id="buy-amount">
-                            <button class="btn-minus"><i class="fa-solid fa-minus"></i></button>
-                            <input type="text" name="Quantity" id="amount" value="1">
-                            <button class="btn-plus"><i class="fa-solid fa-plus"></i></button>
-                            
-                        </div>
-                    </div>
-                    <div class="order">
-                        <a class="btn-order" href="">Mua ngay</a>
-                    </div>
-                </div>
-
+      <footer>
+        <div class="row">
+          <div class="col">
+            <a href="#" class="logo">Pastry Corner</a>
+            <p>Did you know? Serving you is our bread and butter</p>
+          </div>
+          <div class="col">
+            <h3>Thông tin liên hệ<div class="underline"><span></span></h3>
+            <p><i class="material-icons" style="font-size:24px">location_on</i>54 Trương Định , Phường Hai Bà Trưng, Quận Đống Đa, Thành phố Hà Nội</p>
+            <p class id="email-id"><i class="material-icons" style="font-size:24px">email</i>pastrycorner@gmail.com</p>
+            <p><i class="material-icons" style="font-size:24px">local_phone</i>(+84)-39-213-156</p>
+          </div>
+          <div class="col">
+            <h3>Về chúng tôi<div class="underline"><span></span></h3>
+            <ul>
+              <li><a href="index.html">Trang chủ</a></li>
+              <li><a href="product_list.html">Sản phẩm</a></li>
+              <li><a href="#sale">Khuyến mại</a></li>
+              <li><a href="#about">Giới thiệu</a></li>
+              <li><a href="blogmain.html">Blog</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
+            <ul>
+              <li><a href="#">Điều khoản dịch vụ</a></li>
+              <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
+              <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
+              <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>
+              <li><a href="chinhsachdoitra.html">Chính sách đổi trả</a></li>
+            </ul>
+            <div class="social-icons">
+              <i class="fa fa-facebook" style='font-size:24px'></i>
+              <i class="fa fa-instagram" style='font-size:24px'></i>
             </div>
-        </section>
+          </div>
+        </div>
+        <hr>
+        <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
+      </footer>
+      <script>
+        const header = document.querySelector("header");
+        const menubtn = document.querySelector("#menu-btn");
+        const closemenubtn = document.querySelector("#close-menu-btn");
+        menubtn.addEventListener("click", () => {
+          header.classList.toggle("show-mobile-menu");
+        });
+        closemenubtn.addEventListener("click", () => {
+          menubtn.click();
+        });
+      </script>
 
-        <section class="products-relate">
-            <div class="headline">
-                <p>Có thể bạn cũng thích</p>
-            </div>
-            <div class="product">
-                <ul class="list_pro">
-                </ul>
-                <script>
-                const product_infor=
-                [
-                    {name:'Almond Biscotti',price:'50.000đ',image:'../image/Almond Biscotti.jpg',alt:'Almond Biscotti'},
-                    {name:'Almond Croissant',price:'45.000đ',image:'../image/Almond Croissant.jpg ',alt:'Almond Biscotti'},
-                    {name:'Apple Danish',price:'38.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti'},
-                    {name:'Palmier',price:'25.000đ',image:'../image/Palmier.jpg',alt:'Almond Biscotti'},
-                    {name:'Blueberry Cream Cheese',price:'60.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti'}
-                ];
-                for(var i=0;i<product_infor.length;i++)
-                    {
-                        product_ele=product_infor[i]
-                        addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt)
-                    }
-                function addproduct(name,price,img,alt){
-                
-                    var li=document.createElement('li')
-                    var li_content='<div class="product-item">'+
-                                '<div class="product-top">'+
-                                    '<a href="" class="product-image">'+
-                                        '<img src="'+img+'" alt="'+alt+'">'+
-                                    '</a>'+
-                                    '<a href="" class="buy-now">Mua ngay</a>'+
-                                '</div>'+
-                                '<div class="product-infor">'+
-                                    '<!-- tên sản phẩm + giá -->'+
-                                    '<a href="" class="product-name">'+name+'</a>'+
-                                    '<a href="" class="product-price">'+price+'</a> '+
-                                '</div>'+
-                                '<ul class="product-button">'+
-                                    '<li>'+
-                                        '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>'+
-                                    '</li>'+
-                                    '<li>'+
-                                        '<a class="search-product" href="">'+
-                                            '<i class="fa fa-search"></i></button>'+
-                                    '</li>'+
-                                '</ul>'+
-                            '</div>'
-                    li.innerHTML=li_content
-                    var ul=document.querySelector(".list_pro")
-                    ul.append(li)
-                }
-                </script>
-            </div>
-        </section>
-        <script src="../js/product_details.js"></script>
-        <!-- <script src="../js/script.js"></script> -->
-    </body>
-    
-<!-- >>>>>>> 80a6b62ce111fe7442d8bf4ae9c18fa89a80e1b4 -->
+    <!-- >>>>>>> 80a6b62ce111fe7442d8bf4ae9c18fa89a80e1b4 -->
+  </html>
 </html>

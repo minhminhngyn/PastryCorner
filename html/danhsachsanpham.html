@@ -362,5 +362,56 @@
     </div>
 
     <script src="../js/script.js"></script>
+    <footer>
+      <div class="row">
+        <div class="col">
+          <a href="#" class="logo">Pastry Corner</a>
+          <p>Did you know? Serving you is our bread and butter</p>
+        </div>
+        <div class="col">
+          <h3>Thông tin liên hệ<div class="underline"><span></span></h3>
+          <p><i class="material-icons" style="font-size:24px">location_on</i>54 Trương Định , Phường Hai Bà Trưng, Quận Đống Đa, Thành phố Hà Nội</p>
+          <p class id="email-id"><i class="material-icons" style="font-size:24px">email</i>pastrycorner@gmail.com</p>
+          <p><i class="material-icons" style="font-size:24px">local_phone</i>(+84)-39-213-156</p>
+        </div>
+        <div class="col">
+          <h3>Về chúng tôi<div class="underline"><span></span></h3>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="product_list.html">Sản phẩm</a></li>
+            <li><a href="#sale">Khuyến mại</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="blogmain.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
+          <ul>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+            <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
+            <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
+            <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>
+            <li><a href="chinhsachdoitra.html">Chính sách đổi trả</a></li>
+          </ul>
+          <div class="social-icons">
+            <i class="fa fa-facebook" style='font-size:24px'></i>
+            <i class="fa fa-instagram" style='font-size:24px'></i>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
+    </footer>
+    <script>
+      const header = document.querySelector("header");
+      const menubtn = document.querySelector("#menu-btn");
+      const closemenubtn = document.querySelector("#close-menu-btn");
+      menubtn.addEventListener("click", () => {
+        header.classList.toggle("show-mobile-menu");
+      });
+      closemenubtn.addEventListener("click", () => {
+        menubtn.click();
+      });
+    </script>
   </body>
 </html>
