@@ -1,191 +1,366 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Sản phẩm</title>
-        <meta charset="utf-8" >
-        <style>
-            @import url(../css/danhsachsp.css);
-        </style>
-        <!-- <script src="../js/script.js"></script> -->
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-        <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <header class="header">
-            <a href="" class="logo">Pastry Corner</a>
-            <div class="navbar">
-                <ul>
-                <!-- <span id="close-menu-btn" class="fa fa-close">close</span> -->
-                <li><a href="../html/index.html">Trang chủ</a></li>
-                <li><a href="../html/tatcasp.html">Sản phẩm</a></li>
-                <li><a href="../html/khuyenmaimain.html">Khuyến mại</a></li>
-                <li><a href="../html/aboutus.html">Giới thiệu</a></li>
-                <li><a href="../html/blogmain.html">Blog</a></li>
-                </ul>
-                <!-- <span id="menu-btn" class="fa-solid fa-bars" style="font-size: 36px">menu</span> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="description"
+      content="Located in the South End and Fort Point Channel. Includes a menu, catering information, and staff profiles."
+    />
+    <!---link icons------------------------------------------------------------------------------------------------>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!---link sheet css, scss, js----------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet2" href="../scss/style.scss" />
+    <link rel="stylesheet" href="../css/danhsachsp.css" />
+    <!-------------------------------------------------------------------------------------------------------------->
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav_container">
+        <a href="index.html" class="nav_logo">Pastry Corner</a>
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list">
+            <li><a href="index.html" class="nav_link">Trang chủ</a></li>
+            <li class="dropdown-wrapper">
+              <a href="tatcasp.html" class="nav_link">Sản phẩm</a>
+              <ul class="dropdown" id="dropdown">
+                <li><a href="#" class="dropdown_link">Bánh ngọt kiểu Âu</a></li>
+                <li><a href="#" class="dropdown_link">Bánh mì</a></li>
+                <li><a href="#" class="dropdown_link">Bánh lạnh</a></li>
+                <li><a href="#" class="dropdown_link">Bánh mặn</a></li>
+                <li><a href="#" class="dropdown_link">Bánh quy</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="khuyenmaimain.html" class="nav_link">Khuyến mại</a>
+            </li>
+            <li><a href="aboutus.html" class="nav_link">Giới thiệu</a></li>
+            <li><a href="blogmain.html" class="nav_link">Blog</a></li>
+          </ul>
+          <div class="nav_icons">
+            <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
+            <div class="search">
+              <span class="search-icon">
+                <i href="#" class="fa-solid fa-magnifying-glass searchbtn"></i>
+                <i class="fa-solid fa-x closebtn"></i>
+              </span>
             </div>
-            <div class="icons">
-                <a href="" class="fa fa-user-circle-o"></a>
-                <!-- <a href="" class="fa fa-shopping-cart"></a> -->
-                <button class="icon-cart"><i class="fa fa-shopping-cart"></i></button>
-                <!-- <a href="" class="fa fa-search"></a> -->
-                <button class="icon-search"><i class="fa fa-search"></i></button>
+            <div class="searchbox">
+              <input
+                type="text"
+                placeholder="Nhập tên bánh bạn muốn tìm kiếm"
+              />
             </div>
-            
-        </header>
-        <header class="headline">
-            <h3>BÁNH MÌ</h3>
-        </header>
-        <header class="help">
-            <div class="filter">
-                <p>Lọc:</p>
-                <input type="checkbox" id="toggleFilter">
-                <label for="toggleFilter" class="button-filter"><i class="fa-solid fa-filter"></i></label>
-                <div class="options" id="filterOptions">
-                    <a class="filter-favor" href="#">Theo sản phẩm yêu thích</a>
-                    <a class="filter-promo" href="#">Theo sản phẩm khuyến mãi</a>
-                </div>
+            <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+            <div
+              class="dropdown-user"
+              id="dropdown-user"
+              style="display: none; position: relative"
+            >
+              <i id="user-icon" class="fa-solid fa-user"></i>
+              <ul class="dropdownuser" id="dropdownuser" style="display: none">
+                <li>
+                  <a href="accinfo.html" id="account-info" class="dropdown_link"
+                    >Thông tin tài khoản</a
+                  >
+                </li>
+                <li>
+                  <a href="#" id="logout" class="dropdown_link">Đăng xuất</a>
+                </li>
+              </ul>
             </div>
-            <div class="sort">
-                <p>Sắp xếp theo:</p>
-                <select class="select-sort" id="sort-select">
-                    <option value="" selected></option>
-                    <option class="asc" value="asc">Giá tăng dần</option>
-                    <option class="desc" value="desc">Giá giảm dần</option>
-                </select>
+            <div class="nav_close" id="nav-close">
+              <i class="fa-solid fa-x"></i>
             </div>
-        </header>
-
-<!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
- <!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
-<!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
-
-   
-<section class="cart">
-    <form action="">
-        <div class="cart-header">
-            <button id="cart-close"><i class="fa-solid fa-circle-xmark"></i></button>
-            <h2>Cart</h2>
+          </div>
+          <div class="nav_toggle" id="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
         </div>
-        
+      </nav>
+      <script src="../js/header.js"></script>
+    </header>
+    <section id="aboutus">
+      <div class="banner-card">
+        <img src="../images/banhmi.png" />
+        <div class="banner-text">
+          <h4>Bánh mì</h4>
+          <p>Những loại bánh mì ngon nhất chúng tôi có</p>
+        </div>
+      </div>
+    </section>
+    <header class="help">
+      <div class="filter">
+        <p>Lọc:</p>
+        <input type="checkbox" id="toggleFilter" />
+        <label for="toggleFilter" class="button-filter"
+          ><i class="fa-solid fa-filter"></i
+        ></label>
+        <div class="options" id="filterOptions">
+          <ul class="optionfilter">
+            <li>
+              <a class="filter-favor dropdown_link" href="#"
+                >Theo sản phẩm yêu thích</a
+              >
+            </li>
+            <li>
+              <a class="filter-promo dropdown_link" href="#"
+                >Theo sản phẩm khuyến mãi</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sort">
+        <p>Sắp xếp theo:</p>
+        <select class="select-sort" id="sort-select">
+          <option value="" selected></option>
+          <option class="asc" value="asc">Giá tăng dần</option>
+          <option class="desc" value="desc">Giá giảm dần</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
+    <!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
+    <!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
+
+    <section class="cart">
+      <form action="">
+        <div class="cart-header">
+          <button id="cart-close">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+          <h2>Cart</h2>
+        </div>
+
         <table>
-            <thead>
-                <th>Sản phẩm</th>
-                <th>Giá</th>
-                <th>Số lượng</th>
-                <th>Tùy chọn</th>
-            </thead>
-            <tbody>
-            </tbody>
-            
+          <thead>
+            <th>Sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Tùy chọn</th>
+          </thead>
+          <tbody></tbody>
         </table>
         <div class="cost-total">
-            <p>Tổng hóa đơn:<span>0đ</span></p>
+          <p>Tổng hóa đơn:<span>0đ</span></p>
         </div>
 
         <div class="cart-promotion">
-            <label for="promo-code">Mã khuyến mãi:</label>
+          <label for="promo-code">Mã khuyến mãi:</label>
 
-            <div class="promo-input">
-                <select id="promo-code" name="promo-code">
-                    <option value=""></option>
-                </select>
-                <button type="button" id="apply-promo">Áp dụng</button>
-            </div>
+          <div class="promo-input">
+            <select id="promo-code" name="promo-code">
+              <option value=""></option>
+            </select>
+            <button type="button" id="apply-promo">Áp dụng</button>
+          </div>
         </div>
 
         <div class="cost-final">
-            <p>Thanh toán: <span>0đ</span></p>
+          <p>Thanh toán: <span>0đ</span></p>
         </div>
-    </form>
+      </form>
 
-    
-
-    <div class="icon-thanhtoan">
+      <div class="icon-thanhtoan">
         <a class="thanhtoan" href="../html/thanhtoan.html">Thanh toán</a>
-    </div>
-    
-</section>
-    
-<!-- ..........................................product.............................................................................. -->
- <!-- ..........................................product.............................................................................. -->
-<!-- ..........................................product.............................................................................. -->
+      </div>
+    </section>
 
-<div id="wrapper">
-    <ul class="products">
-    </ul>
-    
-    <script>
-        const product_infor=
-        [
-            {id:'1',name:'Almond Biscotti',price:'50.000đ',image:'../images/Paleo bread.jpg',alt:'Almond Biscotti',promo:false,dis:'',linkmuangay:'../html/chitietsp.html'},
-            {id:'2',name:'Almond Croissant',price:'45.000đ',image:'../image/Almond Croissant.jpg ',alt:'Almond Biscotti',promo:true,dis:'10%'},
-            {id:'3',name:'Apple Danish',price:'38.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti',promo:false,dis:''},
-            {id:'4',name:'Blueberry Cream Cheese',price:'60.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti',promo:false},
-            {id:'5',name:'Brownie',price:'23.000đ',image:'../image/Brownie.jpg',alt:'Almond Biscotti',promo:false,dis:''},
-            {id:'6',name:'Cinnamon Raisin Danish',price:'46.000đ',image:'../image/Cinnamon Raisin Danish.jpg',alt:'Almond Biscotti',promo:true,dis:'10%'},
-            {id:'7',name:'Garlic butter bread',price:'87.000đ',image:'../image/Garlic butter bread.jpg',alt:'Almond Biscotti',promo:true,dis:'10%'},
-            {id:'8',name:'Paleo bread',price:'41.000đ',image:'../image/Paleo bread.jpg',alt:'Almond Biscotti',promo:false,dis:''},
-            {id:'9',name:'Palmier',price:'25.000đ',image:'../image/Palmier.jpg',alt:'Almond Biscotti',promo:true,dis:'10%'},
-            {id:'10',name:'Almond Biscotti (new)',price:'89.000đ',image:'../image/Almond Biscotti.jpg',alt:'Almond Biscotti',promo:false,dis:''},
-            {id:'11',name:'Apple Danish (new)',price:'54.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti',promo:false,dis:''},
-            {id:'12',name:'Blueberry Cream Cheese 01',price:'78.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti',promo:true,dis:'10%'},
+    <!-- ..........................................product.............................................................................. -->
+    <!-- ..........................................product.............................................................................. -->
+    <!-- ..........................................product.............................................................................. -->
+
+    <div id="wrapper">
+      <ul class="products"></ul>
+
+      <script>
+        const product_infor = [
+          {
+            id: "1",
+            name: "Almond Biscotti",
+            price: "50.000đ",
+            image: "../images/Paleo bread.jpg",
+            alt: "Almond Biscotti",
+            promo: false,
+            dis: "",
+            linkmuangay: "../html/chitietsp.html",
+          },
+          {
+            id: "2",
+            name: "Almond Croissant",
+            price: "45.000đ",
+            image: "../images/Almond Croissant.jpg ",
+            alt: "Almond Biscotti",
+            promo: true,
+            dis: "10%",
+          },
+          {
+            id: "3",
+            name: "Apple Danish",
+            price: "38.000đ",
+            image: "../images/Apple Danish.jpg",
+            alt: "Almond Biscotti",
+            promo: false,
+            dis: "",
+          },
+          {
+            id: "4",
+            name: "Blueberry Cream Cheese",
+            price: "60.000đ",
+            image: "../images/Blueberry Cream Cheese Bread.jpg",
+            alt: "Almond Biscotti",
+            promo: false,
+          },
+          {
+            id: "5",
+            name: "Brownie",
+            price: "23.000đ",
+            image: "../images/Brownie.jpg",
+            alt: "Almond Biscotti",
+            promo: false,
+            dis: "",
+          },
+          {
+            id: "6",
+            name: "Cinnamon Raisin Danish",
+            price: "46.000đ",
+            image: "../images/Cinnamon Raisin Danish.jpg",
+            alt: "Almond Biscotti",
+            promo: true,
+            dis: "10%",
+          },
+          {
+            id: "7",
+            name: "Garlic butter bread",
+            price: "87.000đ",
+            image: "../images/Garlic butter bread.jpg",
+            alt: "Almond Biscotti",
+            promo: true,
+            dis: "10%",
+          },
+          {
+            id: "8",
+            name: "Paleo bread",
+            price: "41.000đ",
+            image: "../images/Paleo bread.jpg",
+            alt: "Almond Biscotti",
+            promo: false,
+            dis: "",
+          },
+          {
+            id: "9",
+            name: "Palmier",
+            price: "25.000đ",
+            image: "../images/Palmier.jpg",
+            alt: "Almond Biscotti",
+            promo: true,
+            dis: "10%",
+          },
+          {
+            id: "10",
+            name: "Almond Biscotti (new)",
+            price: "89.000đ",
+            image: "../images/Almond Biscotti.jpg",
+            alt: "Almond Biscotti",
+            promo: false,
+            dis: "",
+          },
+          {
+            id: "11",
+            name: "Apple Danish (new)",
+            price: "54.000đ",
+            image: "../images/Apple Danish.jpg",
+            alt: "Almond Biscotti",
+            promo: false,
+            dis: "",
+          },
+          {
+            id: "12",
+            name: "Blueberry Cream Cheese 01",
+            price: "78.000đ",
+            image: "../images/Blueberry Cream Cheese Bread.jpg",
+            alt: "Almond Biscotti",
+            promo: true,
+            dis: "10%",
+          },
         ];
-        for(var i=0;i<product_infor.length;i++)
-            {
-                product_ele=product_infor[i]
-                addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis,product_ele.linkmuangay)
-            }
-        function addproduct(name,price,img,alt,promo,dis,linkmuangay){
-            var promotion
-            if(promo==true)
-                promotion='<div class="product-promotion">'+dis+'</div>'
-            else
-                promotion=''
-            var li=document.createElement('li')
-            var li_content='<div class="product-item">'+
-                        promotion+
-                        '<div class="product-top">'+
-                            '<a href="" class="product-image">'+
-                               '<img src="'+img+'" alt="'+alt+'">'+
-                            '</a>'+
-                            '<a href="'+linkmuangay+'" class="buy-now">Mua ngay</a>'+
-                        '</div>'+
-                        '<div class="product-infor">'+
-                            '<!-- tên sản phẩm + giá -->'+
-                            '<a href="" class="product-name">'+name+'</a>'+
-                            '<a href="" class="product-price">'+price+'</a> '+
-                        '</div>'+
-                        '<ul class="product-button">'+
-                            '<li>'+
-                                '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>'+
-                            '</li>'+
-                            '<li>'+
-                                '<button class="product-favor"><i class="fa-regular fa-heart"></i></button>'+
-                                    
-                            '</li>'+
-                        '</ul>'+
-                    '</div>'
-            li.innerHTML=li_content
-            var ul=document.querySelector(".products")
-            ul.append(li)
+        for (var i = 0; i < product_infor.length; i++) {
+          product_ele = product_infor[i];
+          addproduct(
+            product_ele.name,
+            product_ele.price,
+            product_ele.image,
+            product_ele.alt,
+            product_ele.promo,
+            product_ele.dis,
+            product_ele.linkmuangay
+          );
         }
-    </script>
+        function addproduct(name, price, img, alt, promo, dis, linkmuangay) {
+          var promotion;
+          if (promo == true)
+            promotion = '<div class="product-promotion">' + dis + "</div>";
+          else promotion = "";
+          var li = document.createElement("li");
+          var li_content =
+            '<div class="product-item">' +
+            promotion +
+            '<div class="product-top">' +
+            '<a href="" class="product-image">' +
+            '<img src="' +
+            img +
+            '" alt="' +
+            alt +
+            '">' +
+            "</a>" +
+            '<a href="' +
+            linkmuangay +
+            '" class="buy-now">Mua ngay</a>' +
+            "</div>" +
+            '<div class="product-infor">' +
+            "<!-- tên sản phẩm + giá -->" +
+            '<a href="" class="product-name">' +
+            name +
+            "</a>" +
+            '<a href="" class="product-price">' +
+            price +
+            "</a> " +
+            "</div>" +
+            '<ul class="product-button">' +
+            "<li>" +
+            '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>' +
+            "</li>" +
+            "<li>" +
+            '<button class="product-favor"><i class="fa-regular fa-heart"></i></button>' +
+            "</li>" +
+            "</ul>" +
+            "</div>";
+          li.innerHTML = li_content;
+          var ul = document.querySelector(".products");
+          ul.append(li);
+        }
+      </script>
+    </div>
 
-</div>
-
-<script src="../js/script.js"></script>
-
-    </body>
+    <script src="../js/script.js"></script>
+  </body>
 </html>
