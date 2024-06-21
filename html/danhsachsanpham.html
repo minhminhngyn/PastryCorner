@@ -47,8 +47,29 @@
         <header class="headline">
             <h3>BÁNH MÌ</h3>
         </header>
+        <header class="help">
+            <div class="filter">
+                <p>Lọc:</p>
+                <input type="checkbox" id="toggleFilter">
+                <label for="toggleFilter" class="button-filter"><i class="fa-solid fa-filter"></i></label>
+                <div class="options" id="filterOptions">
+                    <a class="filter-favor" href="#">Theo sản phẩm yêu thích</a>
+                    <a class="filter-promo" href="#">Theo sản phẩm khuyến mãi</a>
+                </div>
+            </div>
+            <div class="sort">
+                <p>Sắp xếp theo:</p>
+                <select class="select-sort" id="sort-select">
+                    <option value="" selected></option>
+                    <option class="asc" value="asc">Giá tăng dần</option>
+                    <option class="desc" value="desc">Giá giảm dần</option>
+                </select>
+            </div>
+        </header>
 
-<!-- .....................................cart............................................. -->
+<!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
+ <!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
+<!-- ...........................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..........cart............................................. -->
 
    
 <section class="cart">
@@ -92,12 +113,14 @@
     
 
     <div class="icon-thanhtoan">
-        <a class="thanhtoan" href="">Thanh toán</a>
+        <a class="thanhtoan" href="../html/thanhtoan.html">Thanh toán</a>
     </div>
     
 </section>
     
-<!-- ..........................................product........................................... -->
+<!-- ..........................................product.............................................................................. -->
+ <!-- ..........................................product.............................................................................. -->
+<!-- ..........................................product.............................................................................. -->
 
 <div id="wrapper">
     <ul class="products">
@@ -106,33 +129,38 @@
     <script>
         const product_infor=
         [
-            {name:'Almond Biscotti',price:'50.000đ',image:'../image/Almond Biscotti.jpg',alt:'Almond Biscotti'},
-            {name:'Almond Croissant',price:'45.000đ',image:'../image/Almond Croissant.jpg ',alt:'Almond Biscotti'},
-            {name:'Apple Danish',price:'38.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti'},
-            {name:'Blueberry Cream Cheese',price:'60.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti'},
-            {name:'Brownie',price:'23.000đ',image:'../image/Brownie.jpg',alt:'Almond Biscotti'},
-            {name:'Cinnamon Raisin Danish',price:'46.000đ',image:'../image/Cinnamon Raisin Danish.jpg',alt:'Almond Biscotti'},
-            {name:'Garlic butter bread',price:'87.000đ',image:'../image/Garlic butter bread.jpg',alt:'Almond Biscotti'},
-            {name:'Paleo bread',price:'41.000đ',image:'../image/Paleo bread.jpg',alt:'Almond Biscotti'},
-            {name:'Palmier',price:'25.000đ',image:'../image/Palmier.jpg',alt:'Almond Biscotti'},
-            {name:'Almond Biscotti (new)',price:'89.000đ',image:'../image/Almond Biscotti.jpg',alt:'Almond Biscotti'},
-            {name:'Apple Danish (new)',price:'54.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti'},
-            {name:'Blueberry Cream Cheese 01',price:'78.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti'},
+            {id:'1',name:'Almond Biscotti',price:'50.000đ',image:'../images/Paleo bread.jpg',alt:'Almond Biscotti',promo:false,dis:'',linkmuangay:'../html/chitietsp.html'},
+            {id:'2',name:'Almond Croissant',price:'45.000đ',image:'../image/Almond Croissant.jpg ',alt:'Almond Biscotti',promo:true,dis:'10%'},
+            {id:'3',name:'Apple Danish',price:'38.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti',promo:false,dis:''},
+            {id:'4',name:'Blueberry Cream Cheese',price:'60.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti',promo:false},
+            {id:'5',name:'Brownie',price:'23.000đ',image:'../image/Brownie.jpg',alt:'Almond Biscotti',promo:false,dis:''},
+            {id:'6',name:'Cinnamon Raisin Danish',price:'46.000đ',image:'../image/Cinnamon Raisin Danish.jpg',alt:'Almond Biscotti',promo:true,dis:'10%'},
+            {id:'7',name:'Garlic butter bread',price:'87.000đ',image:'../image/Garlic butter bread.jpg',alt:'Almond Biscotti',promo:true,dis:'10%'},
+            {id:'8',name:'Paleo bread',price:'41.000đ',image:'../image/Paleo bread.jpg',alt:'Almond Biscotti',promo:false,dis:''},
+            {id:'9',name:'Palmier',price:'25.000đ',image:'../image/Palmier.jpg',alt:'Almond Biscotti',promo:true,dis:'10%'},
+            {id:'10',name:'Almond Biscotti (new)',price:'89.000đ',image:'../image/Almond Biscotti.jpg',alt:'Almond Biscotti',promo:false,dis:''},
+            {id:'11',name:'Apple Danish (new)',price:'54.000đ',image:'../image/Apple Danish.jpg',alt:'Almond Biscotti',promo:false,dis:''},
+            {id:'12',name:'Blueberry Cream Cheese 01',price:'78.000đ',image:'../image/Blueberry Cream Cheese Bread.jpg',alt:'Almond Biscotti',promo:true,dis:'10%'},
         ];
         for(var i=0;i<product_infor.length;i++)
             {
                 product_ele=product_infor[i]
-                addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt)
+                addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis,product_ele.linkmuangay)
             }
-        function addproduct(name,price,img,alt){
-           
+        function addproduct(name,price,img,alt,promo,dis,linkmuangay){
+            var promotion
+            if(promo==true)
+                promotion='<div class="product-promotion">'+dis+'</div>'
+            else
+                promotion=''
             var li=document.createElement('li')
             var li_content='<div class="product-item">'+
+                        promotion+
                         '<div class="product-top">'+
                             '<a href="" class="product-image">'+
-                                '<img src="'+img+'" alt="'+alt+'">'+
+                               '<img src="'+img+'" alt="'+alt+'">'+
                             '</a>'+
-                            '<a href="" class="buy-now">Mua ngay</a>'+
+                            '<a href="'+linkmuangay+'" class="buy-now">Mua ngay</a>'+
                         '</div>'+
                         '<div class="product-infor">'+
                             '<!-- tên sản phẩm + giá -->'+
@@ -144,8 +172,8 @@
                                 '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>'+
                             '</li>'+
                             '<li>'+
-                                '<a class="search-product" href="">'+
-                                    '<i class="fa fa-search"></i></button>'+
+                                '<button class="product-favor"><i class="fa-regular fa-heart"></i></button>'+
+                                    
                             '</li>'+
                         '</ul>'+
                     '</div>'
@@ -159,11 +187,5 @@
 
 <script src="../js/script.js"></script>
 
-<!-- .........................................page......................................... -->
-<div class="page">
-    <a class="page-number" href="">01</a>
-    <a class="page-number" href="">02</a>
-    <a class="page-number" href="">03</a>
-</div>
     </body>
 </html>
