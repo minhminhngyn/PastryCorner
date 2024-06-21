@@ -81,10 +81,11 @@
     </header>
     <section id="aboutus">
       <div class="banner-card">
-        <img src="../images/banhmi.png" />
+        <img src="../images/banhngot.png" />
         <div class="banner-text">
-          <h4>Bánh mì</h4>
-          <p>Những loại bánh mì ngon nhất chúng tôi có</p>
+          <h4>Bánh ngọt kiểu Âu</h4>
+          <p>Từ những nguyên liệu thượng hạng nhất được làm bởi các đầu bếp tài
+            năng của chúng tôi</p>
         </div>
       </div>
     </section>
@@ -92,14 +93,14 @@
       <div class="box">
         <div class="left">
           <div class="img-big">
-            <img src="../images/Paleo bread.jpg" />
+            <img src="../images/Peach Danish.jpg" />
           </div>
           <div class="img-replace">
             <div class="img-small">
-              <img src="../images/White Baguette.jpg" alt="" />
+              <img src="../images/peachdanish1.jpg" alt="" />
             </div>
             <div class="img-small">
-              <img src="../images/Whole Wheat Baguette.JPG" alt="" />
+              <img src="../images/peachdanish2.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -171,34 +172,39 @@
         <script>
           const product_infor_relate = [
             {
-              name: "Almond Biscotti",
-              price: "50.000đ",
-              image: "../image/Almond Biscotti.jpg",
-              alt: "Almond Biscotti",
-            },
-            {
-              name: "Almond Croissant",
+              id: "2",
+              name: "Strawberry Croissant",
               price: "45.000đ",
-              image: "../image/Almond Croissant.jpg ",
-              alt: "Almond Biscotti",
+              image: "../images/Strawberry Croissant.jpg",
+              alt: "Strawberry Croissant",
+              promo: true,
+              dis: "-10%",
             },
             {
-              name: "Apple Danish",
-              price: "38.000đ",
-              image: "../image/Apple Danish.jpg",
-              alt: "Almond Biscotti",
+              id: "3",
+            name: "Apple Danish",
+            price: "38.000đ",
+            image: "../images/Apple Danish.jpg",
+            alt: "Apple Danish",
+            promo: false,
+            dis: "",
             },
             {
-              name: "Palmier",
-              price: "25.000đ",
-              image: "../image/Palmier.jpg",
-              alt: "Almond Biscotti",
+              id: "4",
+            name: "Fondant Chocolate",
+            price: "60.000đ",
+            image: "../images/Fondant Chocolate.jpg",
+            alt: "Fondant Chocolate",
+            promo: false,
             },
             {
-              name: "Blueberry Cream Cheese",
-              price: "60.000đ",
-              image: "../image/Blueberry Cream Cheese Bread.jpg",
-              alt: "Almond Biscotti",
+              id: "5",
+            name: "Paris Brest",
+            price: "55.000đ",
+            image: "../images/Paris Brest.JPG",
+            alt: "Paris Brest",
+            promo: true,
+            dis: "-15%",
             },
           ];
           for (var i = 0; i < product_infor_relate.length; i++) {
@@ -239,7 +245,7 @@
               "</li>" +
               "<li>" +
               '<a class="search-product" href="">' +
-              '<i class="fa fa-search"></i></button>' +
+              '<i class="fa-regular fa-heart"></i></button>' +
               "</li>" +
               "</ul>" +
               "</div>";
