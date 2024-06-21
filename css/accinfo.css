@@ -650,3 +650,267 @@ footer .logo {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
   }
+
+  /* Responsive Design for Account Info Page */
+@media (max-width: 1200px) {
+  #account-info {
+    flex-direction: column;
+  }
+  #account-info .left,
+  #account-info .right {
+    flex: 100%;
+    padding: 10px;
+  }
+  .gallery-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .gallery {
+    width: 100%;
+  }
+  .gallery img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  header .navbar ul li a {
+    font-size: 1rem;
+  }
+  header .icons a {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+  .button button,
+  .CTAbutton {
+    width: 60px;
+    height: 45px;
+  }
+  .ingredients {
+    height: auto;
+    padding: 20px;
+  }
+  footer .col {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  footer ul li {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 62.5%;
+  }
+  header .logo {
+    font-size: 1.5rem;
+  }
+  .container {
+    width: 90%;
+    height: auto;
+  }
+  .gallery img {
+    width: 90%;
+    height: auto;
+  }
+  .button button,
+  .CTAbutton {
+    width: 50px;
+    height: 40px;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+  footer {
+    font-size: 11px;
+    line-height: 18px;
+  }
+  .right fieldset {
+    padding: 5px;
+  }
+  .right legend {
+    font-size: 14px;
+  }
+  .filters label,
+  .filters select,
+  .filters input,
+  .filters button {
+    font-size: 14px;
+    padding: 3px;
+  }
+  table th,
+  table td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Ensuring the header menu is responsive */
+@media (max-width: 992px) {
+  #menu-btn {
+    display: inline-block;
+  }
+  header .navbar ul {
+    display: none;
+  }
+  header .navbar ul li {
+    display: block;
+    margin: 20px 0;
+  }
+  header .navbar ul li a {
+    font-size: 1.5rem;
+  }
+  header .toggler:checked ~ .navbar ul {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--vintage4);
+    padding: 20px 0;
+    text-align: center;
+  }
+}
+
+/* Improve UI and ensure consistency */
+#account-info {
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+#account-info .left {
+  padding-right: 20px;
+}
+
+#account-info .right {
+  padding: 20px;
+}
+
+.right h2, h2 {
+  font-family: "DM Serif Text", serif;
+}
+
+.filters label {
+  font-weight: bold;
+}
+
+table {
+  border: 1px solid #ccc;
+}
+
+table th {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+table td {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.editable-info .edit-mode input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.editable-info .edit-mode button {
+  background: url('save-icon.png') no-repeat center center;
+  background-size: contain;
+}
+
+.editable-info .edit-icon {
+  background: url('edit-icon.png') no-repeat center center;
+  background-size: contain;
+}
+
+.gallery-wrapper {
+  margin-top: 40px;
+}
+
+.gallery img {
+  transform: none;
+}
+
+@keyframes animate {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes moving {
+  0% { left: 0; }
+  100% { left: 100%; }
+}
+
+.container {
+  padding: 20px;
+}
+
+.item .content .name,
+.item .content .des,
+.item .content button {
+  margin-bottom: 10px;
+}
+
+.gallery-wrapper {
+  gap: 20px;
+}
+
+.ingredients {
+  padding: 40px;
+}
+
+footer {
+  padding: 30px 0 10px;
+}
+
+footer .social-icons .fab {
+  margin-right: 10px;
+}
+
+footer .copyright {
+  padding: 10px;
+}
+
+footer .underline {
+  height: 2px;
+}
+
+.underline span {
+  width: 10px;
+}
+
+/* Media query để thay đổi bố cục khi màn hình nhỏ hơn 768px */
+@media screen and (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filters label,
+  .filters select,
+  .filters input,
+  .filters button {
+    margin-right: 0;
+    margin-bottom: 10px; /* Khoảng cách dưới của các phần tử */
+    width: 100%; /* Đảm bảo các phần tử chiếm hết chiều rộng của container */
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .col {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .col:nth-child(1),
+  .col:nth-child(2) {
+    order: 1;
+  }
+  .col:nth-child(3),
+  .col:nth-child(4) {
+    order: 2;
+  }
+}
