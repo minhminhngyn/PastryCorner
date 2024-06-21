@@ -10,6 +10,7 @@
       content="Located in the South End and Fort Point Channel. Includes a menu, catering information, and staff profiles."
     />
     <!---link icons------------------------------------------------------------------------------------------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -23,33 +24,149 @@
       rel="stylesheet"
     />
     <!---link sheet css, scss, js----------------------------------------------------------------------------------->
-    <link rel="stylesheet2" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet2" href="../scss/style.scss" />
     <link rel="stylesheet" href="../css/accinfo.css" />
-  <script defer src="../js/accinfo.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</head>
-
-<body>
-  <!-----navigation bar-->
-  <header style="background-color: #bbab9b;" >
-    <a href="#" class="logo" style="color: black;">Pastry Corner</a>
-    <div class="navbar">
-      <ul>
-        <span id="close-menu-btn" class="fa fa-close" style="color: black;">close</span>
-        <li><a href="#home" style="color: black;">Trang chủ</a></li>
-        <li><a href="#products" style="color: black;">Sản phẩm</a></li>
-        <li><a href="#sale" style="color: black;">Khuyến mại</a></li>
-        <li><a href="#about" style="color: black;">Giới thiệu</a></li>
-        <li><a href="#blog" style="color: black;">Blog</a></li>
-      </ul>
-      <span id="menu-btn" class="fa-solid fa-bars" style="font-size: 36px">menu</span>
+    <link rel="stylesheet" href="../js/accinfo.js" />
+    <!-------------------------------------------------------------------------------------------------------------->
+  </head>
+  <body>
+   <header class="header" id="header">
+    <nav class="nav_container">
+      <a href="index.html" class="nav_logo">Pastry Corner</a>
+      <div  class="nav_menu" id="nav-menu">
+        <ul class="nav_list">
+          <li>
+            <a href="index.html" class="nav_link">Trang chủ</a>
+          </li>
+          <li class="dropdown-wrapper">
+            <a href="tatcasp.html" class="nav_link">Sản phẩm</a>
+            <ul class="dropdown" id="dropdown">
+              <li><a href="#" class="dropdown_link">Bánh ngọt kiểu Âu</a></li>
+              <li><a href="#" class="dropdown_link">Bánh mì</a></li>
+              <li><a href="#" class="dropdown_link">Bánh lạnh</a></li>
+              <li><a href="#" class="dropdown_link">Bánh mặn</a></li>
+              <li><a href="#" class="dropdown_link">Bánh quy</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="khuyenmaimain.html" class="nav_link">Khuyến mại</a>
+          </li>
+          <li>
+            <a href="aboutus.html" class="nav_link">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="blogmain.html" class="nav_link">Blog</a>
+          </li>
+        </ul>
+        <div class="nav_icons">
+          <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
+          <div class="search">
+            <span class="search-icon">
+              <i href="#" class="fa-solid fa-magnifying-glass searchbtn"></i>
+              <i class="fa-solid fa-x closebtn"></i>
+            </span>
+          </div>
+          <div class="searchbox">
+            <input type="text" placeholder="Nhập tên bánh bạn muốn tìm kiếm">
+          </div>
+          <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
+          <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+        </div>
+        <div class="nav_close" id="nav-close">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        </div>
+      <div class="nav_toggle" id="nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <script src="../js/header.js"></script>
+   </header>
+   <!-----login------------------------------------------------------------------------------------------>
+   <div class="overlay"></div>
+<div class="form-box login">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng nhập</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
     </div>
-    <div class="icons">
-      <a href="#" class="fa fa-user-circle-o" style="color: black;"></a>
-      <a href="#" class="fa fa-shopping-cart" style="color: black;"></a>
-      <a href="#" class="fa fa-search" style="color: black;"></a>
-    </header>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <div class="remember-forgot">
+      <label><input type="checkbox">Nhớ mật khẩu</label>
+      <a href="#" class="reset-link">Quên mật khẩu?</a>
+    </div>
+    <button type="submit" class="submit-btn">Đăng nhập</button>
+    <div class="login-register">
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box register">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng ký</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-user"></i></span>
+      <input type="text" required>
+      <label>Tên đăng nhập</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <button type="submit" class="submit-btn">Đăng ký</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box reset">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Quên mật khẩu</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></i></span>
+      <input type="number" required>
+      <label>Mã OTP</label>
+    </div>
+    <button type="submit" class="submit-btn">Lấy lại mật khẩu</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p><br>
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<script src="../js/login.js"></script>
+    
+
+
+<section id="aboutus">
+  <div class="banner-card">
+      <img src="../images/acc1.png">
+      <div class="banner-text">
+          <h4>Trang thông tin khách hàng</h4>
+      </div>
+  </div>
+</section>
 
     <!-----Account Info Section-->
     <section id="account-info">
@@ -58,14 +175,14 @@
           
           <!-- Bộ lọc -->
           <div class="filters">
-              <label for="status-filter">Trạng thái:</label>
+              <label1 for="status-filter">Trạng thái:</label1>
               <select id="status-filter" onchange="applyFilters()">
                   <option value="all">Tất cả</option>
                   <option value="completed">Đã hoàn thành</option>
                   <option value="in-progress">Đang đến</option>
               </select>
   
-              <label for="date-filter">Thời gian:</label>
+              <label1 for="date-filter">Thời gian:</label1>
               <input type="date" id="start-date" onchange="applyFilters()" placeholder="Từ ngày">
               <input type="date" id="end-date" onchange="applyFilters()" placeholder="Đến ngày">
           </div>
@@ -125,10 +242,10 @@
     </section>
 
     <!----------------footer----------------------------------------------------------------------------------------------------------------->
-    <footer id="footer" style="position: relative;">
+    <footer>
       <div class="row">
         <div class="col">
-          <a href="index.html" class="logo">Pastry Corner</a>
+          <a href="#" class="logo">Pastry Corner</a>
           <p>Did you know? Serving you is our bread and butter</p>
         </div>
         <div class="col">
@@ -138,32 +255,30 @@
           <p><i class="material-icons" style="font-size:24px">local_phone</i>(+84)-39-213-156</p>
         </div>
         <div class="col">
-        <h3>Về chúng tôi<div class="underline"><span></span></h3>
-        <ul>
-          <li><a target="_self" href="index.html">Trang chủ</a></li>
-          <li><a target="_self" href="product_list.html">Sản phẩm</a></li>
-          <li><a target="_self" href="#sale">Khuyến mại</a></li>
-          <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
-          <li><a target="_self" href="#blog">Blog</a></li>
-        </ul>
-      </div>
+          <h3>Về chúng tôi<div class="underline"><span></span></h3>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="tatcasp.html">Sản phẩm</a></li>
+            <li><a href="khuyenmaimain.html">Khuyến mại</a></li>
+            <li><a href="aboutus.html">Giới thiệu</a></li>
+            <li><a href="blogmain.html">Blog</a></li>
+          </ul>
+        </div>
         <div class="col">
           <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
-            <ul>
-              <li><a target="_self" href="#">Điều khoản dịch vụ</a></li>
-              <li><a target="_self" href="#">Chính sách bảo mật</a></li>
-              <li><a target="_self" href="#">Chính sách thanh toán</a></li>
-              <li><a target="_self" href="#">Chính sách giao hàng</a></li>
-              <li><a target="_self" href="#">Chính sách đổi trả</a></li>
-            </ul>
+          <ul>
+              <li><a href="dieukhoan.html">Điều khoản dịch vụ</a></li>
+            <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
+            <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
+            <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>
+            <li><a href="chinhsachdoitra.html">Chính sách đổi trả</a></li>
+          </ul>
           <div class="social-icons">
-            <i class="fa fa-facebook" style='font-size:24px'></i>
-            <i class="fa fa-instagram" style='font-size:24px'></i>
-          </div>
+            <i class="bi bi-facebook" style="font-size:24px"></i>
+            <i class="bi bi-instagram" style="font-size:24px"></i>
+        </div>
         </div>
       </div>
       <hr>
       <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
     </footer>
-  </body>
-</html>
