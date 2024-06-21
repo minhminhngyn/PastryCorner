@@ -102,34 +102,34 @@ header {
   color: black;
   margin-top: 20px;
 }
-.blog-section .section-content .cards{
+.blog-section .section-content .blog-cards{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 50px;
   margin: 25px auto;
 }
-.blog-section .section-content .cards .card{
+.blog-section .section-content .blog-cards .blogcard{
   width:100%;
   background-color:#9E7B54;
   position: relative;
 }
-.blog-section .section-content .cards .card img{
+.blog-section .section-content .blog-cards .blogcard img{
   width: 100%;
   height: auto;
 }
-.blog-section .section-content .cards .card .article{
+.blog-section .section-content .blog-cards .blogcard .article{
   padding: 15px 20px;
 }
-.blog-section .section-content .cards .card .article h4{
+.blog-section .section-content .blog-cards .blogcard .article h4{
   font-size: 24px;
   color: black;
 }
-.blog-section .section-content .cards .card .article p{
+.blog-section .section-content .blog-cards .blogcard .article p{
   font-size: 16px;
   margin: 10px 0px;
   color: black;
 }
-.blog-section .section-content .cards .card a{
+.blog-section .section-content .blog-cards .blogcard a{
   text-decoration: none;
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.7);
@@ -137,7 +137,7 @@ header {
   color: white;
   font-size: 20px;
 }
-.blog-section .section-content .cards .card .posted-date p{
+.blog-section .section-content .blog-cards .blogcard .posted-date p{
   font-weight: 600;
   position: absolute;
   top: 0;
@@ -147,28 +147,28 @@ header {
   padding: 6px 15px;
 }
 @media screen and (max-width: 992px){
-  .blog-section .section-content .cards{
+  .blog-section .section-content .blog-cards{
     grid-template-columns: repeat(2,1fr);
   }
 }
 @media screen and (max-width: 768px){
-  .blog-section .section-content .cards{
+  .blog-section .section-content .blog-cards{
     grid-template-columns: 1fr;
   }
 }
 
-.card {
+.blogcard {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card:hover {
+.blogcard:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card .blog-view {
+.blogcard .blog-view {
   position: absolute;
   bottom: -50px;
   left: 0;
@@ -176,7 +176,7 @@ header {
   transition: bottom 0.3s;
 }
 
-.card:hover .blog-view {
+.blogcard:hover .blog-view {
   bottom: 20px;
 }
 .button {
@@ -185,7 +185,7 @@ header {
   position: absolute;
   bottom: -20px;
 }
-.cards {
+.blog-cards {
   display: flex;
   overflow-x: auto; /* Cho phép cuộn ngang */
   gap: 20px; /* Khoảng cách giữa các card */
@@ -428,32 +428,32 @@ header {
   color: black;
   margin-top: 20px;
 }
-.blog-section .section-content .cards{
+.blog-section .section-content .blog-cards{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 50px;
   margin: 25px auto;
   margin-top: -30px;
 }
-.blog-section .section-content .cards .card{
+.blog-section .section-content .blog-cards .blogcard{
   width:100%;
   background-color:#9E7B54;
   position: relative;
 }
-.blog-section .section-content .cards .card img{
+.blog-section .section-content .blog-cards .blogcard img{
   width: 100%;
   height: auto;
 }
-.blog-section .section-content .cards .card .article{
+.blog-section .section-content .blog-cards .blogcard .article{
   padding: 15px 20px;
 }
-.blog-section .section-content .cards .card .article h4{
+.blog-section .section-content .blog-cards .blogcard .article h4{
   font-size: 24px;
   color: white;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
 }
-.blog-section .section-content .cards .card .article p{
+.blog-section .section-content .blog-cards .blogcard .article p{
   font-size: 16px;
   letter-spacing: 0.5px;
     color:#000;
@@ -462,7 +462,7 @@ header {
     padding-bottom: 10px;
 
 }
-.blog-section .section-content .cards .card a{
+.blog-section .section-content .blog-cards .blogcard a{
   text-decoration: none;
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.7);
@@ -470,7 +470,7 @@ header {
   color: white;
   font-size: 20px;
 }
-.blog-section .section-content .cards .card .posted-date p{
+.blog-section .section-content .blog-cards .blogcard .posted-date p{
   font-weight: 600;
   position: absolute;
   top: 0;
@@ -480,28 +480,28 @@ header {
   padding: 6px 15px;
 }
 @media screen and (max-width: 992px){
-  .blog-section .section-content .cards{
+  .blog-section .section-content .blog-cards{
     grid-template-columns: repeat(2,1fr);
   }
 }
 @media screen and (max-width: 768px){
-  .blog-section .section-content .cards{
+  .blog-section .section-content .blog-cards{
     grid-template-columns: 1fr;
   }
 }
 
-.card {
+.blogcard {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card:hover {
+.blogcard:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card .blog-view {
+.blogcard .blog-view {
   position: absolute;
   bottom: -50px;
   left: -100px;
@@ -509,7 +509,7 @@ header {
   transition: bottom 0.3s;
 }
 
-.card:hover .blog-view {
+.blogcard:hover .blog-view {
   bottom: 20px;
   left:-100px;
 }
@@ -519,7 +519,7 @@ header {
   position: absolute;
   bottom: -20px;
 }
-.cards {
+.blog-cards {
   display: flex;
   overflow-x: auto; 
   gap: 20px; 
