@@ -179,17 +179,22 @@ document.addEventListener('DOMContentLoaded', () => {
         let totalQuantity = 0;
 
         cart.forEach(product => {
-            const itemTotalPrice = product.price * product.quantity;
-            totalPrice += itemTotalPrice;
-            totalQuantity += product.quantity;
+            var price_new=product.price.substring(0, product.price.length - 1)
+            price_new=price_new.replace('.','')
+            price_new=parseFloat(price_new)
 
+            var quan_new=parseInt(product.quantity)
+            const itemTotalPrice = price_new*quan_new;
+            totalPrice += itemTotalPrice;
+            totalQuantity += quan_new;
+            
             const productDiv = document.createElement('div');
             productDiv.classList.add('product');
             productDiv.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
                 <div class="product-info">
                     <h3>${product.name}</h3>
-                    <p>${product.price.toLocaleString()} VNĐ x ${product.quantity}</p>
+                    <p>${product.price.toLocaleString()}  x ${product.quantity}</p>
                 </div>
             `;
             productList.appendChild(productDiv);

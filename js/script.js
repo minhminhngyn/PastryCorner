@@ -38,7 +38,7 @@ btnaddcart.forEach(button => {
         total()//tính tổng
         delproduct()//xóa sản phẩm khỏi giỏ hàng
         changeinput()//thay đổi số lượng
-        //saveCart()
+        saveCart()
     })
 });
 
