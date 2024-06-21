@@ -1598,3 +1598,23 @@ footer .logo {
     flex-basis: 100%;
   }
 }
+
+/* CSS cho tương thích phần contact-us */
+@media (max-width: 768px) {
+  .contact-box {
+    flex-direction: column;
+  }
+
+  .contact-left, .contact-right {
+    flex: none;
+    border-radius: 10px;
+  }
+
+  .contact-right {
+    margin-top: 20px;
+  }
+
+  .contact-right iframe {
+    height: 300px;
+  }
+}
