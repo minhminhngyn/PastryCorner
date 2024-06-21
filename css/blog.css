@@ -1,0 +1,735 @@
+
+header {
+    position: relative;
+    z-index: 10;
+    background-color: #BBAB9B;
+  }
+  /* Add margin to the top of the privacy policy section */
+  #privacy-policy {
+    padding: 20px;
+    margin: 20px auto; /* Adjusted top margin */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px; /* Increase font size for privacy policy */
+  }
+  /* Center align the h2 element */
+  h2 {
+    text-align: center;
+    font-size: 24px; /* Increase font size for h2 */
+    margin-bottom: 20px;
+  }
+  /* Increase font size for h3 */
+  h3 {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+.banner {
+    position: relative; /* Đặt vị trí tương đối */
+    width: 100%; /* Chiều rộng 100% của trang */
+    height: 194px; /* Chiều cao của banner */
+    margin-top: -20px; /* Đẩy lên để sát với phần header */
+    overflow: hidden; /* Ẩn phần dư thừa nếu có */
+  }
+  
+  .banner img {
+    width: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+    height: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+    object-fit: cover; /* Đảm bảo hình ảnh sẽ fit với kích thước của banner */
+  }
+  
+  .banner-content {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 50%; /* Căn chỉnh theo chiều dọc */
+    left: 50%; /* Căn chỉnh theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển vị trí để căn giữa */
+    background-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff; /* Màu chữ trắng */
+    text-align: center; /* Căn chỉnh văn bản giữa banner */
+  }
+  
+  .banner-content h2 {
+    font-size: 26px; /* Cỡ chữ tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và đoạn văn bản */
+  }
+  
+  .banner-content p {
+    font-size: 16px; /* Cỡ chữ đoạn văn bản */
+    margin: 0; /* Loại bỏ khoảng trống giữa các đoạn văn bản */
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%; 
+    max-width: 400px;
+}
+.full-width-image {
+    max-width: 100%; /* Đảm bảo ảnh không bị vượt quá kích thước thật */
+    justify-content: center;
+  }
+  .full-width-image img {
+    height:500 px;
+    width: 100%; /* Đảm bảo ảnh không bị vượt quá kích thước thật */
+    display: block; /* Loại bỏ khoảng trống dưới của phần tử img */
+    margin: 0 auto; /* Để căn giữa ảnh */
+  }
+
+.blog-section{
+  width:100%;
+}
+.blog-section .section-content{
+  width: 85%;
+  margin: 20px auto;
+}
+.blog-section .section-content .title{
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+
+.blog-section .section-content .title p{
+  font-size: 18px;
+  color: black;
+  margin-top: 20px;
+}
+.blog-section .section-content .cards{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 50px;
+  margin: 25px auto;
+}
+.blog-section .section-content .cards .card{
+  width:100%;
+  background-color:#9E7B54;
+  position: relative;
+}
+.blog-section .section-content .cards .card img{
+  width: 100%;
+  height: auto;
+}
+.blog-section .section-content .cards .card .article{
+  padding: 15px 20px;
+}
+.blog-section .section-content .cards .card .article h4{
+  font-size: 24px;
+  color: black;
+}
+.blog-section .section-content .cards .card .article p{
+  font-size: 16px;
+  margin: 10px 0px;
+  color: black;
+}
+.blog-section .section-content .cards .card a{
+  text-decoration: none;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 25px;
+  color: white;
+  font-size: 20px;
+}
+.blog-section .section-content .cards .card .posted-date p{
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background-color: #9E7B54;
+  padding: 6px 15px;
+}
+@media screen and (max-width: 992px){
+  .blog-section .section-content .cards{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media screen and (max-width: 768px){
+  .blog-section .section-content .cards{
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card .blog-view {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  transition: bottom 0.3s;
+}
+
+.card:hover .blog-view {
+  bottom: 20px;
+}
+.button {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+}
+.cards {
+  display: flex;
+  overflow-x: auto; /* Cho phép cuộn ngang */
+  gap: 20px; /* Khoảng cách giữa các card */
+  padding: 20px; /* Lề bên trong để các card không bị lặp lại */
+  scroll-behavior: smooth; /* Làm mượt cuộn */
+  width: 100%; /* Đảm bảo chiều rộng đầy đủ */
+}
+.content{
+  width:90%;
+  margin: 30px auto 30PX;
+}
+.content .main-content{
+  width:70%;
+  float: left;
+}
+.content .sidebar{
+  width: 30%;
+  float:left;
+}
+.clearfix::after{
+  content:'';
+  display: block;
+  clear: both;
+}
+.content .main-content .all-post-title{
+  margin: 20px;
+  font-size: 30px;
+}
+.content .main-content .post{
+  width: 95%;
+  height: 270px;
+  margin: 10px auto;
+  border-radius: 5px;
+  background: white;
+  position: relative;
+}
+.content .main-content .post .read-more{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 1px solid #005255;
+  background: transparent;
+  border-radius: .25rem;
+  color: #005255 !important;
+}
+.content .main-content .post .read-more:hover{
+  background: #006669;
+  color: white !important;
+  transition: .25s;
+}
+.content .main-content .post .post-image{
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+.content .main-content .post .post-preview{
+  width:60%;
+  padding: 10px;
+  float: right;
+}
+.btn{
+  padding: .5rem 1rem;
+  background: #008489;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  font-size: 14px;
+}
+.preview-text{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.fa-classic, .fa-regular, .fa-solid, .far, .fas {
+  font-family: "Font Awesome 6 Free";
+  margin: 10px 0px;
+}
+.content .sidebar .section{
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.content .sidebar .section.search{
+  margin-top: 80px;
+}
+.text-input{
+  padding: .7rem 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  color: #444;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+.content .sidebar .section.topics ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  border-top: 1px solid #e0e0e0;
+}
+.content .sidebar .section.topics ul li a{
+  display: block;
+  padding: 15px 0px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #444;
+  font-size: 15px;
+}
+.content .sidebar .section.topics ul li a:hover{
+  padding-left: 20px;
+  transition: all 0.3s;
+  color: #006669;
+}
+.content .sidebar .section .section-title{
+  margin: 10px 0px 10px 0px;
+}
+/* CSS để đặt sidebar cố định và cuộn */
+.sidebar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Đảm bảo rằng phần nội dung chính cũng có thể cuộn */
+.content {
+  display: flex;
+}
+
+.main-content {
+  flex: 3;
+}
+header {
+    position: relative;
+    z-index: 10;
+    background-color: #BBAB9B;
+  }
+  /* Add margin to the top of the privacy policy section */
+  #privacy-policy {
+    padding: 20px;
+    margin: 20px auto; /* Adjusted top margin */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px; /* Increase font size for privacy policy */
+  }
+  /* Center align the h2 element */
+  h2 {
+    text-align: center;
+    font-size: 24px; /* Increase font size for h2 */
+    margin-bottom: 20px;
+  }
+  /* Increase font size for h3 */
+  h3 {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+.banner {
+    position: relative; /* Đặt vị trí tương đối */
+    width: 100%; /* Chiều rộng 100% của trang */
+    height: 194px; /* Chiều cao của banner */
+    margin-top: -20px; /* Đẩy lên để sát với phần header */
+    overflow: hidden; /* Ẩn phần dư thừa nếu có */
+  }
+  
+  .banner img {
+    width: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+    height: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+    object-fit: cover; /* Đảm bảo hình ảnh sẽ fit với kích thước của banner */
+  }
+  
+  .banner-content {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 50%; /* Căn chỉnh theo chiều dọc */
+    left: 50%; /* Căn chỉnh theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển vị trí để căn giữa */
+    background-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff; /* Màu chữ trắng */
+    text-align: center; /* Căn chỉnh văn bản giữa banner */
+  }
+  
+  .banner-content h2 {
+    font-size: 26px; /* Cỡ chữ tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và đoạn văn bản */
+  }
+  
+  .banner-content p {
+    font-size: 16px; /* Cỡ chữ đoạn văn bản */
+    margin: 0; /* Loại bỏ khoảng trống giữa các đoạn văn bản */
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%; 
+    max-width: 400px;
+}
+.full-width-image {
+    max-width: 100%; 
+    justify-content: center;
+  }
+  .full-width-image img {
+    height:500 px;
+    width: 100%; 
+    display: block; 
+    margin: 0 auto; 
+  }
+
+.blog-section{
+  width:100%;
+}
+.blog-section .section-content{
+  width: 85%;
+  margin: 20px auto;
+}
+.blog-section .section-content .title{
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+.blog-section .section-content .title h2{
+  font-size: 60px;
+  color: white;
+  font-family: "Dancing Script", sans-serif;
+  padding: 100px 0px 10px 0px;
+}
+
+.blog-section .section-content .title p{
+  font-size: 18px;
+  color: black;
+  margin-top: 20px;
+}
+.blog-section .section-content .cards{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 50px;
+  margin: 25px auto;
+  margin-top: -30px;
+}
+.blog-section .section-content .cards .card{
+  width:100%;
+  background-color:#9E7B54;
+  position: relative;
+}
+.blog-section .section-content .cards .card img{
+  width: 100%;
+  height: auto;
+}
+.blog-section .section-content .cards .card .article{
+  padding: 15px 20px;
+}
+.blog-section .section-content .cards .card .article h4{
+  font-size: 24px;
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
+.blog-section .section-content .cards .card .article p{
+  font-size: 16px;
+  margin: 10px 0px;
+  color: black;
+}
+.blog-section .section-content .cards .card a{
+  text-decoration: none;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 25px;
+  color: white;
+  font-size: 20px;
+}
+.blog-section .section-content .cards .card .posted-date p{
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background-color: #9E7B54;
+  padding: 6px 15px;
+}
+@media screen and (max-width: 992px){
+  .blog-section .section-content .cards{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media screen and (max-width: 768px){
+  .blog-section .section-content .cards{
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card .blog-view {
+  position: absolute;
+  bottom: -50px;
+  left: -100px;
+  right: -100px;
+  transition: bottom 0.3s;
+}
+
+.card:hover .blog-view {
+  bottom: 20px;
+  left:-100px;
+}
+.button {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+}
+.cards {
+  display: flex;
+  overflow-x: auto; 
+  gap: 20px; 
+  padding: 20px; 
+  scroll-behavior: smooth; 
+  width: 100%; 
+}
+.content{
+  width:90%;
+  margin: 30px auto 30PX;
+}
+.content .main-content{
+  width:70%;
+  float: left;
+}
+.content .sidebar{
+  width: 30%;
+  float:left;
+}
+.clearfix::after{
+  content:'';
+  display: block;
+  clear: both;
+}
+.content .main-content .all-post-title{
+  margin: 20px;
+  font-size: 40px;
+  font-family: "Dancing Script", sans-serif;
+}
+.content .main-content .post{
+  width: 95%;
+  height: 270px;
+  margin: 10px auto;
+  border-radius: 5px;
+  background: white;
+  position: relative;
+}
+.content .main-content .post .read-more{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 1px solid sienna;
+  background: transparent;
+  border-radius: .25rem;
+  color: sienna !important;
+}
+.content .main-content .post .read-more:hover{
+  background: sienna;
+  color: white !important;
+  transition: .25s;
+}
+.content .main-content .post .post-image{
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+.content .main-content .post .post-preview{
+  width:60%;
+  padding: 10px;
+  float: right;
+}.content .main-content .post .post-preview  a{
+  color: sienna;
+  font-family: "Raleway", sans-serif;
+}
+
+.content .main-content .post .post-preview  a:hover{
+  color:brown;
+}
+.btn{
+  padding: .5rem 1rem;
+  background: sienna;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  font-size: 14px;
+}
+.preview-text{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.fa-classic, .fa-regular, .fa-solid, .far, .fas {
+  margin: 10px 0px;
+}
+.content .sidebar .section{
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.content .sidebar .section.search{
+  margin-top: 80px;
+}
+.text-input{
+  padding: .7rem 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  color: #444;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+.content .sidebar .section.topics ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  border-top: 1px solid #e0e0e0;
+}
+.content .sidebar .section.topics ul li a{
+  display: block;
+  padding: 15px 0px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #444;
+  font-size: 15px;
+}
+.content .sidebar .section.topics ul li a:hover{
+  padding-left: 20px;
+  transition: all 0.3s;
+  color: sienna;
+}
+.content .sidebar .section .section-title{
+  margin: 10px 0px 10px 0px;
+  font-family: "Dancing Script", sans-serif;
+  font-size: 30px;
+  
+}
+
+
+.sidebar {
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.content {
+  display: flex;
+}
+
+.main-content {
+  flex: 3;
+}
+
+.fa-calendar:before {
+  display: none;
+}
+.blog-section{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/blog_1.png);
+  background-position: center;
+  background-size: cover;
+  padding: 0 8%;
+  color:khaki;
+  position: relative;
+}
+.popup {
+  display: none; 
+  position: fixed; 
+  z-index: 1000;
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+.popup-content {
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 700px; 
+  max-width: 90%; 
+  text-align: center; 
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  z-index: 1001; 
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1002;
+}
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+}
+img {
+  width: 100%; /* Make image fit within the popup-content */
+  height: auto; /* Maintain aspect ratio */
+}
+
+#promo-code {
+  font-weight: bold;
+  color: sienna;
+  background-color: white;
+  border: 1px solid #9E7B54;
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+}
+#promo-code:hover {
+  background-color: sienna;
+  color: white;
+}

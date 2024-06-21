@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="description"
+      content="Located in the South End and Fort Point Channel. Includes a menu, catering information, and staff profiles."
+    />
+    <!---link icons------------------------------------------------------------------------------------------------>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!---link sheet css, scss, js----------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet2" href="../scss/style.scss" />
+    <link rel="stylesheet" href="../css/khuyenmai.css" />
+    <!-------------------------------------------------------------------------------------------------------------->
+  </head>
+  <body>
+   <header class="header" id="header">
+    <nav class="nav_container">
+      <a href="index.html" class="nav_logo">Pastry Corner</a>
+      <div  class="nav_menu" id="nav-menu">
+        <ul class="nav_list">
+          <li>
+            <a href="index.html" class="nav_link">Trang chủ</a>
+          </li>
+          <li class="dropdown-wrapper">
+            <a href="product_list.html" class="nav_link">Sản phẩm</a>
+            <ul class="dropdown" id="dropdown">
+              <li><a href="#" class="dropdown_link">Bánh ngọt kiểu Âu</a></li>
+              <li><a href="#" class="dropdown_link">Bánh mì</a></li>
+              <li><a href="#" class="dropdown_link">Bánh lạnh</a></li>
+              <li><a href="#" class="dropdown_link">Bánh mặn</a></li>
+              <li><a href="#" class="dropdown_link">Bánh quy</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="khuyenmaimain.html" class="nav_link">Khuyến mại</a>
+          </li>
+          <li>
+            <a href="aboutus.html" class="nav_link">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="blogmain.html" class="nav_link">Blog</a>
+          </li>
+        </ul>
+        <div class="nav_icons">
+          <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
+          <div class="search">
+            <span class="search-icon">
+              <i href="#" class="fa-solid fa-magnifying-glass searchbtn"></i>
+              <i class="fa-solid fa-x closebtn"></i>
+            </span>
+          </div>
+          <div class="searchbox">
+            <input type="text" placeholder="Nhập tên bánh bạn muốn tìm kiếm">
+          </div>
+          <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
+          <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+        </div>
+        <div class="nav_close" id="nav-close">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        </div>
+      <div class="nav_toggle" id="nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <script src="../js/header.js"></script>
+   </header>
+   <!-----login------------------------------------------------------------------------------------------>
+   <div class="overlay"></div>
+<div class="form-box login">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng nhập</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <div class="remember-forgot">
+      <label><input type="checkbox">Nhớ mật khẩu</label>
+      <a href="#" class="reset-link">Quên mật khẩu?</a>
+    </div>
+    <button type="submit" class="submit-btn">Đăng nhập</button>
+    <div class="login-register">
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box register">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng ký</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-user"></i></span>
+      <input type="text" required>
+      <label>Tên đăng nhập</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <button type="submit" class="submit-btn">Đăng ký</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box reset">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Quên mật khẩu</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></i></span>
+      <input type="number" required>
+      <label>Mã OTP</label>
+    </div>
+    <button type="submit" class="submit-btn">Lấy lại mật khẩu</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p><br>
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<script src="../js/login.js"></script>
+      <div class="container2">
+        <div class="content">
+            <p>Ưu đãi cuối tháng 6</p>
+            <p>Giảm giá 20% tối đa 100.000đ trên tổng hóa đơn từ 300.000đ</p>
+            <h1>Chỉ còn áp dụng trong</h1>
+            <div class="time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Ngày</span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span>Giờ</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Phút</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Giây</span>
+                </div>
+            </div>
+            <button type="button"><a href="khuyenmai1.html">Xem chi tiết</a></button>
+        </div>
+      </div>
+      <div class="title">
+        <h1>Voucher tháng 6</h1>
+        <img src="../images/km_main1.png">
+      </div>
+      <div class="container3">
+        <div class="coupon-card">
+          <h1>Pastry Corner</h1>
+          <h3>Ưu Đãi Cuối Tháng 6 - Giảm Giá 20% Tối Đa 100.000đ</h3>
+          <div class="coupon-row">
+            <span class="couponcode">CUOITHANG6</span>
+            <span class="couponbutton">Sao chép</span>
+          </div>
+          <h2 class="popup-trigger" data-popup="popup1">Xem chi tiết</h2>
+          <p>Có giá trị đến hết 30/06/2024</p>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+
+        <div class="coupon-card">
+          <h1>Pastry Corner</h1>
+          <h3>Mua Càng Nhiều - Giảm Càng Sâu <br> Lên Tới 50%</h3>
+          <div class="coupon-row">
+            <span class="couponcode">SALESHOCK6</span>
+            <span class="couponbutton">Sao chép</span>
+          </div>
+          <h2 class="popup-trigger" data-popup="popup2">Xem chi tiết</h2>
+          <p>Có giá trị đến hết 25/06/2024</p>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+
+        <div class="coupon-card">
+          <h1>Pastry Corner</h1>
+          <h3>Siêu Khuyến Mãi Ngày Đôi 6/6 - <br>Giảm giá 50%</h3>
+          <div class="coupon-row">
+            <span class="couponcode">DOUBLESALE661</span>
+            <span class="couponbutton expired">Hết hạn sử dụng</span>
+          </div>
+          <h2 class="popup-trigger" data-popup="popup3">Xem chi tiết</h2>
+          <p>Có giá trị trong khung giờ 9h-11h 06/06/2024</p>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+
+        <div class="coupon-card">
+          <h1>Pastry Corner</h1>
+          <h3>Siêu Khuyến Mãi Ngày Đôi 6/6 - <br>Giảm giá 30%</h3>
+          <div class="coupon-row">
+            <span class="couponcode">DOUBLESALE662</span>
+            <span class="couponbutton expired">Hết hạn sử dụng</span>
+          </div>
+          <h2 class="popup-trigger" data-popup="popup4">Xem chi tiết</h2>
+          <p>Có giá trị trong khung giờ 13h-15h 06/06/2024</p>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+
+        <div class="coupon-card">
+          <h1>Pastry Corner</h1>
+          <h3>Siêu Khuyến Mãi Ngày Đôi 6/6 - <br>Giảm giá 20%</h3>
+          <div class="coupon-row">
+            <span class="couponcode">DOUBLESALE663</span>
+            <span class="couponbutton expired">Hết hạn sử dụng</span>
+          </div>
+          <h2 class="popup-trigger" data-popup="popup5">Xem chi tiết</h2>
+          <p>Có giá trị trong khung giờ 15h-17h 06/06/2024</p>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+        
+      </div>
+       <!-- Popup Structure -->
+       <div class="overlay"></div>
+
+       <div id="popup1" class="popup">
+         <span class="close-btn">&times;</span>
+         <div class="popup-content">
+           <h1>Ưu Đãi Cuối Tháng 6 - Giảm Giá 20% Tối Đa 100.000đ</h1>
+           <h3>Chi tiết chương trình</h3>
+           <ul>
+             <li>Thời gian áp dụng: Từ ngày 20/06 đến ngày 30/06.</li>
+             <li>Mức giảm giá: Giảm 20% trên tổng giá trị đơn hàng.</li>
+             <li>Giá trị giảm tối đa: 100.000đ.</li>
+             <li>Áp dụng cho đơn hàng: Tổng hóa đơn từ 300.000đ trở lên.</li>
+           </ul>
+           <h3>Cách thức tham gia</h3>
+           <ol>
+             <li>Chọn bánh yêu thích: Truy cập vào website của chúng tôi và chọn những chiếc bánh mà quý khách yêu thích.</li>
+             <li>Thêm vào giỏ hàng: Đảm bảo tổng giá trị đơn hàng từ 300.000đ trở lên.</li>
+             <li>Nhập mã ưu đãi: Nhập mã <span id="promo-code" onclick="copyPromoCode()">CUOITHANG6</span> tại trang thanh toán để được giảm giá.</li>
+           </ol>
+           <h3>Lưu ý</h3>
+           <ul>
+             <li>Chương trình không áp dụng đồng thời với các chương trình khuyến mãi khác.</li>
+             <li>Chỉ áp dụng cho các đơn hàng mua trực tuyến trên website của Pastry Corner.</li>
+           </ul>
+           <h3>Đặt hàng ngay hôm nay!</h3>
+         </div>
+       </div>
+
+       <div id="popup2" class="popup">
+        <span class="close-btn">&times;</span>
+        <div class="popup-content">
+          <h1>Mua Càng Nhiều - Giảm Càng Sâu Lên Tới 50%</h1>
+          <h3>Chi tiết chương trình</h3>
+          <ul>
+            <li>Thời gian áp dụng: Từ ngày 15/06 đến ngày 25/06.</li>
+            <li>Mức giảm giá: Giảm tối đa 50% trên tổng giá trị đơn hàng.</li>
+            <li>Giá trị giảm tối đa: 200.000đ.</li>
+            <li>Áp dụng cho đơn hàng: Tổng hóa đơn từ 600.000đ trở lên.</li>
+          </ul>
+          <h3>Cách thức tham gia</h3>
+          <ol>
+            <li>Chọn bánh yêu thích: Truy cập vào website của chúng tôi và chọn những chiếc bánh mà quý khách yêu thích.</li>
+            <li>Thêm vào giỏ hàng: Đảm bảo tổng giá trị đơn hàng đạt mức giảm giá mong muốn.</li>
+            <li>Nhập mã ưu đãi: Nhập mã <span id="promo-code" onclick="copyPromoCode()">SALESHOCK6</span> tại trang thanh toán để được giảm giá.</li>
+          </ol>
+          <h3>Lưu ý</h3>
+          <ul>
+            <li>Chương trình không áp dụng đồng thời với các chương trình khuyến mãi khác.</li>
+            <li>Chỉ áp dụng cho các đơn hàng mua trực tuyến trên website của Pastry Corner.</li>
+          </ul>
+          <h3>Đặt hàng ngay hôm nay!</h3>
+        </div>
+      </div>
+
+      <div id="popup3" class="popup">
+        <span class="close-btn">&times;</span>
+        <div class="popup-content">
+          <h1>Siêu Khuyến Mãi Ngày Đôi 6/6 - Chỉ Có Hôm Nay!
+          </h1>
+          <h3>
+            Chi tiết chương trình
+        </h3>
+<p>Giảm giá 50% tối đa 100.000đ: Áp dụng khi bạn mua hóa đơn từ 300.000đ trở lên trong khoảng thời gian từ 9h đến 11h sáng. Đây là cơ hội để bạn có thể mua sắm với mức giá siêu tiết kiệm nhất!</p>
+
+        <h3>
+            Cách thức tham gia
+        </h3>
+        <ol>
+            <li>Chọn bánh yêu thích: Truy cập vào website của chúng tôi và chọn những chiếc bánh mà quý khách yêu thích.</li>
+            <li>Thêm vào giỏ hàng: Đảm bảo tổng giá trị đơn hàng từ 300.000đ trở lên.</li>
+            <li>Nhập mã ưu đãi: Nhập mã <span id="promo-code" onclick="copyPromoCode()">DOUBLESALE661</span> tại trang thanh toán để được giảm giá.</li>
+        </ol>
+        <h3>
+            Lưu ý
+        </h3>
+        <ul>
+            <li>Chương trình không áp dụng đồng thời với các chương trình khuyến mãi khác.</li>
+            <li>Chỉ áp dụng cho các đơn hàng mua trực tuyến trên website của Pastry Corner.</li>
+            <li>Đây là cơ hội hiếm có để mua sắm với giá ưu đãi nhất, vì vậy hãy tranh thủ truy cập vào website của Pastry Corner để không bỏ lỡ những ưu đãi đặc biệt này. Sản phẩm có thể sẽ hết nhanh chóng!</li>
+        </ul>
+        <h3>
+            Chỉ hôm nay, chỉ có tại Pastry Corner. Đừng bỏ lỡ!
+        </h3>
+        </div>
+      </div>
+
+      <div id="popup4" class="popup">
+        <span class="close-btn">&times;</span>
+        <div class="popup-content">
+          <h1>Siêu Khuyến Mãi Ngày Đôi 6/6 - Chỉ Có Hôm Nay!
+          </h1>
+          <h3>
+            Chi tiết chương trình
+        </h3>
+<p>Giảm giá 30% tối đa 100.000đ: Nếu bạn không thể mua sắm trong khung giờ sáng, đừng lo lắng! Pastry Corner cũng áp dụng giảm giá 30% cho các đơn hàng trong khoảng thời gian từ 13h đến 15h chiều với hóa đơn từ 300.000đ trở lên</p>
+
+        <h3>
+            Cách thức tham gia
+        </h3>
+        <ol>
+            <li>Chọn bánh yêu thích: Truy cập vào website của chúng tôi và chọn những chiếc bánh mà quý khách yêu thích.</li>
+            <li>Thêm vào giỏ hàng: Đảm bảo tổng giá trị đơn hàng từ 300.000đ trở lên.</li>
+            <li>Nhập mã ưu đãi: Nhập mã <span id="promo-code" onclick="copyPromoCode()">DOUBLESALE662</span> tại trang thanh toán để được giảm giá.</li>
+        </ol>
+        <h3>
+            Lưu ý
+        </h3>
+        <ul>
+            <li>Chương trình không áp dụng đồng thời với các chương trình khuyến mãi khác.</li>
+            <li>Chỉ áp dụng cho các đơn hàng mua trực tuyến trên website của Pastry Corner.</li>
+            <li>Đây là cơ hội hiếm có để mua sắm với giá ưu đãi nhất, vì vậy hãy tranh thủ truy cập vào website của Pastry Corner để không bỏ lỡ những ưu đãi đặc biệt này. Sản phẩm có thể sẽ hết nhanh chóng!</li>
+        </ul>
+        <h3>
+            Chỉ hôm nay, chỉ có tại Pastry Corner. Đừng bỏ lỡ!
+        </h3>
+        </div>
+      </div>
+
+      <div id="popup5" class="popup">
+        <span class="close-btn">&times;</span>
+        <div class="popup-content">
+          <h1>Siêu Khuyến Mãi Ngày Đôi 6/6 - Chỉ Có Hôm Nay!
+          </h1>
+          <h3>
+            Chi tiết chương trình
+        </h3>
+<p>Giảm giá 20% tối đa 100.000đ: Dành cho những ai có thời gian mua sắm vào chiều muộn, bạn sẽ tiết kiệm được 20% cho đơn hàng có tổng hóa đơn từ 300.000đ trở lên từ 15h đến 17h.</p>
+        <h3>
+            Cách thức tham gia
+        </h3>
+        <ol>
+            <li>Chọn bánh yêu thích: Truy cập vào website của chúng tôi và chọn những chiếc bánh mà quý khách yêu thích.</li>
+            <li>Thêm vào giỏ hàng: Đảm bảo tổng giá trị đơn hàng từ 300.000đ trở lên.</li>
+            <li>Nhập mã ưu đãi: Nhập mã <span id="promo-code" onclick="copyPromoCode()">DOUBLESALE663</span> tại trang thanh toán để được giảm giá.</li>
+        </ol>
+        <h3>
+            Lưu ý
+        </h3>
+        <ul>
+            <li>Chương trình không áp dụng đồng thời với các chương trình khuyến mãi khác.</li>
+            <li>Chỉ áp dụng cho các đơn hàng mua trực tuyến trên website của Pastry Corner.</li>
+            <li>Đây là cơ hội hiếm có để mua sắm với giá ưu đãi nhất, vì vậy hãy tranh thủ truy cập vào website của Pastry Corner để không bỏ lỡ những ưu đãi đặc biệt này. Sản phẩm có thể sẽ hết nhanh chóng!</li>
+        </ul>
+        <h3>
+            Chỉ hôm nay, chỉ có tại Pastry Corner. Đừng bỏ lỡ!
+        </h3>
+        </div>
+      </div>
+
+      <div class="title">
+        <h1>Voucher tháng 7</h1>
+        <img src="../images/km_main2.png">
+      </div>
+
+      <div class="container3">
+        <div class="coupon-card">
+          <h1>Pastry Corner</h1>
+          <h3>Thất Tịch - <br>Giảm Đến 77,000 VND!</h3>
+          <div class="coupon-row">
+            <span class="couponcode">SALE77</span>
+            <span class="couponbutton expired">Chưa có hiệu lực</span>
+          </div>
+          <h2 class="popup-trigger" data-popup="popup6">Xem chi tiết</h2>
+          <p>Có giá trị sử dụng trong 07/07/2024</p>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+
+        <div class="coupon-card">
+          <h1>Pastry Corner</h1>
+          <h3>Sale Giữa Tháng Giảm Sâu<br>Giảm tới 50%</h3>
+          <div class="coupon-row">
+            <span class="couponcode">GIUATHANG7</span>
+            <span class="couponbutton expired">Chưa có hiệu lực</span>
+          </div>
+          <h2 class="popup-trigger" data-popup="popup7">Xem chi tiết</h2>
+          <p>Có giá trị sử dụng trong 15/07/2024</p>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+
+        <div class="coupon-card">
+          <h1>Pastry Corner</h1>
+          <h3>Sinh Nhật 1 Tuổi Pastry Corner <br> Giảm Tới 70%</h3>
+          <div class="coupon-row">
+            <span class="couponcode">SINHNHAT</span>
+            <span class="couponbutton expired">Chưa có hiệu lực</span>
+          </div>
+          <h2 class="popup-trigger" data-popup="popup8">Xem chi tiết</h2>
+          <p>Có giá trị sử dụng trong 25/07/2024</p>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+      </div>
+
+      <section id="subscribe-section">
+        <h3>Đăng ký nhận thông tin khuyến mãi</h3>
+        <p>Nhập email của bạn để nhận những thông tin mới nhất về các chương trình khuyến mãi từ Pastry Corner 😊</p>
+        <form>
+            <input type="email" placeholder="Nhập email của bạn" required>
+            <button type="submit">Đăng ký</button>
+        </form>
+    </section>
+
+    
+    <footer>
+      <div class="row">
+        <div class="col">
+          <a href="#" class="logo">Pastry Corner</a>
+          <p>Did you know? Serving you is our bread and butter</p>
+        </div>
+        <div class="col">
+          <h3>Thông tin liên hệ<div class="underline"><span></span></h3>
+          <p><i class="material-icons" style="font-size:24px">location_on</i>54 Trương Định , Phường Hai Bà Trưng, Quận Đống Đa, Thành phố Hà Nội</p>
+          <p class id="email-id"><i class="material-icons" style="font-size:24px">email</i>pastrycorner@gmail.com</p>
+          <p><i class="material-icons" style="font-size:24px">local_phone</i>(+84)-39-213-156</p>
+        </div>
+        <div class="col">
+          <h3>Về chúng tôi<div class="underline"><span></span></h3>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="product_list.html">Sản phẩm</a></li>
+            <li><a href="khuyenmaimain.html">Khuyến mại</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="blogmain.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
+          <ul>
+            <li><a href="dieukhoan.html">Điều khoản dịch vụ</a></li>
+            <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
+            <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
+            <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>
+            <li><a href="chinhsachdoitra.html">Chính sách đổi trả</a></li>
+          </ul>
+          <div class="social-icons">
+            <i class="fa fa-facebook" style='font-size:24px'></i>
+            <i class="fa fa-instagram" style='font-size:24px'></i>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
+    </footer>
+
+    <script>
+      const header = document.querySelector("header");
+      const menubtn = document.querySelector("#menu-btn");
+      const closemenubtn = document.querySelector("#close-menu-btn");
+      menubtn.addEventListener("click", () => {
+        header.classList.toggle("show-mobile-menu");
+      });
+      closemenubtn.addEventListener("click", () => {
+        menubtn.click();
+      });
+    </script>
+<script>
+    var countdowndate = new Date("July 01, 2024 00:00:00").getTime();
+    var x=setInterval(function(){
+        var now =new Date().getTime();
+        var distance = countdowndate-now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML=days;
+        document.getElementById("hours").innerHTML=hours;
+        document.getElementById("minutes").innerHTML=minutes;
+        document.getElementById("seconds").innerHTML=seconds;
+    },1000);
+</script>
+
+<script>
+var couponbuttons = document.querySelectorAll(".couponbutton");
+couponbuttons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    // Kiểm tra xem nút có chứa lớp "expired" hay không
+    if (!this.classList.contains("expired")) {
+      var couponcode = this.previousElementSibling.innerHTML;
+      navigator.clipboard.writeText(couponcode).then(() => {
+        this.innerHTML = "Đã sao chép";
+        setTimeout(() => {
+          this.innerHTML = "Sao chép";
+        }, 3000);
+      });
+    }
+  });
+});
+  
+
+  // Popup functionality
+  const popupTriggers = document.querySelectorAll(".popup-trigger");
+  const popups = document.querySelectorAll(".popup");
+  const overlay = document.querySelector(".overlay");
+
+  popupTriggers.forEach(trigger => {
+    trigger.addEventListener("click", () => {
+      const popupId = trigger.getAttribute("data-popup");
+      const popup = document.getElementById(popupId);
+      popup.style.display = "block";
+      overlay.style.display = "block";
+    });
+  });
+
+  overlay.addEventListener("click", () => {
+    popups.forEach(popup => {
+      popup.style.display = "none";
+    });
+    overlay.style.display = "none";
+  });
+
+  const closeBtns = document.querySelectorAll(".popup .close-btn");
+  closeBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.parentElement.style.display = "none";
+      overlay.style.display = "none";
+    });
+  });
+
+</script>
+</body>
+</html>

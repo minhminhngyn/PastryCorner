@@ -1,0 +1,170 @@
+
+header {
+    position: relative;
+    z-index: 10;
+    background-color: #BBAB9B;
+  }
+  /* Add margin to the top of the privacy policy section */
+  #privacy-policy {
+    padding: 20px;
+    margin: 20px auto; /* Adjusted top margin */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px; /* Increase font size for privacy policy */
+  }
+  /* Center align the h2 element */
+  h2 {
+    text-align: center;
+    font-size: 24px; /* Increase font size for h2 */
+    margin-bottom: 20px;
+  }
+  /* Increase font size for h3 */
+  h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+.banner {
+    position: relative; /* Đặt vị trí tương đối */
+    width: 100%; /* Chiều rộng 100% của trang */
+    height: 194px; /* Chiều cao của banner */
+    margin-top: -20px; /* Đẩy lên để sát với phần header */
+    overflow: hidden; /* Ẩn phần dư thừa nếu có */
+  }
+  
+  .banner img {
+    width: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+    height: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+    object-fit: cover; /* Đảm bảo hình ảnh sẽ fit với kích thước của banner */
+  }
+  
+  .banner-content {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 50%; /* Căn chỉnh theo chiều dọc */
+    left: 50%; /* Căn chỉnh theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển vị trí để căn giữa */
+    background-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff; /* Màu chữ trắng */
+    text-align: center; /* Căn chỉnh văn bản giữa banner */
+  }
+  
+  .banner-content h2 {
+    font-size: 26px; /* Cỡ chữ tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và đoạn văn bản */
+  }
+  
+  .banner-content p {
+    font-size: 16px; /* Cỡ chữ đoạn văn bản */
+    margin: 0; /* Loại bỏ khoảng trống giữa các đoạn văn bản */
+  }
+  
+
+header {
+    position: relative;
+    z-index: 10;
+    background-color: #BBAB9B;
+  }
+  /* Add margin to the top of the privacy policy section */
+  #privacy-policy {
+    padding: 20px;
+    margin: 20px auto; /* Adjusted top margin */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px; /* Increase font size for privacy policy */
+  }
+  /* Center align the h2 element */
+  h2 {
+    text-align: center;
+    font-size: 24px; /* Increase font size for h2 */
+    margin-bottom: 20px;
+  }
+  /* Increase font size for h3 */
+  h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+.banner {
+    position: relative; /* Đặt vị trí tương đối */
+    width: 100%; /* Chiều rộng 100% của trang */
+    height: 194px; /* Chiều cao của banner */
+    margin-top: -20px; /* Đẩy lên để sát với phần header */
+    overflow: hidden; /* Ẩn phần dư thừa nếu có */
+  }
+  
+  .banner img {
+    width: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+    height: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+    object-fit: cover; /* Đảm bảo hình ảnh sẽ fit với kích thước của banner */
+  }
+  
+  .banner-content {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 50%; /* Căn chỉnh theo chiều dọc */
+    left: 50%; /* Căn chỉnh theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển vị trí để căn giữa */
+    background-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff; /* Màu chữ trắng */
+    text-align: center; /* Căn chỉnh văn bản giữa banner */
+  }
+  
+  .banner-content h2 {
+    font-size: 26px; /* Cỡ chữ tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và đoạn văn bản */
+  }
+  
+  .banner-content p {
+    font-size: 16px; /* Cỡ chữ đoạn văn bản */
+    margin: 0; /* Loại bỏ khoảng trống giữa các đoạn văn bản */
+  }
+
+.content {
+    margin-left: 250px; /* Điều chỉnh margin để phù hợp với chiều rộng của sidebar */
+    padding: 20px;
+}
+.full-width-image {
+  max-width: 100%; 
+  justify-content: center;
+}
+.full-width-image img {
+  height:500 px;
+  width: 100%; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+.sidebar {
+  float: left; /* hoặc sử dụng các thuộc tính phù hợp như position và margin */
+  width: 250px; /* Điều chỉnh độ rộng theo yêu cầu */
+  margin: 20px; /* Điều chỉnh margin cho khoảng cách với các phần khác */
+}
+.sidebar h3{
+  text-align: center;
+  margin-left: 25px;
+}
+.sidebar li{
+  list-style-type: none;
+  font-size: 15px;
+  padding: 10px 10px;
+  border-bottom: 1px solid sienna;
+
+}
+.sidebar ul{
+  margin-left: 30px;
+  margin-top: 10px;
+  text-align: center;
+}
+.sidebar a{
+  color: sienna;
+}
+.sidebar a:hover{
+padding-left: 20px;
+transition: all 0.3s;
+color: brown;
+}

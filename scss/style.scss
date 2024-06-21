@@ -1,0 +1,32 @@
+$main: #4f3222;
+$white:#fff;
+$black:#000;
+$light-color:#aaa;
+$border: .2rem solid rgba(255,255,255,.3);
+.scroll h3{
+    @include title-text(4rem);
+  }
+.scroll p{
+  @include grap-text(1.7rem);  
+  padding: 2rem 0;
+}
+
+
+
+
+@mixin title-text($titleSize) {
+    font-size: $titleSize;
+    text-transform: uppercase;
+    color: $white;
+  }
+  @mixin grap-text($grapSize) {
+    font-size: $grapSize;
+    line-height: 2;
+    color: $light-color;
+  }
+  @mixin grid($val) {
+    display: grid;
+    grip-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 2rem;
+  }
+  

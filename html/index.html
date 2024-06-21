@@ -23,8 +23,8 @@
       rel="stylesheet"
     />
     <!---link sheet css, scss, js----------------------------------------------------------------------------------->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet2" href="scss/style.scss" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet2" href="../scss/style.scss" />
     <!-------------------------------------------------------------------------------------------------------------->
   </head>
   <body>
@@ -47,20 +47,34 @@
             </ul>
           </li>
           <li>
-            <a href="#" class="nav_link">Khuyến mại</a>
+            <a href="khuyenmaimain.html" class="nav_link">Khuyến mại</a>
           </li>
           <li>
             <a href="aboutus.html" class="nav_link">Giới thiệu</a>
           </li>
           <li>
-            <a href="#" class="nav_link">Blog</a>
+            <a href="blogmain.html" class="nav_link">Blog</a>
           </li>
         </ul>
         <div class="nav_icons">
           <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
-          <i href="#" class="fa-solid fa-magnifying-glass" id="nav_icon-link"></i>
-          <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
+          <div class="search">
+            <span class="search-icon">
+              <i href="#" class="fa-solid fa-magnifying-glass searchbtn"></i>
+              <i class="fa-solid fa-x closebtn"></i>
+            </span>
+          </div>
+          <div class="searchbox">
+            <input type="text" placeholder="Nhập tên bánh bạn muốn tìm kiếm">
+          </div>
           <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+                  <div class="user-dropdown" style="display: none; position: relative;">
+                      <i id="user-icon" class="fa-solid fa-user"></i>
+                      <ul class="dropdown-menu" style="display: none;">
+                          <li><a href="#" id="account-info">Thông tin tài khoản</a></li>
+                          <li><a href="#" id="logout">Đăng xuất</a></li>
+                      </ul>
+                  </div>
         </div>
         <div class="nav_close" id="nav-close">
           <i class="fa-solid fa-x"></i>
@@ -70,7 +84,7 @@
         <i class="fa-solid fa-bars"></i>
         </div>
     </nav>
-    <script src="js/header.js"></script>
+    <script src="../js/header.js"></script>
    </header>
    <!-----login------------------------------------------------------------------------------------------>
    <div class="overlay"></div>
@@ -98,7 +112,6 @@
     </div>
   </form>
 </div>
-
 <div class="form-box register">
   <span class="login-close"><i class="fa-solid fa-x"></i></span>
   <h2>Đăng ký</h2>
@@ -124,7 +137,6 @@
     </div>
   </form>
 </div>
-
 <div class="form-box reset">
   <span class="login-close"><i class="fa-solid fa-x"></i></span>
   <h2>Quên mật khẩu</h2>
@@ -146,23 +158,21 @@
     </div>
   </form>
 </div>
-
-<script src="js/login.js"></script>
-
+<script src="../js/login.js"></script>
     <!-----slider------------------------------------------------------------------------------------->
     <section>
       <div class="container">
         <div class="slide">
-          <div class="item" style="background-image: url(images/bg11.jpg)">
+          <div class="item" style="background-image: url(../images/slide4.png)">
             <div class="content">
               <div class="name">Bánh mì thơm ngon mỗi ngày</div>
               <div class="des">
                 Từ những nguyên liệu đắt giá và giàu dinh dưỡng nhất
               </div>
-              <button class="CTAbutton">Mua ngay</button>
+              <button class="CTAbutton" data-link="product_list.html">Mua ngay</button>
             </div>
           </div>
-          <div class="item" style="background-image: url(images/bg6.jpg)">
+          <div class="item" style="background-image: url(../images/slide10.png)">
             <div class="content">
               <div class="name">Background2</div>
               <div class="des">
@@ -171,10 +181,10 @@
                 numquam, autem officia, ipsam quas saepe sapiente. Quas vero
                 accusantium debitis ullam dolore atque.
               </div>
-              <button class="CTAbutton">See More</button>
+              <button class="CTAbutton" data-link="product_list.html">See More</button>
             </div>
           </div>
-          <div class="item" style="background-image: url(images/bg8.jpg)">
+          <div class="item" style="background-image: url(../images/slide9.png)">
             <div class="content">
               <div class="name">Background3</div>
               <div class="des">
@@ -183,10 +193,10 @@
                 numquam, autem officia, ipsam quas saepe sapiente. Quas vero
                 accusantium debitis ullam dolore atque.
               </div>
-              <button class="CTAbutton">See More</button>
+              <button class="CTAbutton" data-link="product_list.html">See More</button>
             </div>
           </div>
-          <div class="item" style="background-image: url(images/bg9.jpg)">
+          <div class="item" style="background-image: url(../images/slide2.png)">
             <div class="content">
               <div class="name">Background4</div>
               <div class="des">
@@ -195,10 +205,10 @@
                 numquam, autem officia, ipsam quas saepe sapiente. Quas vero
                 accusantium debitis ullam dolore atque.
               </div>
-              <button class="CTAbutton">See More</button>
+              <button class="CTAbutton" data-link="product_list.html">See More</button>
             </div>
           </div>
-          <div class="item" style="background-image: url(images/bg10.jpg)">
+          <div class="item" style="background-image: url(../images/slide7.png)">
             <div class="content">
               <div class="name">Background5</div>
               <div class="des">
@@ -207,10 +217,10 @@
                 numquam, autem officia, ipsam quas saepe sapiente. Quas vero
                 accusantium debitis ullam dolore atque.
               </div>
-              <button class="CTAbutton">See More</button>
+              <button class="CTAbutton" data-link="product_list.html">See More</button>
             </div>
           </div>
-          <div class="item" style="background-image: url(images/bg12.jpg)">
+          <div class="item" style="background-image: url(../images/slide1.png)">
             <div class="content">
               <div class="name">Background6</div>
               <div class="des">
@@ -219,7 +229,7 @@
                 numquam, autem officia, ipsam quas saepe sapiente. Quas vero
                 accusantium debitis ullam dolore atque.
               </div>
-              <button class="CTAbutton">See More</button>
+              <button class="CTAbutton" data-link="product_list.html">See More</button>
             </div>
           </div>
         </div>
@@ -228,7 +238,7 @@
           <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
-      <script src="js/app.js"></script>
+      <script src="../js/app.js"></script>
     </section>
     <!-------------ingredients--------------------------------------------------------------------------------------------------------------->
     <section class="ingredients">
@@ -239,7 +249,7 @@
       <div class="gallery-wrapper">
         <!--responsive-->
         <div class="gallery">
-          <img src="images/2.2.2.png" alt="" />
+          <img src="../images/2.2.2.png" alt="" />
           <div class="info">
             <h2>Nguyên liệu cao cấp</h2>
             <p>
@@ -249,14 +259,14 @@
           </div>
         </div>
         <div class="gallery">
-          <img src="images/1.1.1.png" alt="" />
+          <img src="../images/1.1.1.png" alt="" />
           <div class="info">
             <h2>Phương pháp đặc biệt</h2>
             <p>Sử dụng các kỹ thuật riêng và truyền thống để bánh thơm ngon</p>
           </div>
         </div>
         <div class="gallery">
-          <img src="images/4.4.4.png" alt="" />
+          <img src="../images/4.4.4.png" alt="" />
           <div class="info">
             <h2>Hương vị đa dạng</h2>
             <p>Kết hợp nhiều thành phần, biến tấu hương vị phong phú</p>
@@ -265,24 +275,27 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></script>
     </section>
     <!------------------breadstype----------------------------------------------------------------------------------------------------------->
-    <section class="breadstype" style="--bg: url(images/list1.jpg)">
-      <h1 class="heading2">
-        <span> Danh </span><span> mục </span><span> sản </span><span> phẩm </span>
-      </h1>
+    <section class="breadstype">
+      <div class="title-container">
+        <h1 class="heading2">
+          <span> Danh </span><span> mục </span><span> sản </span><span> phẩm </span>
+        </h1>
+        <p class="subheading">Những món bánh sẽ làm khơi dậy vị giác của bạn</p>
+      </div>
       <div class="cards">
-        <div class="card active" style="--bg: url(images/list1.jpg)">
-            <div class="shadow"></div>
-            <div class="label">
-              <div class="icon">
-                <i class="fa-solid fa-cookie-bite"></i>
-              </div>
-              <div class="information">
-                <div class="title">Sweety Cakes</div>
-                <h2>Pain Un Chocola</h2>
-              </div>
+        <div class="card active" style="--bg: url(../images/list1.jpg)">
+          <div class="shadow"></div>
+          <div class="label">
+            <div class="icon">
+              <i class="fa-solid fa-cookie-bite"></i>
             </div>
+            <div class="information">
+              <div class="title">Sweety Cakes</div>
+              <h2>Pain Un Chocola</h2>
+            </div>
+          </div>
         </div>
-        <div class="card" style="--bg: url(images/list2.jpg)">
+        <div class="card" style="--bg: url(../images/list2.jpg)">
           <div class="shadow"></div>
           <div class="label">
             <div class="icon">
@@ -293,96 +306,107 @@
               <h2>White Grain Baguette</h2>
             </div>
           </div>
-      </div>
-      <div class="card" style="--bg: url(images/list3.jpg)">
-        <div class="shadow"></div>
-        <div class="label">
-          <div class="icon">
-            <i class="fa-solid fa-cookie-bite"></i>
+        </div>
+        <div class="card" style="--bg: url(../images/list3.jpg)">
+          <div class="shadow"></div>
+          <div class="label">
+            <div class="icon">
+              <i class="fa-solid fa-cookie-bite"></i>
+            </div>
+            <div class="information">
+              <div class="title">Croissants</div>
+              <h2>Chocola un croissant</h2>
+            </div>
           </div>
-          <div class="information">
-            <div class="title">Croissants</div>
-            <h2>Chocola un croissant</h2>
+        </div>
+        <div class="card" style="--bg: url(../images/list4.jpg)">
+          <div class="shadow"></div>
+          <div class="label">
+            <div class="icon">
+              <i class="fa-solid fa-cookie-bite"></i>
+            </div>
+            <div class="information">
+              <div class="title">New Menu</div>
+              <h2>Roundy Sourdough</h2>
+            </div>
           </div>
         </div>
-    </div>
-    <div class="card" style="--bg: url(images/list4.jpg)">
-      <div class="shadow"></div>
-      <div class="label">
-        <div class="icon">
-          <i class="fa-solid fa-cookie-bite"></i>
-        </div>
-        <div class="information">
-          <div class="title">New Menu</div>
-          <h2>Roundy Sourdough</h2>
+        <div class="card" style="--bg: url(../images/list4.jpg)">
+          <div class="shadow"></div>
+          <div class="label">
+            <div class="icon">
+              <i class="fa-solid fa-cookie-bite"></i>
+            </div>
+            <div class="information">
+              <div class="title">New Menu</div>
+              <h2>Roundy Sourdough</h2>
+            </div>
+          </div>
         </div>
       </div>
-  </div>
-      </div>
-      <script src="js/test.js"></script>
+      <script src="../js/test.js"></script>
     </section>
+  
     <!-----------------------------Blogs-------------------->
     <section id="blog">
       <div class="blog-heading">
         <div class="name">
-          <span> Tin tức mới nhất </span>
+          <span>Tin tức mới nhất</span>
           <p>Những thông tin cập nhật của Pastry Corner</p>
         </div>
         <div class="blog-container">
           <div class="blog-box">
             <div class="blog-img">
-              <img src="images/bg1.jpg" alt="">
+              <img src="../images/blog1_bg2.png" alt="">
             </div>
             <div class="blog-text">
-              <span>20 Tháng 4, 2024</span>
-              <a href="#" class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repudiandae, quod odio alias magni at dolore dicta! Excepturi ex iste distinctio, rem corporis animi inventore delectus recusandae sit adipisci quasi.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque, eos repellat autem alias placeat iure neque non nobis asperiores maiores, labore expedita, ad nulla iste? Recusandae quos magnam non.</p>
+              <span>📅10/06/2024</span>
+              <a href="#" class="blog-title">Khám Phá Văn Hóa Bánh Ngọt Pháp: Sự Kết Hợp Tinh Tế Giữa Nghệ Thuật Và Ẩm Thực</h2>
+              <p>Bánh ngọt Pháp không chỉ đơn thuần là món tráng miệng, mà còn là một phần không thể thiếu trong văn hóa ẩm thực của nước Pháp...</p>
+              <button href= "#" class="blog-button">Đọc bài viết</button>
+            </div>
+          </div>
+          <div class="blog-box">
+            <div class="blog-img">
+              <img src="../images/blog2_bg2.jpg" alt="">
+            </div>
+            <div class="blog-text">
+              <span>📅15/04/2024</span>
+              <a href="#" class="blog-title">Bước Vào Thế Giới Làm Bánh: Sự Hài Hòa Giữa Nghệ Thuật và Khoa Học</h2>
+              <p>Việc làm bánh không chỉ đơn thuần là một hoạt động nấu nướng mà nó còn là một nghệ thuật thú vị kết hợp giữa sự sáng tạo và kỹ thuật. Từ những viên bột mịn màng đến hương vị tinh tế của kem và nhân, mọi thứ đều cần phải được cân đối tỉ mỉ để tạo ra một chiếc bánh hoàn hảo. Đây là một hành trình tưởng chừng như đơn giản nhưng lại vô cùng phức tạp và thú vị ...</p>
               <button href= "#" class="blog-button">Xem thêm</button>
             </div>
           </div>
           <div class="blog-box">
             <div class="blog-img">
-              <img src="images/bg1.jpg" alt="">
+              <img src="../images/blog3-bg3.jpg" alt="">
             </div>
             <div class="blog-text">
-              <span>20 Tháng 4, 2024</span>
-              <a href="#" class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repudiandae, quod odio alias magni at dolore dicta! Excepturi ex iste distinctio, rem corporis animi inventore delectus recusandae sit adipisci quasi.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque, eos repellat autem alias placeat iure neque non nobis asperiores maiores, labore expedita, ad nulla iste? Recusandae quos magnam non.</p>
+              <span>📅30/03/2024</span>
+              <a href="#" class="blog-title">Bánh Ngọt Tốt Cho Sức Khỏe: Sự Lựa Chọn Thông Minh cho Bữa Ăn Nhẹ</h2>
+              <p>Bánh ngọt, mặc dù thường được xem là không tốt cho sức khỏe vì chúng thường giàu đường và chất béo, nhưng sự lựa chọn các loại bánh thông minh có thể mang lại nhiều lợi ích cho sức khỏe hơn bạn nghĩ. Hãy cùng khám phá những loại bánh ngọt tốt cho sức khỏe sau đây ...</p>
               <button href= "#" class="blog-button">Xem thêm</button>
             </div>
           </div>
           <div class="blog-box">
             <div class="blog-img">
-              <img src="images/bg1.jpg" alt="">
+              <img src="../images/blog4_bg1.jpg" alt="">
             </div>
             <div class="blog-text">
-              <span>20 Tháng 4, 2024</span>
-              <a href="#" class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repudiandae, quod odio alias magni at dolore dicta! Excepturi ex iste distinctio, rem corporis animi inventore delectus recusandae sit adipisci quasi.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque, eos repellat autem alias placeat iure neque non nobis asperiores maiores, labore expedita, ad nulla iste? Recusandae quos magnam non.</p>
-              <button href= "#" class="blog-button">Xem thêm</button>
-            </div>
-          </div>
-          <div class="blog-box">
-            <div class="blog-img">
-              <img src="images/bg1.jpg" alt="">
-            </div>
-            <div class="blog-text">
-              <span>20 Tháng 4, 2024</span>
-              <a href="#" class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repudiandae, quod odio alias magni at dolore dicta! Excepturi ex iste distinctio, rem corporis animi inventore delectus recusandae sit adipisci quasi.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque, eos repellat autem alias placeat iure neque non nobis asperiores maiores, labore expedita, ad nulla iste? Recusandae quos magnam non.</p>
+              <span>📅25/02/2024</span>
+              <a href="#" class="blog-title">Bánh Ngọt - Món Quà Ý Nghĩa Mang Đến Niềm Hạnh Phúc</h2>
+              <p>Việc tặng bánh ngọt không chỉ đơn thuần là việc làm thường ngày mà còn chứa đựng nhiều ý nghĩa sâu sắc đối với người nhận. Những chiếc bánh được làm từ tâm huyết và tình yêu thương không chỉ làm giàu thêm bữa tiệc mà còn là dấu hiệu của sự quan tâm, sự chia sẻ từ người tặng đến người nhận  ...</p>
               <button href= "#" class="blog-button">Xem thêm</button>
             </div>
           </div>
           </div>
         </div>
     </section>
-  </div>
-</div>
     <!----------------footer----------------------------------------------------------------------------------------------------------------->
-    <footer id="footer">
+    <footer>
       <div class="row">
         <div class="col">
-          <a href="index.html" class="logo">Pastry Corner</a>
+          <a href="#" class="logo">Pastry Corner</a>
           <p>Did you know? Serving you is our bread and butter</p>
         </div>
         <div class="col">
@@ -392,24 +416,24 @@
           <p><i class="material-icons" style="font-size:24px">local_phone</i>(+84)-39-213-156</p>
         </div>
         <div class="col">
-        <h3>Về chúng tôi<div class="underline"><span></span></h3>
-        <ul>
-          <li><a target="_self" href="index.html">Trang chủ</a></li>
-          <li><a target="_self" href="product_list.html">Sản phẩm</a></li>
-          <li><a target="_self" href="#sale">Khuyến mại</a></li>
-          <li><a target="_self" href="aboutus.html">Giới thiệu</a></li>
-          <li><a target="_self" href="#blog">Blog</a></li>
-        </ul>
-      </div>
+          <h3>Về chúng tôi<div class="underline"><span></span></h3>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="product_list.html">Sản phẩm</a></li>
+            <li><a href="khuyenmaimain.html">Khuyến mại</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="blogmain.html">Blog</a></li>
+          </ul>
+        </div>
         <div class="col">
           <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
-            <ul>
-              <li><a target="_self" href="#">Điều khoản dịch vụ</a></li>
-              <li><a target="_self" href="#">Chính sách bảo mật</a></li>
-              <li><a target="_self" href="#">Chính sách thanh toán</a></li>
-              <li><a target="_self" href="#">Chính sách giao hàng</a></li>
-              <li><a target="_self" href="#">Chính sách đổi trả</a></li>
-            </ul>
+          <ul>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+            <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
+            <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
+            <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>
+            <li><a href="chinhsachdoitra.html">Chính sách đổi trả</a></li>
+          </ul>
           <div class="social-icons">
             <i class="fa fa-facebook" style='font-size:24px'></i>
             <i class="fa fa-instagram" style='font-size:24px'></i>
@@ -420,13 +444,13 @@
       <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
     </footer>
     <script>
-      const header=document.querySelector("header");
-      const menubtn=document.querySelector("#menu-btn");
-      const closemenubtn=document.querySelector("#close-menu-btn");
-      menubtn.addEventListener("click",()=>{
+      const header = document.querySelector("header");
+      const menubtn = document.querySelector("#menu-btn");
+      const closemenubtn = document.querySelector("#close-menu-btn");
+      menubtn.addEventListener("click", () => {
         header.classList.toggle("show-mobile-menu");
       });
-      closemenubtn.addEventListener("click",()=>{
+      closemenubtn.addEventListener("click", () => {
         menubtn.click();
       });
     </script>

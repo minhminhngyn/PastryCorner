@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+*{
+    /* padding:0;margin:0 */
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+html 
+{
+    font-size: 72.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+header.header 
+{
+    font-family: "Raleway", sans-serif;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /*Căn lề nav-text sang phải*/
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem solid rgba(0, 0, 0, 0.1);
+   
+}
+
+header .navbar ul li 
+{
+    list-style: none;
+    display: inline;
+    margin: 0 20px;
+    position: relative;
+}
+header .navbar ul li a 
+{
+    color: var(--white);
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+header .logo 
+{
+    font-size: 1.85rem;
+    color: var(--white);
+    font-weight: bolder;
+    cursor: pointer;
+    margin-right: auto;
+}
+header .icons i 
+{
+    color: var(--white);
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+header .toggler
+{
+    display: none;
+}
+
+/* ...................................... product image......................................... */
+.content .box
+{
+    display: flex;
+    margin: 50px 30px;
+    width: 1000px;
+    /* background-color: blue; */
+}
+.box .left 
+{
+    /* left chiếm 50% chiều rộng contentbox */
+    width: 50%;
+    
+}
+.box .left .img-big
+{
+    /* img-big chiếm 100% chiều rộng phần left */
+    width: 100%;
+}
+.box .left .img-big img
+{
+    /* để giá trị tuyệt đối cho chiều cao để khi thay src nó không đổi kích cỡ */
+    width: 100%;
+    height: 600px;
+}
+.box .left .img-replace
+{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.box .left .img-replace .img-small
+{
+    width: 100px;
+    border: solid 1px #3a2b07;
+    overflow: hidden;
+}
+.box .left .img-replace .img-small img
+{
+    /* cho dài rộng bằng với img-small */
+    width: 100%; 
+    height: 100%;
+    cursor: pointer;
+    /* cho hiệu ứng chuyển tiếp trong 0.5s  */
+    transition: all 0.5s ease;
+}
+.box .left .img-replace .img-small img:hover
+{
+    /* cho ảnh phóng to 1.2 lần */
+    transform: scale(1.2); 
+}
+
+
+/* .............................................product infor....................................... */
+.box .right
+{
+    /* right chiếm 50% chiều rộng contentbox */
+    width: 50%;
+    margin-left: 80px;
+    margin-right: 0px;
+    justify-content: right;
+}
+.box .right .product-name p
+{
+    font-size: 4em;
+    font-weight: bold;
+    color: #3a2b07;
+    
+}
+.box .right .product-infor
+{
+    margin-top: 10px;
+}
+.box .right .product-infor .product-info-short
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    color: #584519;
+}
+.box .right .product-infor .product-info-short td
+{
+    padding-right: 10px;
+    border-right: solid #3a2b07;
+}
+.box .right .product-infor .product-price
+{
+    font-size: 2.5em;
+    color:  #584519;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.box .right .product-infor .product-infor-detail
+{
+    color:  #584519;
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+.box .right .product-infor .product-infor-detail span
+{
+    font-weight: bold;
+}
+.box .right .product-infor .product-infor-detail ul
+{
+    list-style: none;
+    padding-left: 0px;
+}
+.box .right .product-infor .product-infor-detail ul li
+{
+    margin-top: 10px;
+}
+.box .right .product-infor .product-infor-detail ul.hdsd li
+{
+    padding-left: 15px;
+    /* margin-top: 10px; */
+}
+.box .right .product-infor .product-infor-detail ul.hdsd li.tl
+{
+    list-style-type:none;
+    padding-left: 0px;
+    font-weight: bold;
+    color: #584519;
+}
+.box .right .quantity
+{
+    margin-top: 10px;
+}
+.box .right .quantity p
+{
+    color:  #584519;
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.box .right .quantity #buy-amount
+{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    
+}
+.box .right .quantity #buy-amount button
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px #dbceb0;
+    background-color: #ebe3d3;
+    color: #584519;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.box .right .quantity #buy-amount button:hover
+{
+    background-color: #dbceb0;
+}
+.box .right .quantity #buy-amount input
+{
+    height: 40px;
+    width: 50px;
+    border-radius: 10px;
+    background-color: #ebe3d3;
+    text-align: center;
+    color: #584519;
+}
+
+.box .right .order a
+{
+    display: block;
+    box-sizing: border-box;
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #ebe3d3;
+    color: #584519;
+    transition: 0.5s ease;
+    /* justify-content: center;
+    align-items: center; */
+    text-align: center;
+    align-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.box .right .order a:hover
+{
+    background-color: brown;
+    color: #fff;
+    transform: scale(1.2);
+}
+
+
+/* ............................................................................................... */
+
+.headline
+{
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color:   #3a2b07;;
+}
+
+ul.list_pro
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px 30px;
+}
+
+ul.list_pro li 
+{
+
+    flex-basis: 20%;  
+    /* flex basis điều chỉnh bố cục flexbox. n%=> kích thước bằng n% container */
+    box-sizing: border-box;
+    list-style: none;
+    padding: 10px;
+    width: 100px;
+}
+ul.list_pro li img
+{
+    width: 100%;
+    height: 200px; /* Chiều cao của khung chứa */
+    overflow: hidden; /*ảnh vừa khung chứa*/
+}
+ul.list_pro li .product-top
+{
+    position: relative;
+    overflow: hidden;
+}
+ul.list_pro li .product-top a.product-image
+{
+    display: block;
+    object-fit: cover;
+}
+ul.list_pro li :hover .product-top a.product-image img
+{
+    filter: opacity(70%);
+    /*lia chuột vào thì ảnh mờ đi 30%*/
+}
+ul.list_pro li .product-top a.product-image img
+{
+    display: block;
+}
+ul.list_pro li .product-top a.buy-now
+{
+    text-align: center;
+    text-decoration: none;
+    background-color: #4f3222;
+    color: #fff;
+    display: block;
+    padding: 10px 0px;
+    position: absolute; 
+    width: 100%;
+    bottom: -42px;
+    transition: 0.25s ease-in-out;
+    font-size: 1.5em;
+}
+
+ul.list_pro li :hover a.buy-now
+{
+    bottom:0px;
+}
+
+
+ul.list_pro li .product-infor a
+{
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #dbceb0; 
+}
+
+ul.list_pro li .product-infor a.product-name
+{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+ul.list_pro li .product-infor a.product-price
+{
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+ul.list_pro ul.product-button
+{
+    display: block;
+    background-color: #dbceb0;
+}
+ul.list_pro ul.product-button li
+{
+    display: inline-block;
+    padding-left: 50px;
+}
+ul.list_pro ul.product-button i
+{
+    display: block;
+    font-size: 1.5em;
+    color: #4f3222;
+    background-color: #dbceb0;
+    cursor: pointer;
+}

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="description"
+      content="Located in the South End and Fort Point Channel. Includes a menu, catering information, and staff profiles."
+    />
+    <!---link icons------------------------------------------------------------------------------------------------>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!---link sheet css, scss, js----------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet2" href="../scss/style.scss" />
+    <link rel="stylesheet" href="../css/blog.css" />
+    <!-------------------------------------------------------------------------------------------------------------->
+  </head>
+  <body>
+   <header class="header" id="header">
+    <nav class="nav_container">
+      <a href="index.html" class="nav_logo">Pastry Corner</a>
+      <div  class="nav_menu" id="nav-menu">
+        <ul class="nav_list">
+          <li>
+            <a href="index.html" class="nav_link">Trang chủ</a>
+          </li>
+          <li class="dropdown-wrapper">
+            <a href="product_list.html" class="nav_link">Sản phẩm</a>
+            <ul class="dropdown" id="dropdown">
+              <li><a href="#" class="dropdown_link">Bánh ngọt kiểu Âu</a></li>
+              <li><a href="#" class="dropdown_link">Bánh mì</a></li>
+              <li><a href="#" class="dropdown_link">Bánh lạnh</a></li>
+              <li><a href="#" class="dropdown_link">Bánh mặn</a></li>
+              <li><a href="#" class="dropdown_link">Bánh quy</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="khuyenmaimain.html" class="nav_link">Khuyến mại</a>
+          </li>
+          <li>
+            <a href="aboutus.html" class="nav_link">Giới thiệu</a>
+          </li>
+          <li>
+            <a href="blogmain.html" class="nav_link">Blog</a>
+          </li>
+        </ul>
+        <div class="nav_icons">
+          <i href="#" class="fa-solid fa-cart-plus" id="nav_icon-link"></i>
+          <div class="search">
+            <span class="search-icon">
+              <i href="#" class="fa-solid fa-magnifying-glass searchbtn"></i>
+              <i class="fa-solid fa-x closebtn"></i>
+            </span>
+          </div>
+          <div class="searchbox">
+            <input type="text" placeholder="Nhập tên bánh bạn muốn tìm kiếm">
+          </div>
+          <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
+          <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+        </div>
+        <div class="nav_close" id="nav-close">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        </div>
+      <div class="nav_toggle" id="nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <script src="../js/header.js"></script>
+   </header>
+   <!-----login------------------------------------------------------------------------------------------>
+   <div class="overlay"></div>
+<div class="form-box login">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng nhập</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <div class="remember-forgot">
+      <label><input type="checkbox">Nhớ mật khẩu</label>
+      <a href="#" class="reset-link">Quên mật khẩu?</a>
+    </div>
+    <button type="submit" class="submit-btn">Đăng nhập</button>
+    <div class="login-register">
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box register">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng ký</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-user"></i></span>
+      <input type="text" required>
+      <label>Tên đăng nhập</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <button type="submit" class="submit-btn">Đăng ký</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box reset">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Quên mật khẩu</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></i></span>
+      <input type="number" required>
+      <label>Mã OTP</label>
+    </div>
+    <button type="submit" class="submit-btn">Lấy lại mật khẩu</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p><br>
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<script src="../js/login.js"></script>
+   <!-----login------------------------------------------------------------------------------------------>
+   <div class="overlay"></div>
+<div class="form-box login">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng nhập</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <div class="remember-forgot">
+      <label><input type="checkbox">Nhớ mật khẩu</label>
+      <a href="#" class="reset-link">Quên mật khẩu?</a>
+    </div>
+    <button type="submit" class="submit-btn">Đăng nhập</button>
+    <div class="login-register">
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box register">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Đăng ký</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-user"></i></span>
+      <input type="text" required>
+      <label>Tên đăng nhập</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
+      <input type="password" required>
+      <label>Mật khẩu</label>
+    </div>
+    <button type="submit" class="submit-btn">Đăng ký</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p>
+    </div>
+  </form>
+</div>
+<div class="form-box reset">
+  <span class="login-close"><i class="fa-solid fa-x"></i></span>
+  <h2>Quên mật khẩu</h2>
+  <form action="#">
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <span class="login-icon"><i class="fa-solid fa-lock"></i></i></span>
+      <input type="number" required>
+      <label>Mã OTP</label>
+    </div>
+    <button type="submit" class="submit-btn">Lấy lại mật khẩu</button>
+    <div class="login-register">
+      <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p><br>
+      <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
+    </div>
+  </form>
+</div>
+<script src="../js/login.js"></script>
+
+
+<div class="blog-section">
+  <div class="section-content blog">
+    <div class="title">
+      <h2>Bài viết nổi bật</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="image-section">
+          <img src="../images/blog1_bg2.png">
+        </div>
+        <div class="article">
+          <h4>Khám Phá Văn Hóa Bánh Ngọt Pháp: Sự Kết Hợp Tinh Tế Giữa Nghệ Thuật Và Ẩm Thực</h4>
+          <p>Bánh ngọt Pháp không chỉ đơn thuần là món tráng miệng, mà còn là một phần không thể thiếu trong văn hóa ẩm thực của nước Pháp...</p>
+        </div>
+        <div class="blog-view">
+          <a href="blog1.html" class="button">Chi tiết bài viết</a>
+        </div>
+        <div class="posted-date">
+          <p> Đăng ngày 10/06/2024</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="image-section">
+            <img src="../images/blog2_bg2.jpg">
+          </div>
+          <div class="article">
+            <h4>Bước Vào Thế Giới Làm Bánh: Sự Hài Hòa Giữa Nghệ Thuật và Khoa Học</h4>
+            <p>Việc làm bánh không chỉ đơn thuần là một hoạt động nấu nướng mà nó còn là một nghệ thuật thú vị kết hợp giữa sự sáng tạo và kỹ thuật...</p>
+          </div>
+          <div class="blog-view">
+            <a href="blog2.html" class="button">Chi tiết bài viết</a>
+          </div>
+          <div class="posted-date">
+            <p> Đăng ngày 15/04/2024</p>
+          </div>
+          </div>
+          <div class="card">
+            <div class="image-section">
+              <img src="../images/blog3_bg.jpg">
+            </div>
+            <div class="article">
+              <h4>Bánh Ngọt Tốt Cho Sức Khỏe: Sự Lựa Chọn Thông Minh cho Bữa Ăn Nhẹ</h4>
+              <p>Bánh ngọt, mặc dù thường được xem là không tốt cho sức khỏe vì chúng thường giàu đường và chất béo, nhưng ...</p>
+            </div>
+            <div class="blog-view">
+              <a href="blog3.html" class="button">Chi tiết bài viết</a>
+            </div>
+            <div class="posted-date">
+              <p> Đăng ngày 30/03/2024</p>
+            </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content clearfix">
+  <div class="main-content">
+    <h1 class="all-post-title">Tất cả bài viết</h1>
+    
+    <div class="post">
+      <img src="../images/blog5_bg.jpg" alt="" class="post-image">
+      <div class="post-preview">
+        <h1><a href="blog5.html">Lợi Ích của Việc Ăn Bánh Mì Đen Nguyên Cám</a></h1>
+        <i class="far fa-calendar">📅  15/06/2024</i>
+        <p class="preview-text">Bánh mì đen nguyên cám, với nguyên liệu chính là bột mì nguyên cám, đã ngày càng được biết đến và ưa chuộng bởi những lợi ích sức khỏe mà nó mang lại. Đây không chỉ là món ăn ngon miệng mà còn là một phần của chế độ ăn uống cân bằng và lành mạnh. Dưới đây là những lợi ích chính của việc ăn bánh mì đen nguyên cám mà bạn nên biết...
+        </p>
+        <a href="blog5.html" class="btn read-more">Chi tiết bài viết</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="../images/blog1_bg2.png" alt="" class="post-image">
+      <div class="post-preview">
+        <h1><a href="blog1.html">Khám Phá Văn Hóa Bánh Ngọt Pháp: Sự Kết Hợp Tinh Tế Giữa Nghệ Thuật Và Ẩm Thực</a></h1>
+        <i class="far fa-calendar">📅  10/06/2024</i>
+        <p class="preview-text">Bánh ngọt Pháp không chỉ đơn thuần là món tráng miệng, mà còn là một phần không thể thiếu trong văn hóa ẩm thực của nước Pháp...
+        </p>
+        <a href="blog1.html" class="btn read-more">Chi tiết bài viết</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="../images/blog2_bg2.jpg" alt="" class="post-image">
+      <div class="post-preview">
+        <h1><a href="blog2.html">Bước Vào Thế Giới Làm Bánh: Sự Hài Hòa Giữa Nghệ Thuật và Khoa Học</a></h1>
+        <i class="far fa-calendar">📅  15/04/2024</i>
+        <p class="preview-text">Việc làm bánh không chỉ đơn thuần là một hoạt động nấu nướng mà nó còn là một nghệ thuật thú vị kết hợp giữa sự sáng tạo và kỹ thuật. Từ những viên bột mịn màng đến hương vị tinh tế của kem và nhân, mọi thứ đều cần phải được cân đối tỉ mỉ để tạo ra một chiếc bánh hoàn hảo. Đây là một hành trình tưởng chừng như đơn giản nhưng lại vô cùng phức tạp và thú vị ...
+        </p>
+        <a href="blog2.html" class="btn read-more">Chi tiết bài viết</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="../images/blog3-bg3.jpg" alt="" class="post-image">
+      <div class="post-preview">
+        <h1><a href="blog3.html">Bánh Ngọt Tốt Cho Sức Khỏe: Sự Lựa Chọn Thông Minh cho Bữa Ăn Nhẹ</a></h1>
+        <i class="far fa-calendar">📅  30/03/2024</i>
+        <p class="preview-text">Bánh ngọt, mặc dù thường được xem là không tốt cho sức khỏe vì chúng thường giàu đường và chất béo, nhưng sự lựa chọn các loại bánh thông minh có thể mang lại nhiều lợi ích cho sức khỏe hơn bạn nghĩ. Hãy cùng khám phá những loại bánh ngọt tốt cho sức khỏe sau đây ...
+        </p>
+        <a href="blog3.html" class="btn read-more">Chi tiết bài viết</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="../images/blog4_bg1.jpg" alt="" class="post-image">
+      <div class="post-preview">
+        <h1><a href="blog4.html">Bánh Ngọt - Món Quà Ý Nghĩa Mang Đến Niềm Hạnh Phúc</a></h1>
+        <i class="far fa-calendar">📅  25/02/2024</i>
+        <p class="preview-text">Việc tặng bánh ngọt không chỉ đơn thuần là việc làm thường ngày mà còn chứa đựng nhiều ý nghĩa sâu sắc đối với người nhận. Những chiếc bánh được làm từ tâm huyết và tình yêu thương không chỉ làm giàu thêm bữa tiệc mà còn là dấu hiệu của sự quan tâm, sự chia sẻ từ người tặng đến người nhận  ...
+        </p>
+        <a href="blog4.html" class="btn read-more">Chi tiết bài viết</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="sidebar">
+
+    <div class="section search">
+      <h2 class="section-title">Tìm kiếm</h2>
+      <form action="blogmain.html" method="post">
+        <input type="text" name="search-term" class="text-input" placeholder="Tìm kiếm...">
+      </form>
+    </div>
+
+    <div class="section topics">
+      <h2 class="section-title">Topics</h2>
+      <ul>
+        <li><a href="#" data-topic="bánh mì">Bánh mì</a></li>
+        <li><a href="#" data-topic="bánh ngọt">Bánh ngọt</a></li>
+        <li><a href="#" data-topic="lợi ích">Lợi ích</a></li>
+        <li><a href="#" data-topic="sức khỏe">Sức khỏe</a></li>
+        <li><a href="#" data-topic="văn hóa">Văn hóa</a></li>
+      </ul>
+    </div>
+
+    <div id="myPopup" class="popup">
+      <div class="popup-content">
+          <span class="close">&times;</span>
+          <img src="../images/popup1.png" alt="Popup Image">
+          <span id="promo-code" onclick="copyPromoCode()">Sao chép mã</span>
+
+      </div>
+  </div>
+
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="col">
+      <a href="#" class="logo">Pastry Corner</a>
+      <p>Did you know? Serving you is our bread and butter</p>
+    </div>
+    <div class="col">
+      <h3>Thông tin liên hệ<div class="underline"><span></span></h3>
+      <p><i class="material-icons" style="font-size:24px">location_on</i>54 Trương Định , Phường Hai Bà Trưng, Quận Đống Đa, Thành phố Hà Nội</p>
+      <p class id="email-id"><i class="material-icons" style="font-size:24px">email</i>pastrycorner@gmail.com</p>
+      <p><i class="material-icons" style="font-size:24px">local_phone</i>(+84)-39-213-156</p>
+    </div>
+    <div class="col">
+      <h3>Về chúng tôi<div class="underline"><span></span></h3>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="product_list.html">Sản phẩm</a></li>
+        <li><a href="khuyenmaimain.html">Khuyến mại</a></li>
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="blogmain.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
+      <ul>
+        <li><a href="#">Điều khoản dịch vụ</a></li>
+        <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
+        <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
+        <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>
+        <li><a href="chinhsachdoitra.html">Chính sách đổi trả</a></li>
+      </ul>
+      <div class="social-icons">
+        <i class="fa fa-facebook" style='font-size:24px'></i>
+        <i class="fa fa-instagram" style='font-size:24px'></i>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
+</footer>
+
+<script>
+  const header = document.querySelector("header");
+  const menubtn = document.querySelector("#menu-btn");
+  const closemenubtn = document.querySelector("#close-menu-btn");
+  menubtn.addEventListener("click", () => {
+    header.classList.toggle("show-mobile-menu");
+  });
+  closemenubtn.addEventListener("click", () => {
+    menubtn.click();
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[action="blogmain.html"]');
+    const searchInput = form.querySelector('input[name="search-term"]');
+    const posts = document.querySelectorAll('.post');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        if (searchTerm === '') {
+            return; // Không làm gì nếu không có từ khóa tìm kiếm
+        }
+
+        // Ẩn tất cả các bài viết
+        posts.forEach(post => post.style.display = 'none');
+
+        // Tìm trong các bài viết
+        let found = false;
+        posts.forEach(function(post) {
+            const title = post.querySelector('h1 a').textContent.toLowerCase();
+            const previewText = post.querySelector('.preview-text').textContent.toLowerCase();
+
+            if (title.includes(searchTerm) || previewText.includes(searchTerm)) {
+                // Nếu tìm thấy, hiển thị bài viết này
+                post.style.display = 'block';
+                found = true;
+            }
+        });
+
+        if (!found) {
+            alert('Không tìm thấy kết quả phù hợp.');
+            // Hiển thị lại tất cả bài viết nếu không tìm thấy kết quả
+            posts.forEach(post => post.style.display = 'block');
+        }
+    });
+});
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[action="blogmain.html"]');
+    const searchInput = form.querySelector('input[name="search-term"]');
+    const posts = document.querySelectorAll('.post');
+    const topicLinks = document.querySelectorAll('.section.topics a');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        filterPosts(searchTerm);
+    });
+
+    topicLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const topic = link.getAttribute('data-topic').toLowerCase();
+            filterPosts(topic);
+        });
+    });
+
+    function filterPosts(searchTerm) {
+        if (searchTerm === '') {
+            return; // Không làm gì nếu không có từ khóa tìm kiếm
+        }
+
+        // Ẩn tất cả các bài viết
+        posts.forEach(post => post.style.display = 'none');
+
+        // Tìm trong các bài viết
+        let found = false;
+        posts.forEach(function(post) {
+            const title = post.querySelector('h1 a').textContent.toLowerCase();
+            const previewText = post.querySelector('.preview-text').textContent.toLowerCase();
+
+            if (title.includes(searchTerm) || previewText.includes(searchTerm)) {
+                // Nếu tìm thấy, hiển thị bài viết này
+                post.style.display = 'block';
+                found = true;
+            }
+        });
+
+        if (!found) {
+            alert('Không tìm thấy kết quả phù hợp.');
+            // Hiển thị lại tất cả bài viết nếu không tìm thấy kết quả
+            posts.forEach(post => post.style.display = 'block');
+        }
+    }
+  });
+
+  
+</script>
+<script>
+  var popup = document.getElementById("myPopup");
+
+  var span = document.getElementsByClassName("close")[0];
+
+
+  window.onload = function() {
+      popup.style.display = "flex";
+  }
+
+
+  span.onclick = function() {
+      popup.style.display = "none";
+  }
+
+
+  window.onclick = function(event) {
+      if (event.target == popup) {
+          popup.style.display = "none";
+      }
+  }
+
+  function copyPromoCode() {
+        const promoCode = "CUOITHANG6";
+        navigator.clipboard.writeText(promoCode).then(() => {
+          alert("Mã khuyến mãi đã được sao chép: " + promoCode);
+        }).catch(err => {
+          console.log('Something went wrong', err);
+        });
+      }
+</script>
+
+</body>
+</html>

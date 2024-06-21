@@ -1,0 +1,393 @@
+header {
+  position: relative;
+  z-index: 10;
+  background-color: #BBAB9B;
+}
+/* Add margin to the top of the privacy policy section */
+#privacy-policy {
+  padding: 20px;
+  margin: 20px auto; /* Adjusted top margin */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px; /* Increase font size for privacy policy */
+}
+/* Center align the h2 element */
+h2 {
+  text-align: center;
+  font-size: 24px; /* Increase font size for h2 */
+  margin-bottom: 20px;
+}
+/* Increase font size for h3 */
+h3 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+.banner {
+  position: relative; /* Đặt vị trí tương đối */
+  width: 100%; /* Chiều rộng 100% của trang */
+  height: 194px; /* Chiều cao của banner */
+  margin-top: -20px; /* Đẩy lên để sát với phần header */
+  overflow: hidden; /* Ẩn phần dư thừa nếu có */
+}
+
+.banner img {
+  width: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+  height: 100%; /* Đảm bảo hình ảnh sẽ vừa với kích thước của banner */
+  object-fit: cover; /* Đảm bảo hình ảnh sẽ fit với kích thước của banner */
+}
+
+.banner-content {
+  position: absolute; /* Đặt vị trí tuyệt đối */
+  top: 50%; /* Căn chỉnh theo chiều dọc */
+  left: 50%; /* Căn chỉnh theo chiều ngang */
+  transform: translate(-50%, -50%); /* Dịch chuyển vị trí để căn giữa */
+  background-color: transparent;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #ffffff; /* Màu chữ trắng */
+  text-align: center; /* Căn chỉnh văn bản giữa banner */
+}
+
+.banner-content h2 {
+  font-size: 26px; /* Cỡ chữ tiêu đề */
+  margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và đoạn văn bản */
+}
+
+.banner-content p {
+  font-size: 16px; /* Cỡ chữ đoạn văn bản */
+  margin: 0; /* Loại bỏ khoảng trống giữa các đoạn văn bản */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%; 
+  max-width: 800px;
+}
+.full-width-image {
+  max-width: 100%; 
+  justify-content: center;
+}
+.full-width-image img {
+  height:500 px;
+  width: 100%; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+.blog-section{
+width:100%;
+}
+.blog-section .section-content{
+width: 85%;
+margin: 20px auto;
+}
+.blog-section .section-content .title{
+width: 60%;
+text-align: center;
+margin: auto;
+}
+
+.blog-section .section-content .title h2{
+font-size: 40px;
+color: black;
+font-family: "Dancing Script", sans-serif;
+}
+
+.blog-section .section-content .title p{
+font-size: 18px;
+color: black;
+margin-top: 20px;
+}
+.blog-section .section-content .cards{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-gap: 50px;
+margin: 25px auto;
+}
+.blog-section .section-content .cards .card{
+width:100%;
+background-color:#9E7B54;
+position: relative;
+}
+.blog-section .section-content .cards .card img{
+width: 100%;
+height: auto;
+}
+.blog-section .section-content .cards .card .article{
+padding: 15px 20px;
+}
+.blog-section .section-content .cards .card .article h4{
+font-size: 24px;
+color: black;
+}
+.blog-section .section-content .cards .card .article p{
+font-size: 16px;
+margin: 10px 0px;
+color: black;
+}
+.blog-section .section-content .cards .card a{
+text-decoration: none;
+display: inline-block;
+background-color: rgba(0, 0, 0, 0.7);
+padding: 20px 25px;
+color: white;
+font-size: 20px;
+}
+.blog-section .section-content .cards .card .posted-date p{
+font-weight: 600;
+position: absolute;
+top: 0;
+left: 0;
+display: inline-block;
+background-color: #9E7B54;
+padding: 6px 15px;
+}
+
+  .container2{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/km_bg3.png);
+    background-position: center;
+    background-size: cover;
+    padding: 0 8%;
+    color:khaki;
+    position: relative;
+  }
+  .container2 p{
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+  }
+  .container2 h1{
+    font-size: 64px;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+  }
+  .content{
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    color: #ffffff;
+  }
+  .content button{
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    padding: 12px 25px;
+    color: white;
+  }
+  .container2 .content button a {
+    color: white;
+  }
+
+  .time{
+    display:flex;
+  }
+  .time div{
+    flex-basis: 100px;
+  }
+  .time div p{
+    font-size: 60px;
+    margin-bottom: -5px;
+  }
+  #promo-code {
+    font-weight: bold;
+    color: brown;
+    background-color: white;
+    border: 1px solid #9E7B54;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #promo-code:hover {
+    background-color: brown;
+    color: white;
+  }
+  #subscribe-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+  #subscribe-section h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #subscribe-section p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  #subscribe-section input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  #subscribe-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #9E7B54;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  #subscribe-section button:hover {
+    background-color:peru;
+  }
+  .container3 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .coupon-card {
+    background: #9E7B54;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    width: 400px;
+  }
+
+  .coupon-card h1, .coupon-card h3 {
+    margin: 0 0 10px;
+  }
+.coupon-card h1{
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  border-bottom: 1px dashed #fff;
+}
+.coupon-card h3{
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+}
+.coupon-card p{
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  border-bottom: 1px dashed #fff;
+}
+
+.coupon-card h2{
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  font-size: 13px;
+  margin-bottom: 5px;
+  
+}
+  .coupon-row {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    width: fit-content;
+  }
+.couponbutton{
+  border: 1px solid #fff;
+  background: #fff;
+  padding: 10px 20px;
+  color: black;
+}
+.couponcode{
+  border: 1px dashed #fff;
+  padding: 10px 20px;
+  border-right: 0;
+  background-color:sienna;
+  color: #fff;
+}
+
+
+  .circle1, .circle2 {
+    position: absolute;
+    border-radius: 50%;
+    background: #f4f4f4;
+    width: 20px;
+    height: 20px;
+  }
+
+  .circle1 {
+    top: 100px;
+    left: -10px;
+    background-color:#ffffff;
+  }
+
+  .circle2 {
+    bottom: 95px;
+    right: -10px;
+    background-color:#ffffff;
+  }
+  .title h1{
+    text-align: center;
+    font-family: "Dancing Script", sans-serif;
+    font-size: 50px;
+    margin-top: 20px;
+    border-top: 1px dashed #9E7B54;
+    color:sienna;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  .popup-content h1{
+    font-family: "Dancing Script", sans-serif;
+    font-size: 30px;
+  }
+  .popup-content li{
+    text-align: left;
+    font-size: 15px;
+  }
+  .popup-content p{
+    text-align: left;
+    font-size: 15px;
+  }
+  .title img{
+    width: 1250px; 
+    display: block; 
+    margin: 0 auto; 
+  }
+
+
+  
+  
