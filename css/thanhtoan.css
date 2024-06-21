@@ -103,28 +103,6 @@ body {
     margin-left: auto; /* Di chuyển phần giá tiền sang bên phải */
 }
 
-.coupon {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.coupon input {
-  flex: 1;
-  padding: 10px;
-  font-size: 1rem;
-}
-.coupon button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.coupon button:hover {
-  background-color: #45a049;
-}
 .summary-info {
   border: 1px solid #ddd;
   padding: 15px;
@@ -152,6 +130,13 @@ body {
 }
 .shipping-fee {
   padding: 5px 0;
+}
+
+.divider {
+  border: none; 
+  border-top: 1px solid #ccc; 
+  margin: 20px 0; 
+  font-weight: 200;
 }
 
 #store-address {
