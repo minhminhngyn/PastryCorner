@@ -5,26 +5,26 @@ body {
 }
 .container {
   display: flex;
+  flex-wrap: wrap;
   min-height: 100vh;
-  overflow: hidden;
 }
+
 .left-pane, .right-pane {
-  width: 50%;
+  flex: 1;
   padding: 20px;
   box-sizing: border-box;
 }
- 
-  .left-pane {
-    flex: 1;
-    background-color: #f0f0f0; /* Màu nền cho phần bên trái */
-    padding: 20px;
-  }
-  
-  .right-pane {
-    flex: 1;
-    background-color: #e0e0e0; /* Màu nền cho phần bên phải */
-    padding: 20px;
-  }
+
+.left-pane {
+  background-color: #f0f0f0;
+}
+
+.right-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #e0e0e0;
+}
   
   fieldset {
     border: 1px solid #ccc;
@@ -57,6 +57,12 @@ body {
     margin-right: 10px; /* Khoảng cách giữa các select */
   }
   
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
   button {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -68,6 +74,15 @@ body {
   button:hover {
     background-color: #45a049;
   }
+  
+  button#back-to-cart {
+    background-color: #f44336;
+  }
+  
+  button#back-to-cart:hover {
+    background-color: #e53935;
+  }
+  
 .product-list {
     flex: 1;
     padding: 20px;
@@ -312,104 +327,33 @@ body {
 .copyright {
   text-align: center;
   font-size: 0.8em;
+  margin-top: 20px;
 }
 
-/* Tương thích cho màn hình laptop, ipad và mobile phone */
+/* Responsive adjustments */
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
-    padding: 20px;
   }
 
-  .left-pane,
-  .right-pane {
+  .left-pane, .right-pane {
     width: 100%;
   }
 
   .right-pane {
     margin-top: 20px;
   }
-}
 
-@media (max-width: 768px) {
-  h1, h2, h3, p, label, button, input, select, textarea {
-    font-size: 1em;
-  }
-
-  .left-pane {
-    padding: 10px;
-  }
-
-  .right-pane {
-    padding: 10px;
-  }
-
-  .product-list table,
-  .summary-info p {
-    font-size: 0.9em;
-  }
-
-  fieldset {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 576px) {
-  body {
-    padding: 0;
-    margin: 0;
-  }
-
-  .container {
-    padding: 10px;
-  }
-
-  .left-pane {
-    padding: 10px;
-  }
-
-  .right-pane {
-    padding: 10px;
-    margin-top: 20px;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  select {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .address-selects {
+  .action-buttons {
     flex-direction: column;
   }
 
-  .address-selects select {
+  .action-buttons button {
     width: 100%;
     margin-bottom: 10px;
   }
 
-  .summary-info p {
-    font-size: 0.9em;
-  }
-
-  button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .popup-content {
-    padding: 10px;
-  }
-
-  .popup-content h2,
-  .popup-content h3,
-  .popup-content p {
-    font-size: 0.9em;
-  }
-
-  .popup-content table {
-    font-size: 0.8em;
+  .action-buttons button:last-child {
+    margin-bottom: 0;
   }
 }
