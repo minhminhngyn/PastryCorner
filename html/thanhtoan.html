@@ -119,28 +119,26 @@
       <div class="right-pane">
         <h2>Chi tiết hóa đơn</h2>
         <div class="product-list">
-          <table id="product-table">
-            <tbody id="product-list">
-              <!-- Danh sách sản phẩm sẽ được thêm vào đây bằng JavaScript -->
-            </tbody>
-          </table>
+            <table id="product-table">
+                <tbody id="product-list">
+                    <!-- Danh sách sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+                </tbody>
+            </table>
         </div>
-        <div class="coupon">
-          <input type="text" id="coupon-code" placeholder="Nhập mã giảm giá" />
-          <button id="apply-coupon">Sử dụng</button>
-        </div>
+        <hr class="divider">
         <div id="order-summary" class="summary-info">
-          <p>Số lượng sản phẩm: <span id="total-quantity">0</span></p>
-          <p>Tạm tính (VNĐ): <span id="subtotal">0</span></p>
-          <p class="shipping-fee">
-            Phí vận chuyển (VNĐ): <span id="shipping-fee">0</span>
-          </p>
-          <p>Giảm giá (VNĐ): <span id="discount-amount">0</span></p>
-          <p class="total-section">
-            Tổng tiền phải trả (VNĐ): <span id="total-price">0</span>
-          </p>
+            <p>Số lượng sản phẩm: <span id="total-quantity">0</span></p>
+            <p>Tạm tính (VNĐ): <span id="subtotal">0</span></p>
+            <p class="shipping-fee">
+                Phí vận chuyển (VNĐ): <span id="shipping-fee">0</span>
+            </p>
+            <p>Giảm giá (VNĐ): <span id="discount-amount">0</span></p>
+            <p class="total-section">
+                Tổng tiền phải trả (VNĐ): <span id="total-price">0</span>
+            </p>
         </div>
-      </div>
+    </div>
+    
     </div>
     <!-- Popup thanh toán -->
     <div id="payment-popup" class="popup">
@@ -190,19 +188,19 @@
         <div class="price-summary">
           <table>
             <tr>
-              <td><strong>Tạm tính:</strong></td>
+              <td><strong>Tạm tính (VNĐ):</strong></td>
               <td id="popup-subtotal"></td>
             </tr>
             <tr>
-              <td><strong>Phí vận chuyển:</strong></td>
+              <td><strong>Phí vận chuyển (VNĐ):</strong></td>
               <td id="popup-shipping-fee"></td>
             </tr>
             <tr>
-              <td><strong>Giảm giá:</strong></td>
+              <td><strong>Giảm giá (VNĐ):</strong></td>
               <td id="popup-discount-amount"></td>
             </tr>
             <tr>
-              <td><strong>Tổng tiền:</strong></td>
+              <td><strong>Tổng tiền (VNĐ):</strong></td>
               <td id="popup-total-price"></td>
             </tr>
           </table>
