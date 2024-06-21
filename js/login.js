@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const loginBtn = document.querySelector(".nav_login-btn");
     const userIcon = document.getElementById("user-icon");
-    const userDropdown = document.querySelector(".user-dropdown");
-    const dropdownMenu = document.querySelector(".dropdown-menu");
+    const userDropdown = document.querySelector(".dropdown-user");
+    const dropdownMenu = document.querySelector(".dropdownuser");
     const accountInfoLink = document.getElementById("account-info");
     const logoutLink = document.getElementById("logout");
 
