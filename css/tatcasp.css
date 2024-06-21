@@ -96,4 +96,5 @@ header {
     border-radius: 5px;
     position: relative;
     z-index: 2;
+    font-size: 1.3em;
 }
