@@ -327,15 +327,12 @@ body {
 }
 /*-------footer-----------------------------------------------------------------*/
 footer {
-  background-color: #f0f0f0;
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 0;
   background: var(--vintage);
   color: #000000;
   padding: 50px 0 20px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   font-size: 13px;
   line-height: 20px;
 }

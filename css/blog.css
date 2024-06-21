@@ -1,4 +1,4 @@
-<<<<<<< HEAD:css/blog.css
+
 header {
     position: relative;
     z-index: 10;
@@ -94,11 +94,6 @@ header {
   margin: auto;
 }
 
-.blog-section .section-content .title h2{
-  font-size: 40px;
-  color: black;
-  text-transform: uppercase;
-}
 
 .blog-section .section-content .title p{
   font-size: 18px;
@@ -324,7 +319,6 @@ header {
 .main-content {
   flex: 3;
 }
-=======
 header {
     position: relative;
     z-index: 10;
@@ -421,9 +415,10 @@ header {
 }
 
 .blog-section .section-content .title h2{
-  font-size: 50px;
+  font-size: 60px;
   color: white;
   font-family: "Dancing Script", sans-serif;
+  padding: 100px 0px 10px 0px;
 }
 
 .blog-section .section-content .title p{
@@ -436,6 +431,7 @@ header {
   grid-template-columns: repeat(3,1fr);
   grid-gap: 50px;
   margin: 25px auto;
+  margin-top: -30px;
 }
 .blog-section .section-content .cards .card{
   width:100%;
@@ -501,14 +497,14 @@ header {
 .card .blog-view {
   position: absolute;
   bottom: -50px;
-  left: -500px;
-  right: 170px;
+  left: -100px;
+  right: -100px;
   transition: bottom 0.3s;
 }
 
 .card:hover .blog-view {
   bottom: 20px;
-  left:-500px;
+  left:-100px;
 }
 .button {
   width: 100%;
@@ -598,7 +594,6 @@ header {
   margin-bottom: 10px;
 }
 .fa-classic, .fa-regular, .fa-solid, .far, .fas {
-  font-family:'Times New Roman', Times, serif;
   margin: 10px 0px;
 }
 .content .sidebar .section{
@@ -667,32 +662,74 @@ header {
 .fa-calendar:before {
   display: none;
 }
-.blog-section  img{
-  width: 100%;
+.blog-section{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/blog_1.png);
+  background-position: center;
+  background-size: cover;
+  padding: 0 8%;
+  color:khaki;
+  position: relative;
 }
-
-.blog-section {
-  position: relative; /* Cần thiết để định vị tuyệt đối cho .section-content */
+.popup {
+  display: none; 
+  position: fixed; 
+  z-index: 1000;
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
-
-.blog-section .section-content {
+.popup-content {
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 700px; 
+  max-width: 90%; 
+  text-align: center; 
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  z-index: 1001; 
+}
+.close {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff; /* Màu sắc văn bản tùy chọn */
-  z-index: 1; /* Đảm bảo nội dung được hiển thị trước hình ảnh */
-  padding: 20px; /* Padding để tách nội dung ra khỏi viền hình ảnh */
-  background: rgba(0, 0, 0, 0.3); /* Nền mờ để tăng độ tương phản cho nội dung */
+  top: 10px;
+  right: 25px;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1002;
+}
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+}
+img {
+  width: 100%; /* Make image fit within the popup-content */
+  height: auto; /* Maintain aspect ratio */
 }
 
-.blog-section img {
-  display: block;
-  width: 100%;
-  height: auto;
-  z-index: 0; /* Đảm bảo hình ảnh ở dưới nội dung */
+#promo-code {
+  font-weight: bold;
+  color: sienna;
+  background-color: white;
+  border: 1px solid #9E7B54;
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
 }
-
-
->>>>>>> e0d5fa4665fe91c5ab2656a1b6416b38b65f3eb9:duong/blog.css
+#promo-code:hover {
+  background-color: sienna;
+  color: white;
+}

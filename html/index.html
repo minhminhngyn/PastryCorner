@@ -67,8 +67,14 @@
           <div class="searchbox">
             <input type="text" placeholder="Nhập tên bánh bạn muốn tìm kiếm">
           </div>
-          <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
           <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
+                  <div class="user-dropdown" style="display: none; position: relative;">
+                      <i id="user-icon" class="fa-solid fa-user"></i>
+                      <ul class="dropdown-menu" style="display: none;">
+                          <li><a href="#" id="account-info">Thông tin tài khoản</a></li>
+                          <li><a href="#" id="logout">Đăng xuất</a></li>
+                      </ul>
+                  </div>
         </div>
         <div class="nav_close" id="nav-close">
           <i class="fa-solid fa-x"></i>
