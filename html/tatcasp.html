@@ -233,45 +233,16 @@
       @import url(../css/blog.css);
     </style>
     <main>
-      <div id="myPopup" class="popup">
+      <!--<div id="myPopup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
             <img src="../images/popup1.png" alt="Popup Image">
             <span id="promo-code" onclick="copyPromoCode()">Sao chép mã</span>
-  
         </div>
     </div>
-    <script>
-      var popup = document.getElementById("myPopup");
-    
-      var span = document.getElementsByClassName("close")[0];
+    <script src="../js/popup.js"></script>-->
     
     
-      window.onload = function() {
-          popup.style.display = "flex";
-      }
-    
-    
-      span.onclick = function() {
-          popup.style.display = "none";
-      }
-    
-    
-      window.onclick = function(event) {
-          if (event.target == popup) {
-              popup.style.display = "none";
-          }
-      }
-    
-      function copyPromoCode() {
-            const promoCode = "CUOITHANG6";
-            navigator.clipboard.writeText(promoCode).then(() => {
-              alert("Mã khuyến mãi đã được sao chép: " + promoCode);
-            }).catch(err => {
-              console.log('Something went wrong', err);
-            });
-          }
-    </script>
       <section id="aboutus">
         <div class="banner-card">
             <img src="../images/productmain.png">
