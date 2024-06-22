@@ -318,6 +318,16 @@
             </a>
           </div>
         </div>
+
+        <div id="myPopup" class="popup">
+          <div class="popup-content">
+              <span class="close">&times;</span>
+              <img src="../images/popup1.png" alt="Popup Image">
+              <span id="promo-code" onclick="copyPromoCode()">Sao chép mã</span>
+    
+          </div>
+      </div>
+
       </section>
     </main>
     <footer>
@@ -336,16 +346,16 @@
           <h3>Về chúng tôi<div class="underline"><span></span></h3>
           <ul>
             <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="product_list.html">Sản phẩm</a></li>
+            <li><a href="tatcasp.html">Sản phẩm</a></li>
             <li><a href="khuyenmaimain.html">Khuyến mại</a></li>
-            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="aboutus.html">Giới thiệu</a></li>
             <li><a href="blogmain.html">Blog</a></li>
           </ul>
         </div>
         <div class="col">
           <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
           <ul>
-            <li><a href="#">Điều khoản dịch vụ</a></li>
+            <li><a href="dieukhoan.html">Điều khoản dịch vụ</a></li>
             <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
             <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
             <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>
@@ -370,6 +380,38 @@
       closemenubtn.addEventListener("click", () => {
         menubtn.click();
       });
-    </script>z
+    </script>
+
+<script>
+  var popup = document.getElementById("myPopup");
+
+  var span = document.getElementsByClassName("close")[0];
+
+
+  window.onload = function() {
+      popup.style.display = "flex";
+  }
+
+
+  span.onclick = function() {
+      popup.style.display = "none";
+  }
+
+
+  window.onclick = function(event) {
+      if (event.target == popup) {
+          popup.style.display = "none";
+      }
+  }
+
+  function copyPromoCode() {
+        const promoCode = "CUOITHANG6";
+        navigator.clipboard.writeText(promoCode).then(() => {
+          alert("Mã khuyến mãi đã được sao chép: " + promoCode);
+        }).catch(err => {
+          console.log('Something went wrong', err);
+        });
+      }
+</script>
   </body>
 </html>
