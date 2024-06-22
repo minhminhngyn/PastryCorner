@@ -997,7 +997,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  height: 320px; /* Đặt chiều cao cố định cho phần text */
+  height: 320px; /* Đặt chiều cao cố định cho phần text 
   justify-content: space-between; /* Căn đều khoảng cách giữa các phần
 }
 
