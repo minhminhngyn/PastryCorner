@@ -73,7 +73,13 @@
             </div>
             <!--<i href="#" class="fa-solid fa-user" id="nav_icon-link"></i>-->
             <button id="login-btn" class="nav_login-btn">Đăng nhập</button>
-          </div>
+            <div class="dropdown-user" id="dropdown-user" style="display: none; position: relative;">
+              <i id="user-icon" class="fa-solid fa-user"></i>
+              <ul class="dropdownuser" id="dropdownuser" style="display: none;">
+                <li><a href="accinfo.html" class="dropdown_link" id="account-info">Thông tin tài khoản</a></li>
+                <li><a href="#" class="dropdown_link" id="logout">Đăng xuất</a></li>
+              </ul>
+            </div>
           <div class="nav_close" id="nav-close">
             <i class="fa-solid fa-x"></i>
           </div>
@@ -173,18 +179,18 @@
           </div>
           <div class="item" style="background-image: url(../images/slide10.png)">
             <div class="content">
-              <div class="name">Hãy để mỗi ngày tại Pastry Corner là một ngày ngọt ngào</div>
+              <div class="name">Mỗi ngày đều ngọt ngào tại Pastry Corner</div>
               <div class="des">
-                Thêm bánh vào giỏ hàng của bạn ngay bây giờ để được thưởng thức những chiếc bánh tươi ngon nhất!
+                Hãy thưởng thức những chiếc bánh tươi ngon nhất!
               </div>
               <button class="CTAbutton" data-link="tatcasp.html">Mua ngay</button>
             </div>
           </div>
           <div class="item" style="background-image: url(../images/slide9.png)">
             <div class="content">
-              <div class="name">Đảm bảo giao hàng đúng hẹn để bạn có trải nghiệm tuyệt vời nhất</div>
+              <div class="name">Trải nghiệm tuyệt vời nhất đến từ những chuyến đi hỏa tốc</div>
               <div class="des">
-                Hãy đặt niềm tin ở Pastry Corner và chúng tôi sẽ không làm bạn thất vọng
+                Chúng tôi sẽ không bao giờ làm bạn thất vọng
               </div>
               <button class="CTAbutton" data-link="tatcasp.html">Mua ngay</button>
             </div>
@@ -202,16 +208,16 @@
             <div class="content">
               <div class="name">Địa chỉ tin cậy cho những bữa tiệc ngọt ngào</div>
               <div class="des">
-                Pastry Corner tự tin là lựa chọn hoàn hảo cho mọi sự kiện có các món bánh ngọt đặc sắc
+                Lựa chọn hoàn hảo cho mọi sự kiện có các món bánh ngọt đặc sắc
               </div>
               <button class="CTAbutton" data-link="tatcasp.html">Mua ngay</button>
             </div>
           </div>
           <div class="item" style="background-image: url(../images/slide1.png)">
             <div class="content">
-              <div class="name">Pastry Corner luôn có những ưu đãi đặc biệt cho khách hàng thân thiết</div>
+              <div class="name">Muôn vàn những ưu đãi đặc biệt cho khách hàng thân thiết</div>
               <div class="des">
-                Khi trở thành khách hàng thân thiết của Pastry Corner, bạn sẽ có được những ưu đãi độc quyền
+                Ưu đãi độc quyền dành cho khách hàng thân thiết
               </div>
               <button class="CTAbutton" data-link="tatcasp.html">Mua ngay</button>
             </div>
@@ -228,6 +234,7 @@
     <section class="ingredients">
       <h1 class="heading">
         <span> Chúng </span><span> tôi </span><span> có </span><span> gì </span>
+        <p>Những điều tạo nên các chiếc bánh thơm ngon tại Pastry Corner</p>
       </h1>
 
       <div class="gallery-wrapper">
@@ -267,7 +274,7 @@
         <p class="subheading">Những món bánh sẽ làm khơi dậy vị giác của bạn</p>
       </div>
       <div class="cards">
-        <div class="card active" style="--bg: url(../images/m2.png)">
+        <div class="card active" style="--bg: url(../images/bgaboutus.png)">
           <div class="shadow"></div>
           <div class="label">
             <div class="icon">
@@ -279,7 +286,7 @@
             </div>
           </div>
         </div>
-        <div class="card" style="--bg: url(../images/m4.png)">
+        <div class="card" style="--bg: url(../images/bm.png)">
           <div class="shadow"></div>
           <div class="label">
             <div class="icon">
@@ -291,7 +298,7 @@
             </div>
           </div>
         </div>
-        <div class="card" style="--bg: url(../images/m1.png)">
+        <div class="card" style="--bg: url(../images/bl.png)">
           <div class="shadow"></div>
           <div class="label">
             <div class="icon">
@@ -303,7 +310,7 @@
             </div>
           </div>
         </div>
-        <div class="card" style="--bg: url(../images/m5.png)">
+        <div class="card" style="--bg: url(../images/download.png)">
           <div class="shadow"></div>
           <div class="label">
             <div class="icon">
@@ -315,7 +322,7 @@
             </div>
           </div>
         </div>
-        <div class="card" style="--bg: url(../images/m3.png)">
+        <div class="card" style="--bg: url(../images/bq.png)">
           <div class="shadow"></div>
           <div class="label">
             <div class="icon">
@@ -516,16 +523,16 @@
           <h3>Về chúng tôi<div class="underline"><span></span></h3>
           <ul>
             <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="product_list.html">Sản phẩm</a></li>
+            <li><a href="tatcasp.html">Sản phẩm</a></li>
             <li><a href="khuyenmaimain.html">Khuyến mại</a></li>
-            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="aboutus.html">Giới thiệu</a></li>
             <li><a href="blogmain.html">Blog</a></li>
           </ul>
         </div>
         <div class="col">
           <h3>Hỗ trợ khách hàng<div class="underline"><span></span></h3>
           <ul>
-            <li><a href="#">Điều khoản dịch vụ</a></li>
+            <li><a href="dieukhoan.html">Điều khoản dịch vụ</a></li>
             <li><a href="chinhsachbaomat.html">Chính sách bảo mật</a></li>
             <li><a href="chinhsachthanhtoan.html">Chính sách thanh toán</a></li>
             <li><a href="chinhsachgiaohang.html">Chính sách giao hàng</a></li>

@@ -657,10 +657,10 @@ body {
   text-align: left;
   color: var(--white);
   transform: translate(0, -50%);
-  font-family: "Alex Brush", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   display: none;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .slide .item:nth-child(2) .content {
   display: block;
@@ -727,19 +727,27 @@ body {
   text-align: center;
   font-size: 4.5rem;
   color: var(--vintage4);
-  padding: 1rem;
-  margin-bottom: 20px;
+  padding: 3rem;
+  margin-bottom: 2px;
+  font-family: "Great Vibes", sans-serif;
+  font-weight: 500;
+}
+.heading p{
+  margin-top: 2px;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--vintage4);
   font-family: "Dancing Script", sans-serif;
+  font-weight: 200;
 }
 .ingredients {
   text-align: center;
-  padding: 20px;
   background-color: var(--vintage);
   margin-top: 55.5rem;
   height: 500px;
 }
 .gallery-wrapper {
-  margin-top: 80px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-around;
   gap: -120px; /* Khoảng cách giữa mỗi gallery */
@@ -762,12 +770,14 @@ body {
 
 .info {
   margin-top: 10px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .info h2 {
   font-size: 2em;
   margin-bottom: 5px;
   color: var(--vintage4);
+  font-weight: 600;
 }
 
 .info p {
@@ -784,10 +794,10 @@ body {
   align-items: center;
   overflow: hidden;
   height: 70vh;
-  font-family: "Dancing Script", cursive;
-  background: var(--bg);
+  font-family: "Great Vibes", cursive;
+  background: #f9f9f9;
   color: white;
-  margin: 20px 0; /* Khoảng cách với các section trước và sau */
+  margin: 0px 0; /* Khoảng cách với các section trước và sau */
   padding: 20px; /* Khoảng cách bên trong section */
   border: 2px solid #fff; /* Thêm border cho section */
   border-radius: 10px; /* Tùy chọn: thêm border-radius cho đẹp */
@@ -801,17 +811,24 @@ body {
 
 /* Style cho tiêu đề chính */
 .heading2 {
-  font-size: 4rem;
+  text-align: center;
+  font-size: 4.5rem;
   color: var(--vintage4);
   padding: 1rem;
-  margin: 0;
+  margin-bottom: 1px;
+  font-family: "Great Vibes", sans-serif;
+  font-weight: 500;
 }
 
 /* Style cho tiêu đề phụ */
 .subheading {
+  margin-top: 1px;
+  text-align: center;
   font-size: 2rem;
   color: var(--vintage4);
-  margin: 10px 0 30px 0; /* Giãn khoảng cách giữa tiêu đề và các card */
+  font-family: "Dancing Script", sans-serif;
+  font-weight: 200;
+  margin: 5px 0 20px 0; /* Giãn khoảng cách giữa tiêu đề và các card */
 }
 
 /* Đặt style cho các thẻ card */
@@ -824,9 +841,11 @@ body {
 }
 
 .cards .card .information .title {
-  font-weight: bold;
-  font-size: 3.2rem;
+  font-weight: 400;
+  font-size: 3rem;
+  font-family: "Great Vibes", sans-serif;
 }
+
 
 .cards .card .label .icon {
   display: flex;
@@ -932,14 +951,22 @@ body {
 }
 
 .sale-heading .name span {
-  font-size: 4rem;
-  font-family: "Dancing Script", cursive;
+  text-align: center;
+  font-size: 4.5rem;
+  color: var(--white);
+  padding: 1rem;
+  margin-bottom: 1px;
+  font-family: "Great Vibes", sans-serif;
+  font-weight: 500;
 }
 
 .sale-heading .name p {
+  margin-top: 10px;
+  text-align: center;
   font-size: 2rem;
-  font-weight: 600;
-  font-family: "Dancing Script", cursive;
+  color: var(--white);
+  font-family: "Dancing Script", sans-serif;
+  font-weight: 200;
 }
 
 #wrapper {
@@ -970,234 +997,141 @@ body {
 }
 
 /*-------------------------------blog-------------------------------------*/
+.blog {
+  padding: 60px 0;
+  background-color: #fff;
+  margin-top: 50px; /* Khoảng cách phía trên */
+  margin-bottom: 50px; /* Khoảng cách phía dưới */
+}
+
 .blog-heading {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%; /* Ensure the .name div takes the full width */
-  margin: 20px 0;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .blog-heading .name {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .blog-heading .name span {
-  color: var(--vintage4);
   text-align: center;
-  font-size: 4rem;
-  font-family: "Dancing Script", cursive;
+  font-size: 4.5rem;
+  color: var(--vintage4);
+  padding: 1rem;
+  margin-bottom: 1px;
+  font-family: "Great Vibes", sans-serif;
+  font-weight: 500;
 }
 
 .blog-heading .name p {
+  margin-top: 10px;
+  text-align: center;
   font-size: 2rem;
   color: var(--vintage4);
-  text-align: center;
-  font-family: "Dancing Script", cursive;
-  font-weight: 600;
-  margin: 10px 0;
-  margin: 20px 0 60px 0;
+  font-family: "Dancing Script", sans-serif;
+  font-weight: 200;
+  padding-bottom: 15px;
 }
-/*.blog-container {
+.blog-cards {
   display: flex;
   justify-content: center;
-  align-items: stretch;
   flex-wrap: wrap;
-  gap: 25px;
-}
-
-.blog-box {
-  width: 300px;
-  background-color: var(--white);
-  border: 1px solid #4f3222;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.blog-img {
-  width: 100%;
-  height: 200px; /* Đặt chiều cao cố định cho hình ảnh 
-  overflow: hidden;
-}
-
-.blog-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.blog-text {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  height: 320px; /* Đặt chiều cao cố định cho phần text 
-  justify-content: space-between; /* Căn đều khoảng cách giữa các phần
-}
-
-.blog-text span {
-  color: var(--vintage4);
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  font-weight: 400;
-}
-
-.blog-text .blog-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--vintage4);
-  text-decoration: none;
-  margin-bottom: 10px;
-}
-
-.blog-text p {
-  color: var(--vintage4);
-  font-size: 1.2rem;
-  font-weight: 200;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 20px 0;
-}
-
-.blog-text .blog-button {
-  display: inline-block;
-  background-color: var(--white);
-  color: var(--vintage4);
-  padding: 15px 20px;
-  border-radius: 5px;
-  font-size: 14px;
-  border: 0.55px solid var(--vintage4);
-  cursor: pointer;
-  transition: 0.3s ease;
+  gap: 30px;
+  padding: 0 15px;
   font-family: "Josefin Sans", sans-serif;
 }
 
-.blog-text .blog-button:hover {
-  background-color: var(--vintage4);
-  transform: scale(1.1);
-  color: var(--white);
-}
-
-@media (max-width: 1250px) {
-  .blog-box {
-    width: 300px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .blog-box {
-    width: 70%;
-  }
-}
-
-@media (max-width: 550px) {
-  .blog-box {
-    margin: 20px 10px;
-    width: 100%;
-  }
-  #blog {
-    padding: 20px;
-  }
-}*/
-#blog {
-  padding: 50px 0;
-  background-color: #f5f5f5;
-}
-
-
-.blog-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
 .blogcard {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1 1 calc(33.333% - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 350px;
 }
 
 .blogcard:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
 }
 
-.blogcard .image-section {
+.image-section {
   overflow: hidden;
-  border-radius: 8px;
+  height: 200px;
 }
 
-.blogcard .image-section img {
+.image-section img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
 }
 
-.blogcard .article {
-  padding: 20px 0;
+.blogcard:hover .image-section img {
+  transform: scale(1.1);
 }
 
-.blogcard .article h4 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+.article {
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.article h4 {
+  font-size: 1.6em;
+  color: var(--vintage4);
+  margin-bottom: 0px;
+  font-weight: 600;
+  padding: 2rem;
+  line-height: 1.8;
+}
+
+.article p {
+  line-height: 1.5;
+  font-size: 1.3em;
+  color: var(--vintage2);
+  margin-top: 0px;
+  font-weight: 600;
+  padding: 0.2rem 2rem 2rem 2rem;
+}
+
+.posted-date {
+  padding: 0 20px 20px;
+  font-size: 0.9em;
+  color: var(--vintage);
+}
+
+.blog-view {
+  padding: 20px;
   text-align: center;
+  border-top: 1px solid #eee;
+  margin-top: 15px;
 }
 
-.blogcard .article p {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.6;
-  text-align: justify;
-}
-
-.blogcard .posted-date {
-  font-size: 14px;
-  font-weight: bold;
-  color: #999;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.blogcard .blog-view {
-  text-align: center;
-}
-
-.blogcard .button {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #333;
-  color: #fff;
+.blog-view .button {
+  display: block;
+  padding: 12px 10px;
+  width: 88%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--vintage);
+  color: var(--vintage4);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 25px;
   transition: background-color 0.3s;
 }
 
-.blogcard .button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 992px) {
-  .blog-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .blog-cards {
-    grid-template-columns: 1fr;
-  }
+.blog-view .button:hover {
+  background-color: var(--vintage4);
+  color: var(--white);
 }
 
 
@@ -1546,10 +1480,12 @@ footer {
   position: relative;
   bottom: 0;
   background: var(--vintage);
-  color: #000000;
+  color: var(--vintage4);
   padding: 50px 0 20px;
   font-size: 13px;
   line-height: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
 }
 .row {
   width: 90%;
@@ -1600,7 +1536,7 @@ footer ul li {
 }
 footer ul li a {
   text-decoration: none;
-  color: #000000;
+  color: var(--vintage4);
   font-size: 14px;
 }
 .social-icons .fab {
