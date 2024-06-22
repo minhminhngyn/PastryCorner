@@ -1160,15 +1160,16 @@ body {
 #aboutus .banner-text h4 {
   text-align: center;
   font-size: 60px;
-  font-weight: bold;
+  font-weight: 400;
   margin-bottom: 5px;
-  font-family: "Dancing Script", sans-serif;
+  font-family: "Great Vibes", sans-serif;
+  font-size: 70px;
   opacity: 0;
   animation: animate 1s ease-in-out 0.2s 1 forwards;
 }
 #aboutus .banner-text p {
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   margin-top: 30px;
   opacity: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -1196,13 +1197,16 @@ body {
   font-size: 50px;
   margin-bottom: 20px;
   color: var(--vintage4);
-  font-family: "Dancing Script", sans-serif;
+  font-weight: 550;
+  font-family: "Great Vibes", sans-serif;
 }
 .details-content p {
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1.8;
   margin-bottom: 40px;
-  color: var(--vintage2);
+  color: var(--vintage4);
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
 }
 .details-image {
   flex: 0.65;
@@ -1281,12 +1285,12 @@ body {
 .scroller {
   background-color: var(--vintage3);
   margin-top: 35px;
-  margin-bottom: 75px;
+  margin-bottom: 15px;
   padding: 40px;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 400px;
+  height: 350px;
   position: relative;
   color: var(--vintage4);
 }
@@ -1327,7 +1331,8 @@ body {
 }
 .scroller_heading h1 {
   font-size: 40px;
-  font-family: "Dancing Script", sans-serif;
+  font-family: "Great Vibes", sans-serif;
+  font-weight: 500;
   padding-bottom: 35px;
 }
 .scroller-inner .inner h2 {
@@ -1335,6 +1340,8 @@ body {
   word-wrap: break-word; /* Hoặc sử dụng overflow-wrap: break-word; */
   overflow-wrap: break-word; /* Đảm bảo từ dài sẽ được ngắt dòng */
   white-space: normal; /* Đảm bảo văn bản xuống dòng bình thường */
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
 }
 @keyframes scroll {
   to {
@@ -1346,7 +1353,25 @@ body {
 /*-------------contact us------------------------------------------------*/
 .contact-container {
   width: 80%;
-  margin: 10px auto 70px auto;
+  margin: 0 auto 70px auto;
+}
+.contact-container h1 {
+  text-align: center;
+  font-size: 4.5rem;
+  color: var(--vintage4);
+  padding: 1rem;
+  margin-bottom: 2px;
+  font-family: "Great Vibes", sans-serif;
+  font-weight: 500;
+  margin-bottom: 20px; /* Điều chỉnh khoảng cách phía dưới tiêu đề h1 */
+}
+.contact-container p{
+  margin-top: 0;
+  text-align: center;
+  font-size: 80px;
+  color: var(--vintage4);
+  font-family: "Dancing Script", sans-serif;
+  margin-bottom: 30px; /* Điều chỉnh khoảng cách phía dưới đoạn văn p */
 }
 .contact-box {
   background: var(--white);

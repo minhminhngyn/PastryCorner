@@ -1,8 +1,32 @@
-body {
+/* Global Reset and Basic Styling */
+/*import font text*/
+@import url("https://fonts.googleapis.com/css2?family=Josefin Sans:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/*------------------------------------------------------------------------------------------------------------------*/
+:root {
+  --white: #ffff;
+  --vintage: #bbab9b;
+  --vintage2: #8b6f47;
+  --vintage3: #d4ac6e;
+  --vintage4: #4f3222;
+  --z-fixed: 100;
+  --z-tooltip: 10;
+}
+/* Global Reset and Basic Styling */
+html, body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #fff;
+  color: var(--vintage4);
 }
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -24,188 +48,147 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: #e0e0e0;
-}
-  
-  fieldset {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  legend {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box; /* Đảm bảo kích thước input chứa cả padding và border */
-  }
-  
-  .address-selects {
-    display: flex;
-  }
-  
-  .address-selects select {
-    flex: 1; /* Dãn toàn bộ không gian có sẵn */
-    margin-right: 10px; /* Khoảng cách giữa các select */
-  }
-  
-  .action-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  button#back-to-cart {
-    background-color: #f44336;
-  }
-  
-  button#back-to-cart:hover {
-    background-color: #e53935;
-  }
-  
-.product-list {
-    flex: 1;
-    padding: 20px;
+  padding-bottom: 80px; /* Increased padding for action buttons */
 }
 
+/* Form and Input Styles */
+fieldset {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: calc(100% - 22px); /* Adjusted width to accommodate padding and border */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Radio Button and Label Styling */
+input[type="radio"] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button#back-to-cart {
+  background-color: #f44336;
+}
+
+button#back-to-cart:hover {
+  background-color: #e53935;
+}
+
+/* Product List Styles */
 .product {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .product img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
 .product-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
+  flex: 1;
 }
 
 .product-info h3,
 .product-info p {
-    margin: 0;
-    font-size: 15px;
+  margin: 0;
 }
 
 .product-info p:last-child {
-    margin-left: auto; /* Di chuyển phần giá tiền sang bên phải */
+  margin-left: auto;
 }
 
+/* Summary Info and Divider */
 .summary-info {
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 5px;
-  overflow: hidden; 
+  margin-top: 20px;
 }
 
 .summary-info p {
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: 14px;
   line-height: 1.5;
-  overflow: hidden; 
 }
 
 .summary-info span {
   font-weight: bold;
   color: #333;
-  float: right; 
+  float: right;
 }
 
-.summary-info .total-section {
-  margin-top: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-}
 .shipping-fee {
   padding: 5px 0;
 }
 
 .divider {
-  border: none; 
-  border-top: 1px solid #ccc; 
-  margin: 20px 0; 
-  font-weight: 200;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
 }
 
-#store-address {
-  margin: 10px 0;
-  font-weight: bold;
-  border: none;
-  color: #333;
-  font-size: 14px;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-}
-
-#selected-district, #selected-ward {
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-#bank-account-info {
-  margin-top: 10px;
-  font-weight: bold;
-  border: none;
-  color: #333;
-  font-size: 14px;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-}
-
-#bank-account-info p {
-  margin: 0;
-  line-height: 1.5;
-}
-
+/* Notes Section */
 .notes {
-  border-left: 5px solid #ffab00; /* Đường viền màu nổi bật */
-  padding: 10px 15px; /* Khoảng cách bên trong */
-  margin-top: 20px; /* Khoảng cách phía trên */
-  font-style: italic; /* Chữ in nghiêng */
-  font-size: 14px; /* Kích thước chữ */
-  color: #333; /* Màu chữ */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
-  border-radius: 4px; /* Bo góc */
-  max-width: 600px; /* Độ rộng tối đa */
+  border-left: 5px solid #ffab00;
+  padding: 10px 15px;
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  max-width: 600px;
   margin-left: auto;
-  margin-right: auto; /* Căn giữa */
+  margin-right: auto;
 }
 
-/* Popup css */
-/* Popup container */
+/* Popup Styling */
 .popup {
-  display: none; /* Ẩn ban đầu */
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -213,13 +196,12 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); /* Màu nền mờ */
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Popup content */
 .popup-content {
-  background-color: #f7f4f1; /* Màu nền popup */
-  margin: 5% auto; /* Canh lề và căn giữa */
+  background-color: #f7f4f1;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
@@ -227,54 +209,15 @@ body {
   position: relative;
 }
 
-#confirm-popup-btn {
-  position: absolute; /* Đặt nút xác nhận vị trí tuyệt đối */
-  top: 10px; /* Khoảng cách từ trên xuống */
-  left: 10px; /* Khoảng cách từ trái sang */
-  padding: 8px 16px; /* Kích thước của nút */
-  cursor: pointer; /* Con trỏ chuột thành pointer khi di chuyển vào nút */
-  color: #443131;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-#confirm-popup-btn:hover, #confirm-popup-btn:focus{
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Đóng popup (nút X) */
-.close {
-  position: absolute; /* Đặt nút đóng vị trí tuyệt đối */
-  top: 10px; /* Khoảng cách từ trên xuống */
-  right: 10px; /* Khoảng cách từ phải sang */
-  padding: 8px 16px; /* Kích thước của nút */
-  cursor: pointer; /* Con trỏ chuột thành pointer khi di chuyển vào nút */
-  border: none; /* Không có viền */
-  font-size: 24px; /* Kích thước chữ */
-  color: #aaa;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Tiêu đề popup */
 .popup-title {
   text-align: center;
+  margin-top: 0;
 }
 
-/* Thông tin chung */
 .general-info {
   margin-bottom: 20px;
 }
 
-/* Danh sách sản phẩm */
 .product-list table {
   width: 100%;
   border-collapse: collapse;
@@ -285,43 +228,20 @@ body {
   text-align: left;
 }
 
-.product-list .product-quantity {
-  margin-right: 20px; /* Khoảng cách giữa số lượng và tên sản phẩm */
-}
-
-.product-list .product-name {
-  margin-left: 20px; /* Khoảng cách giữa số lượng và tên sản phẩm */
-}
-
-/* Tóm tắt giá */
-.price-summary, .total {
-  margin-top: 20px;
-  text-align: right; /* Căn phải */
-}
-
-.price-summary table, .total table {
+.price-summary table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.price-summary td, .total td {
+.price-summary td {
   padding: 8px;
   text-align: right;
 }
 
-.price-summary td:first-child, .total td:first-child {
-  text-align: left; /* Căn trái cho tiêu đề */
-}
-
-/* Lời cảm ơn */
 .thank-you {
   text-align: center;
   font-size: 14px;
   margin-top: 20px;
-}
-
-.thank-you em {
-  font-weight: bold;
 }
 
 .copyright {
@@ -330,7 +250,7 @@ body {
   margin-top: 20px;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
@@ -342,6 +262,7 @@ body {
 
   .right-pane {
     margin-top: 20px;
+    padding-bottom: 100px; /* Increased padding for action buttons */
   }
 
   .action-buttons {
@@ -357,3 +278,6 @@ body {
     margin-bottom: 0;
   }
 }
+
+/* Additional Spacing Adjustments */
+/* Adjust margins and paddings as needed */

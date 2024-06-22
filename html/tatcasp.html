@@ -72,8 +72,8 @@
             <div class="dropdown-user" id="dropdown-user" style="display: none; position: relative;">
               <i id="user-icon" class="fa-solid fa-user"></i>
               <ul class="dropdownuser" id="dropdownuser" style="display: none;">
-                <li><a href="accinfo.html" class="dropdown_link">Thông tin tài khoản</a></li>
-                <li><a href="#" class="dropdown_link">Đăng xuất</a></li>
+                <li><a href="accinfo.html" class="dropdown_link" id="account-info">Thông tin tài khoản</a></li>
+                <li><a href="#" class="dropdown_link" id="logout">Đăng xuất</a></li>
               </ul>
             </div>
           <div class="nav_close" id="nav-close">
@@ -159,81 +159,6 @@
     </form>
   </div>
   <script src="../js/login.js"></script>
-
-
-    <!-----login------------------------------------------------------------------------------------------>
-    <div class="overlay"></div>
-    <div class="form-box login">
-      <span class="login-close"><i class="fa-solid fa-x"></i></span>
-      <h2>Đăng nhập</h2>
-      <form action="#">
-        <div class="input-box">
-          <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
-          <input type="email" required>
-          <label>Email</label>
-        </div>
-        <div class="input-box">
-          <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
-          <input type="password" required>
-          <label>Mật khẩu</label>
-        </div>
-        <div class="remember-forgot">
-          <label><input type="checkbox">Nhớ mật khẩu</label>
-          <a href="#" class="reset-link">Quên mật khẩu?</a>
-        </div>
-        <button type="submit" class="submit-btn">Đăng nhập</button>
-        <div class="login-register">
-          <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
-        </div>
-      </form>
-    </div>
-    <div class="form-box register">
-      <span class="login-close"><i class="fa-solid fa-x"></i></span>
-      <h2>Đăng ký</h2>
-      <form action="#">
-        <div class="input-box">
-          <span class="login-icon"><i class="fa-solid fa-user"></i></span>
-          <input type="text" required>
-          <label>Tên đăng nhập</label>
-        </div>
-        <div class="input-box">
-          <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
-          <input type="email" required>
-          <label>Email</label>
-        </div>
-        <div class="input-box">
-          <span class="login-icon"><i class="fa-solid fa-lock"></i></span>
-          <input type="password" required>
-          <label>Mật khẩu</label>
-        </div>
-        <button type="submit" class="submit-btn">Đăng ký</button>
-        <div class="login-register">
-          <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p>
-        </div>
-      </form>
-    </div>
-    <div class="form-box reset">
-      <span class="login-close"><i class="fa-solid fa-x"></i></span>
-      <h2>Quên mật khẩu</h2>
-      <form action="#">
-        <div class="input-box">
-          <span class="login-icon"><i class="fa-solid fa-envelope"></i></span>
-          <input type="email" required>
-          <label>Email</label>
-        </div>
-        <div class="input-box">
-          <span class="login-icon"><i class="fa-solid fa-lock"></i></i></span>
-          <input type="number" required>
-          <label>Mã OTP</label>
-        </div>
-        <button type="submit" class="submit-btn">Lấy lại mật khẩu</button>
-        <div class="login-register">
-          <p>Đã có tài khoản?<a href="#" class="login-link">Đăng nhập</a></p><br>
-          <p>Chưa có tài khoản?<a href="#" class="register-link">Đăng ký</a></p>
-        </div>
-      </form>
-    </div>
-    <script src="../js/login.js"></script>
     <style>
       @import url(../css/tatcasp.css);
       @import url(../css/blog.css);
@@ -247,8 +172,7 @@
         </div>
     </div>
     <script src="../js/popup.js"></script>-->
-    
-    
+
       <section id="aboutus">
         <div class="banner-card">
             <img src="../images/productmain.png">
@@ -310,7 +234,7 @@
     <footer>
       <div class="row">
         <div class="col">
-          <a href="#" class="logo">Pastry Corner</a>
+          <a href="index.html" class="logo">Pastry Corner</a>
           <p>Did you know? Serving you is our bread and butter</p>
         </div>
         <div class="col">
@@ -339,9 +263,9 @@
             <li><a href="chinhsachdoitra.html">Chính sách đổi trả</a></li>
           </ul>
           <div class="social-icons">
-            <i class="fa fa-facebook" style='font-size:24px'></i>
-            <i class="fa fa-instagram" style='font-size:24px'></i>
-          </div>
+            <i class="bi bi-facebook" style="font-size:24px"></i>
+            <i class="bi bi-instagram" style="font-size:24px"></i>
+        </div>
         </div>
       </div>
       <hr>
