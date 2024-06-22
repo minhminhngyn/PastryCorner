@@ -274,23 +274,60 @@ body {
 
 
 /* Style for the search box */
+.search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  z-index: 10;
+  cursor: pointer;
+  width: 100%;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+}
+
+.searchbtn,
+.closebtn {
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-right: 10px; /* Adjust spacing between buttons */
+  display: inline-block; /* Ensure buttons are inline */
+}
+
+.closebtn {
+  display: none; /* Initially hidden */
+}
+
+.searchbtn.active,
+.closebtn.active {
+  color: var(--vintage4);
+  display: block;
+  margin-right: 20px;
+  font-size: 1.5rem;
+}
+
 .searchbox {
   position: absolute;
   top: 0;
   left: 0;
   width: 80%;
   height: 100%;
-  display: none;
+  display: none; /* Initially hidden */
   align-items: center;
   padding: 0 20px;
   background-color: var(--white);
   transition: 0.5s ease-in-out;
   border-radius: 15px;
-  border-bottom: 2px solid var(--vintage4);
+  border-bottom: 2px solid var(--vintage4); /* Add underline */
 }
 
 .searchbox.active {
-  display: flex;
+  display: flex; /* Show when active */
 }
 
 .searchbox input {
@@ -912,7 +949,7 @@ body {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Responsive grid: tự động fit và tối thiểu 250px cho mỗi cột */
+  grid-template-columns: repeat(4, 4fr); /* Responsive grid: tự động fit và tối thiểu 250px cho mỗi cột */
   gap: 30px; /* Khoảng cách giữa các sản phẩm */
   list-style: none;
   padding: 0;

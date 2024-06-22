@@ -51,37 +51,6 @@ closebtn.onclick = function () {
   closebtn.classList.remove("active");
   searchbtn.classList.remove("active");
 };
-document.addEventListener("DOMContentLoaded", () => {
-  const userIcon = document.getElementById("user-icon");
-  const dropdownUser = document.getElementById("dropdownuser");
-
-  userIcon.addEventListener("click", () => {
-      dropdownUser.style.display = dropdownUser.style.display === "none" || dropdownUser.style.display === "" ? "block" : "none";
-  });
-
-  document.addEventListener("click", (e) => {
-      if (!userIcon.contains(e.target) && !dropdownUser.contains(e.target)) {
-          dropdownUser.style.display = "none";
-      }
-  });
-
-  // Search functionality
-  const searchBtn = document.querySelector('.searchbtn');
-  const closeBtn = document.querySelector('.closebtn');
-  const searchBox = document.querySelector('.searchbox');
-
-  searchBtn.addEventListener('click', () => {
-      searchBox.classList.add('active');
-      searchBtn.style.display = 'none';
-      closeBtn.style.display = 'inline-block';
-  });
-
-  closeBtn.addEventListener('click', () => {
-      searchBox.classList.remove('active');
-      searchBtn.style.display = 'inline-block';
-      closeBtn.style.display = 'none';
-  });
-});
 
 /*document.addEventListener("DOMContentLoaded", function() {
     const header = document.getElementById("header");
