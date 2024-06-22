@@ -1,11 +1,12 @@
 /*import font text*/
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin Sans:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 /*------------------------------------------------------------------------------------------------------------------*/
 :root {
   --white: #ffff;
@@ -57,7 +58,7 @@ body {
 }
 /*navigationbar*/
 .header {
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   width: 100%;
   position: fixed;
   top: 0;
@@ -120,7 +121,7 @@ body {
   border: 0.2px solid var(--vintage4);
   cursor: pointer;
   transition: 0.3s ease;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -507,7 +508,7 @@ body {
   border: 0.1px solid var(--vintage);
   cursor: pointer;
   transition: 0.3s ease;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
   width: 60%; /* Giảm chiều rộng xuống */
   text-align: center; /* Đảm bảo text được căn giữa */
@@ -646,7 +647,7 @@ body {
   border: none;
   cursor: pointer;
   opacity: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
 .button {
@@ -1037,7 +1038,7 @@ body {
   border: 0.55px solid var(--vintage4);
   cursor: pointer;
   transition: 0.3s ease;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .blog-text .blog-button:hover {
@@ -1199,7 +1200,7 @@ body {
   font-size: 15px;
   margin-top: 30px;
   opacity: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   animation: animate 1.3s ease-in-out 0.2s 1 forwards;
 }
 .details {
@@ -1386,7 +1387,7 @@ body {
   border-bottom-left-radius: 15px;
   flex-basis: 60%;
   padding: 40px 60px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 .contact-left h3 {
   font-size: 20px;
@@ -1407,7 +1408,7 @@ label {
   background: var(--vintage4);
   color: var(--white);
   font-weight: 600;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
@@ -1419,7 +1420,7 @@ label {
 }
 table {
   font-size: 14px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 .contact-container h1 {
   text-align: center;
@@ -1480,7 +1481,7 @@ label {
   font-size: 14px;
   cursor: pointer;
   transition: 0.3s ease;
-  font-family: "Raleway", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   box-shadow: 0px 1px 10px 0px #ccc;
 }
 .contact-left button:hover {
@@ -1613,7 +1614,7 @@ footer .logo {
   font-weight: bolder;
   cursor: pointer;
   margin-right: auto;
-  font-family: "Raleway",sans-serif;
+  font-family: "Josefin Sans",sans-serif;
 }
 /*-----------------------------------------------------------------*/
 /*Điều chỉnh giao diện trên các màn hình khác*/
