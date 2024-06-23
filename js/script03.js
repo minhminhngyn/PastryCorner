@@ -153,7 +153,7 @@ function saveCart() {
         var productname = row.querySelector(".tl").textContent;
         var productprice = row.querySelector('.product-price').textContent;
         var quantity = row.querySelector('input').value;
-        var productimage = row.querySelector('.product-img').src; // Lấy thông tin ảnh sản phẩm
+        var productimage = row.querySelector('.product-image img').src; // Lấy thông tin ảnh sản phẩm
         cartData.push({ name: productname, price: productprice, quantity: quantity, image: productimage });
     });
     localStorage.setItem('cart', JSON.stringify(cartData));
@@ -161,9 +161,11 @@ function saveCart() {
 
 // Load giỏ hàng từ localStorage khi trang được tải lại
 window.onload = function () {
-    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    cartItems.forEach(function (item) {
-        addtocart(item.name, item.price, item.image);
+    var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    cartData.forEach(product => {
+        addtocart(product.name, product.price, product.image);
+        var rows = document.querySelectorAll('tbody tr');
+        rows[rows.length - 1].querySelector('input').value = product.quantity;
     });
     total();
     delproduct();
