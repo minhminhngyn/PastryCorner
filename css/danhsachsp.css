@@ -58,13 +58,13 @@ header.help .filter, .sort
 
 header.help .filter
 {
-    flex-direction: row;
+    display: flex;
    
 }
 header.help .sort
 {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     
 }
 
@@ -227,7 +227,7 @@ ul.products li .product-top a.buy-now {
     font-family: "Josefin Sans", sans-serif;
 }
 
-ul.products li:hover .product-top a.buy-now {
+ul.products li:hover a.buy-now {
     bottom: 0;
 }
 
@@ -301,91 +301,6 @@ ul.products ul.product-buttons i.fa-solid {
     text-align: center;
 }
 
-
-@media (max-width: 768px) {
-    header .navbar ul li {
-        margin: 0 5px; /* Giảm khoảng cách của mục trong navbar */
-    }
-
-    .products li {
-        flex-basis: 45%; /* Hiển thị 2 cột trên mỗi hàng */
-    }
-
-}
-
-/* Media queries cho các thiết bị nhỏ hơn 480px */
-@media (max-width: 480px) {
-    header .navbar ul li {
-        font-size: 10px; /* Giảm cỡ chữ cho thanh điều hướng */
-    }
-    header .logo {
-        font-size: 1.2rem; /* Giảm kích thước logo */
-    }
-
-    header .navbar ul {
-        display: none; /* Ẩn các liên kết điều hướng */
-        flex-direction: column; /* Hiển thị theo cột khi mở menu */
-        position: absolute; /* Đảm bảo menu hiển thị trên các phần tử khác */
-        top: 60px; /* Điều chỉnh khoảng cách từ trên xuống */
-        left: 5px;
-        right: 0;
-        background-color: #fff; /* Màu nền menu */
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Bóng đổ */
-    }
-
-    header .navbar ul.active {
-        display: flex; /* Hiển thị các liên kết khi nhấn vào biểu tượng menu */
-    }
-
-    header .icons .icon-menu {
-        display: inline; /* Hiển thị biểu tượng menu */
-        font-size: 2rem; /* Kích thước biểu tượng menu */
-        color: var(--white);
-        margin-left: 1.5rem;
-    }
-
-    header .icons i {
-        font-size: 1.5rem; /* Giảm kích thước các biểu tượng khác */
-    }
-
-
-    ul.products li {
-        flex-basis: 100%; /* Hiển thị sản phẩm theo chiều dọc */
-
-    }
-    ul.products li .product-top a.buy-now
-    {
-        text-align: center;
-        text-decoration: none;
-        background-color: #4f3222;
-        color: #fff;
-        display: block;
-        padding: 10px 0px;
-        position: absolute; 
-        width: 100%;
-        bottom: 0px;
-        transition: 0.25s ease-in-out;
-        font-size: 1.5em;
-    }
-    
-
-    .cart {
-        width: 100%; /* Đặt độ rộng tối đa bằng độ rộng của màn hình */
-        max-width: 100%; /* Độ rộng tối đa */
-        right: -100%; /* Di chuyển phần giỏ hàng ra khỏi màn hình */
-        transition: right 0.3s ease; /* Thêm hiệu ứng chuyển động */
-    }
-}
-
-@media (min-width: 769px) {
-    header .icons .icon-menu {
-        display: none; /* Ẩn biểu tượng menu */
-    }
-
-    header .navbar ul {
-        display: flex; /* Hiển thị các liên kết điều hướng */
-    }
-}
 .cart
 {
     width: 50%;

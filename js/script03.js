@@ -27,7 +27,7 @@ btnaddcart.forEach(button => {
 
         var price=productitem.querySelector('.product-price').textContent
         var name=productitem.querySelector('.product-name').textContent
-        
+        var image = productitem.querySelector('.product-image img').src
         if(check(name)==true)
             {
                 alert("Đã có sản phẩm trong giỏ hàng");
@@ -35,7 +35,7 @@ btnaddcart.forEach(button => {
             }
 
 
-        addtocart(name,price)//thêm sản phẩm vào giỏ hàng
+        addtocart(name,price, image)//thêm sản phẩm vào giỏ hàng
         total()//tính tổng
         delproduct()//xóa sản phẩm khỏi giỏ hàng
         changeinput()//thay đổi số lượng
@@ -46,10 +46,10 @@ btnaddcart.forEach(button => {
 
 //...........................................thêm vào giỏ hàng.....................................
 
-function addtocart(productname,productprice){
+function addtocart(productname,productprice,productimage){
     var tr=document.createElement('tr')
 
-    var trcontent='<tr><td><span class="tl">'+productname+'</span></td>'+
+    var trcontent = '<tr><td><img src="' + productimage + '" alt="' + productname + '" class="product-img"><span class="tl">' + productname + '</span></td>' +
     '<td><p class="product-price">'+productprice+'</p></td>'+
     '<td><input type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="del">Xóa</span></td>'
     tr.innerHTML=trcontent
@@ -165,7 +165,8 @@ function saveCart() {
         var productname = row.querySelector(".tl").textContent;
         var productprice = row.querySelector('.product-price').textContent;
         var quantity = row.querySelector('input').value;
-        cartData.push({ name: productname, price: productprice, quantity: quantity });
+        var productimage = row.querySelector('.product-img').src; // Lấy thông tin ảnh sản phẩm
+        cartData.push({ name: productname, price: productprice, quantity: quantity, image: productimage });
     });
     localStorage.setItem('cart', JSON.stringify(cartData));
 }
@@ -174,7 +175,7 @@ function saveCart() {
 function loadCart() {
     var cartData = JSON.parse(localStorage.getItem('cart')) || [];
     cartData.forEach(product => {
-        addtocart(product.name, product.price);
+        addtocart(product.name, product.price, product.image);
         var rows = document.querySelectorAll('tbody tr');
         rows[rows.length - 1].querySelector('input').value = product.quantity;
     });
