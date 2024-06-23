@@ -394,15 +394,18 @@ ul.products ul.product-buttons i.fa-solid {
     color: #4f3222;
 
     position: fixed;
-    height: 700px;
+    height: 100%;
     width: 500px;
     background-color:#dbceb0;
     padding: 10px 20px;
     z-index: 1001; /*giỏ hàng xếp đè lên các phần tử khác*/
     overflow-y: scroll;
     right: -100%;
+    top:0;
     transition: 0.2s ease ;
-    border:solid 0.5px #3a2b07;
+    border:solid 0.5px #3a2b07; 
+
+    
 }
 .cart-header
 {
