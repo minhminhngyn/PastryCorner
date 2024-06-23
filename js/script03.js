@@ -361,7 +361,7 @@ sortid.addEventListener("change",function(){
         {
             product_ele=pro_new[i]
             //console.log(product_ele);
-            addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis)
+            addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis,product_ele.linkmuangay)
         }
     function addproduct(name,price,img,alt,promo,dis){
         var promotion
@@ -371,29 +371,38 @@ sortid.addEventListener("change",function(){
             promotion=''
         var priceformat=price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })
         var li=document.createElement('li')
-        var li_content='<div class="product-item">'+
-                    promotion+
-                    '<div class="product-top">'+
-                        '<a href="" class="product-image">'+
-                            '<img src="'+img+'" alt="'+alt+'">'+
-                        '</a>'+
-                        '<a href="" class="buy-now">Mua ngay</a>'+
-                    '</div>'+
-                    '<div class="product-infor">'+
-                        '<!-- tên sản phẩm + giá -->'+
-                        '<a href="" class="product-name">'+name+'</a>'+
-                        '<a href="" class="product-price">'+priceformat+'</a> '+
-                    '</div>'+
-                    '<ul class="product-button">'+
-                        '<li>'+
-                            '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>'+
-                        '</li>'+
-                        '<li>'+
-                            '<button class="product-favor"><i class="fa-regular fa-heart"></i></button>'+
-                                
-                        '</li>'+
-                    '</ul>'+
-                '</div>'
+        var li_content =
+                        '<div class="product-item">' +
+                        promotion +
+                        '<div class="product-top">' +
+                        '<a href="" class="product-image">' +
+                        '<img src="' +
+                        img +
+                        '" alt="' +
+                        alt +
+                        '">' +
+                        "</a>" +
+                        '<a href="' +
+                        linkmuangay +
+                        '" class="buy-now">Mua ngay</a>' +
+                        "</div>" +
+                        '<div class="product-info">' +
+                        '<a href="" class="product-name">' +
+                        name +
+                        "</a>" +
+                        '<a href="" class="product-price">' +
+                        priceformat +
+                        "</a>" +
+                        "</div>" +
+                        '<ul class="product-buttons">' +
+                        "<li>" +
+                        '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>' +
+                        "</li>" +
+                        "<li>" +
+                        '<button class="product-favor"><i class="fa-regular fa-heart"></i></button>' +
+                        "</li>" +
+                        "</ul>" +
+                        "</div>";
         li.innerHTML=li_content
         ul.append(li)
 }
