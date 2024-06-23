@@ -933,7 +933,7 @@ body {
 .sale {
   background-color: var(--vintage2);
   color: var(--white);
-  padding: 50px 0;
+  padding: 30px 0;
 }
 
 .sale-heading {
@@ -942,7 +942,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .sale-heading .name {

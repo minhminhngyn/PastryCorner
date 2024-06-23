@@ -133,4 +133,71 @@
     background-color: sienna;
     color: white;
   }
+  @media (max-width: 480px) 
+{
+    .banner-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .banner-card img {
+        width: 100%;
+        margin: 0 0 10px;
+      }
+
+      .banner-text {
+        width: 100%;
+      }
+    
+      .banner-text h4 {
+        font-size: 20px;
+      }
+    
+      .banner-text p {
+        font-size: 14px;
+      }
+
+    .categories .category-item {
+        flex-basis: 100%; }
+
+    .category-item img 
+    {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển tiếp */
+    }
+        
+    .category-item img:hover 
+    {
+            transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng khi hover */
+    }
+
+}
+
+/* .........................................................trên màn hình 768px............................................................ */
+@media (max-width: 768px) {
+    .banner-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .banner-card img {
+      width: 100%;
+      margin: 0 0 10px;
+    }
+  
+    .banner-text {
+      text-align: center;
+      width: 100%;
+    }
+  
+    .banner-text h4 {
+      font-size: 20px;
+    }
+  
+    .banner-text p {
+      font-size: 14px;
+    }
+  }
   
