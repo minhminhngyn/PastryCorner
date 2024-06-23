@@ -208,7 +208,21 @@ button#back-to-cart:hover {
   max-width: 600px;
   position: relative;
 }
-
+.popup-content #confirm-popup-btn{
+  color: var(--white);
+  background-color: var(--vintage4);
+}
+.popup-content #confirm-popup-btn:hover{
+  color: var(--white);
+  background-color: var(--vintage3);
+  transition: 0.3s ease-in-out;
+}
+.popup-content #closeBtn{
+  color: var(--vintage4);
+  background-color: var(--vintage3);
+  font-size: 2rem;
+  font-weight: 600;
+}
 .popup-title {
   text-align: center;
   margin-top: 0;

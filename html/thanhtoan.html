@@ -14,20 +14,57 @@
         <form action="#" method="POST">
           <fieldset>
             <legend>Thông tin cá nhân</legend>
-            <input type="text" name="fullname" id="fullname" placeholder="Nhập họ và tên..." />
-            <input type="email" name="email" id="email" placeholder="Nhập email..." />
-            <input type="tel" name="phone" id="phone" placeholder="Nhập số điện thoại..." />
+            <input
+              type="text"
+              name="fullname"
+              id="fullname"
+              placeholder="Nhập họ và tên..."
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Nhập email..."
+            />
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Nhập số điện thoại..."
+            />
           </fieldset>
-  
+
           <fieldset>
             <legend>Phương thức vận chuyển</legend>
-            <input type="radio" id="pickup" name="delivery_method" value="pickup" checked />
+            <input
+              type="radio"
+              id="pickup"
+              name="delivery_method"
+              value="pickup"
+              checked
+            />
             <label for="pickup">Nhận tại cửa hàng</label><br />
-            <input type="text" id="store-address" value="54 Trương Định, P.Hai Bà Trưng, Đống Đa, Hà Nội" readonly style="display: block" />
-            <input type="radio" id="delivery" name="delivery_method" value="delivery" />
+            <input
+              type="text"
+              id="store-address"
+              value="54 Trương Định, P.Hai Bà Trưng, Đống Đa, Hà Nội"
+              readonly
+              style="display: block"
+            />
+            <input
+              type="radio"
+              id="delivery"
+              name="delivery_method"
+              value="delivery"
+            />
             <label for="delivery">Giao tận nơi</label><br />
             <div id="delivery_details" style="display: none">
-              <input type="text" id="address" name="address" placeholder="Nhập địa chỉ..." />
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Nhập địa chỉ..."
+              />
               <div class="address-selects">
                 <select id="district" name="district">
                   <option value="">Chọn quận/huyện</option>
@@ -42,9 +79,20 @@
           </fieldset>
           <fieldset>
             <legend>Phương thức thanh toán</legend>
-            <input type="radio" id="cod" name="payment_method" value="cod" checked />
+            <input
+              type="radio"
+              id="cod"
+              name="payment_method"
+              value="cod"
+              checked
+            />
             <label for="cod">COD</label><br />
-            <input type="radio" id="bank_transfer" name="payment_method" value="bank_transfer" />
+            <input
+              type="radio"
+              id="bank_transfer"
+              name="payment_method"
+              value="bank_transfer"
+            />
             <label for="bank_transfer">Chuyển khoản ngân hàng</label><br />
             <div id="bank-account-info" style="display: none">
               <p>Pastry Corner</p>
@@ -54,7 +102,10 @@
             </div>
           </fieldset>
           <div id="notes-container" style="display: none">
-            <p class="notes">Quý khách vui lòng ghi đúng nội dung chuyển khoản để shop nhanh chóng cập nhật và tránh sai sót, xin cảm ơn!</p>
+            <p class="notes">
+              Quý khách vui lòng ghi đúng nội dung chuyển khoản để shop nhanh
+              chóng cập nhật và tránh sai sót, xin cảm ơn!
+            </p>
           </div>
         </form>
       </div>
@@ -67,37 +118,60 @@
             </tbody>
           </table>
         </div>
-        <hr class="divider">
+        <hr class="divider" />
         <div id="order-summary" class="summary-info">
           <p>Số lượng sản phẩm: <span id="total-quantity">0</span></p>
           <p>Tạm tính (VNĐ): <span id="subtotal">0</span></p>
-          <p class="shipping-fee">Phí vận chuyển (VNĐ): <span id="shipping-fee">0</span></p>
+          <p class="shipping-fee">
+            Phí vận chuyển (VNĐ): <span id="shipping-fee">0</span>
+          </p>
           <p>Giảm giá (VNĐ): <span id="discount-amount">0</span></p>
-          <p class="total-section">Tổng tiền phải trả (VNĐ): <span id="total-price">0</span></p>
+          <p class="total-section">
+            Tổng tiền phải trả (VNĐ): <span id="total-price">0</span>
+          </p>
         </div>
         <div class="action-buttons">
           <button type="submit" id="submit-checkout">Thanh toán</button>
           <button type="button" id="back-to-cart">Quay lại giỏ hàng</button>
         </div>
-        <p class="copyright">@ Bản quyền thuộc về Pastry Corner | Powered by Nhom05</p>
+        <p class="copyright">
+          @ Bản quyền thuộc về Pastry Corner | Powered by Nhom05
+        </p>
       </div>
     </div>
     <!-- Popup thanh toán -->
     <div id="payment-popup" class="popup">
       <div class="popup-content">
-        <button id="closeBtn" class="close" style="background-color: transparent">&times;</button>
-        <button id="confirm-popup-btn" style="background-color: transparent">Xác nhận</button>
+        <button
+          id="closeBtn"
+          class="close"
+          style="background-color: transparent"
+        >
+          &times;
+        </button>
         <h2 class="popup-title">Hóa đơn thanh toán</h2>
         <div class="general-info">
           <h3>Thông tin chung</h3>
           <p><strong>Họ và tên:</strong> <span id="popup-fullname"></span></p>
           <p><strong>Email:</strong> <span id="popup-email"></span></p>
           <p><strong>Số điện thoại:</strong> <span id="popup-phone"></span></p>
-          <p><strong>Phương thức vận chuyển:</strong> <span id="popup-shipping-method"></span></p>
-          <p id="popup-delivery-address"><strong>Địa chỉ nhận:</strong> <span></span></p>
-          <p><strong>Phương thức thanh toán:</strong> <span id="popup-payment-method"></span></p>
-          <p><strong>Mã hóa đơn:</strong> <span id="popup-invoice-number"></span></p>
-          <p><strong>Ngày đặt hàng:</strong> <span id="popup-order-date"></span></p>
+          <p>
+            <strong>Phương thức vận chuyển:</strong>
+            <span id="popup-shipping-method"></span>
+          </p>
+          <p id="popup-delivery-address">
+            <strong>Địa chỉ nhận:</strong> <span></span>
+          </p>
+          <p>
+            <strong>Phương thức thanh toán:</strong>
+            <span id="popup-payment-method"></span>
+          </p>
+          <p>
+            <strong>Mã hóa đơn:</strong> <span id="popup-invoice-number"></span>
+          </p>
+          <p>
+            <strong>Ngày đặt hàng:</strong> <span id="popup-order-date"></span>
+          </p>
         </div>
         <div class="product-list">
           <h3>Danh sách sản phẩm</h3>
@@ -131,8 +205,10 @@
           <p>Cảm ơn bạn đã tin tưởng lựa chọn <em>Pastry Corner</em></p>
           <p>Hẹn gặp lại bạn lần tới!</p>
         </div>
+        <button id="confirm-popup-btn">Xác nhận</button>
       </div>
     </div>
+
     <script src="../js/thanhtoan.js"></script>
-  </body>  
+  </body>
 </html>
