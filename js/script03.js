@@ -27,7 +27,7 @@ btnaddcart.forEach(button => {
 
         var price=productitem.querySelector('.product-price').textContent
         var name=productitem.querySelector('.product-name').textContent
-        var image = productitem.querySelector('.product-image img').src
+        //var image = productitem.querySelector('.product-image img').src
         if(check(name)==true)
             {
                 alert("Đã có sản phẩm trong giỏ hàng");
@@ -35,7 +35,7 @@ btnaddcart.forEach(button => {
             }
 
 
-        addtocart(name,price, image)//thêm sản phẩm vào giỏ hàng
+        addtocart(name,price)//thêm sản phẩm vào giỏ hàng
         total()//tính tổng
         delproduct()//xóa sản phẩm khỏi giỏ hàng
         changeinput()//thay đổi số lượng
@@ -46,10 +46,10 @@ btnaddcart.forEach(button => {
 
 //...........................................thêm vào giỏ hàng.....................................
 
-function addtocart(productname,productprice,productimage){
+function addtocart(productname,productprice){
     var tr=document.createElement('tr')
 
-    var trcontent = '<tr><td><img src="' + productimage + '" alt="' + productname + '" class="product-img"><span class="tl">' + productname + '</span></td>' +
+    var trcontent = '<tr><td><span class="tl">'+productname+'</span></td>'+
     '<td><p class="product-price">'+productprice+'</p></td>'+
     '<td><input type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="del">Xóa</span></td>'
     tr.innerHTML=trcontent
