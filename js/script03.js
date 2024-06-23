@@ -1,31 +1,4 @@
 
-document.getElementById('sort-select').addEventListener('change', function() {
-    var sortOrder = this.value;
-    var products = document.querySelectorAll('.products li');
-
-    // Chuyển NodeList thành Array để sử dụng các hàm của mảng
-    var productArray = Array.from(products);
-
-    // Chuyển giá từ chuỗi sang số
-    productArray.sort(function(a, b) {
-        var priceA = parseInt(a.querySelector('.product-price').textContent.replace('đ', '').replace('.', ''));
-        var priceB = parseInt(b.querySelector('.product-price').textContent.replace('đ', '').replace('.', ''));
-
-        if (sortOrder === 'asc') {
-            return priceA - priceB;
-        } else if (sortOrder === 'desc') {
-            return priceB - priceA;
-        }
-        return 0;
-    });
-
-    // Cập nhật giao diện sản phẩm
-    var productContainer = document.querySelector('.products');
-    productContainer.innerHTML = ''; // Xóa nội dung cũ
-    productArray.forEach(function(product) {
-        productContainer.appendChild(product); // Thêm sản phẩm đã sắp xếp
-    });
-});
 
 //.................................hiện giỏ hàng.................................
 icon=document.querySelector(".nav_icons")

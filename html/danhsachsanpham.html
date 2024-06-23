@@ -175,88 +175,69 @@
         </div>
       </div>
     </section>
+    <!------------------->
     <header class="help">
-      <div class="filter-sort-container">
-        <div class="filter">
+      <div class="filter">
           <p>Lọc:</p>
-          <input type="checkbox" id="toggleFilter" />
-          <label for="toggleFilter" class="button-filter"
-            ><i class="fa-solid fa-filter"></i
-          ></label>
+          <input type="checkbox" id="toggleFilter">
+          <label for="toggleFilter" class="button-filter"><i class="fa-solid fa-filter"></i></label>
           <div class="options" id="filterOptions">
-            <ul class="optionfilter">
-              <li>
-                <a class="filter-favor dropdown_link" href="#"
-                  >Theo sản phẩm yêu thích</a
-                >
-              </li>
-              <li>
-                <a class="filter-promo dropdown_link" href="#"
-                  >Theo sản phẩm khuyến mãi</a
-                >
-              </li>
-            </ul>
+              <a class="filter-favor" href="#">Theo sản phẩm yêu thích</a>
+              <a class="filter-promo" href="#">Theo sản phẩm khuyến mãi</a>
           </div>
-        </div>
-        <div class="sort">
+      </div>
+      <div class="sort">
           <p>Sắp xếp theo:</p>
           <select class="select-sort" id="sort-select">
-            <option value="" selected></option>
-            <option class="asc" value="asc">Giá tăng dần</option>
-            <option class="desc" value="desc">Giá giảm dần</option>
+              <option value="" selected></option>
+              <option class="asc" value="asc">Giá tăng dần</option>
+              <option class="desc" value="desc">Giá giảm dần</option>
           </select>
+      </div>
+  </header>
+   <!------------------->
+   <section class="cart">
+    <form action="">
+        <div class="cart-header">
+            <button id="cart-close"><i class="fa-solid fa-circle-xmark"></i></button>
+            <h2>Cart</h2>
         </div>
-      </div>
-    </header>
-    <section class="cart">
-      <form action="">
-          <div class="cart-header">
-              <button id="cart-close"><i class="fa-solid fa-circle-xmark"></i></button>
-              <h2>Cart</h2>
-          </div>
-          
-          <table>
-              <thead>
-                  <th>Sản phẩm</th>
-                  <th>Giá</th>
-                  <th>Số lượng</th>
-                  <th>Tùy chọn</th>
-              </thead>
-              <tbody>
-              </tbody>
-              
-          </table>
-          <div class="cost-total">
-              <p>Tổng hóa đơn:<span>0đ</span></p>
-          </div>
-  
-          <div class="cart-promotion">
-              <label for="promo-code">Mã khuyến mãi:</label>
-  
-              <div class="promo-input">
-                  <select id="promo-code" name="promo-code">
-                      <option value=""></option>
-                  </select>
-                  <button type="button" id="apply-promo">Áp dụng</button>
-              </div>
-          </div>
-  
-          <div class="cost-final">
-              <p>Thanh toán: <span>0đ</span></p>
-          </div>
-      </form>
-  
-      
-  
-      <div class="icon-thanhtoan">
-          <a class="thanhtoan" href="../html/thanhtoan.html">Thanh toán</a>
-      </div>
-      
-  </section>
+        
+        <table>
+            <thead>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tùy chọn</th>
+            </thead>
+            <tbody>
+            </tbody>
+            
+        </table>
+        <div class="cost-total">
+            <p>Tổng hóa đơn:<span>0đ</span></p>
+        </div>
 
-      <div class="icon-thanhtoan">
+        <div class="cart-promotion">
+            <label for="promo-code">Mã khuyến mãi:</label>
+
+            <div class="promo-input">
+                <select id="promo-code" name="promo-code">
+                    <option value=""></option>
+                </select>
+                <button type="button" id="apply-promo">Áp dụng</button>
+            </div>
+        </div>
+
+        <div class="cost-final">
+            <p>Thanh toán: <span>0đ</span></p>
+        </div>
+    </form>
+    <div class="icon-thanhtoan">
         <a class="thanhtoan" href="../html/thanhtoan.html">Thanh toán</a>
-      </div>
+    </div> 
+</section>
+ <!----------------->  
       <section class="products-relate">
         <div id="wrapper">
             <ul class="products"></ul>
@@ -343,22 +324,16 @@
                 ];
 
                 for (var i = 0; i < product_infor.length; i++) {
-                    const product_ele = product_infor[i];
-                    addproduct(
-                        product_ele.name,
-                        product_ele.price,
-                        product_ele.image,
-                        product_ele.alt,
-                        product_ele.promo,
-                        product_ele.dis,
-                        product_ele.linkmuangay
-                    );
+                  product_ele=product_infor[i]
+                  addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis,product_ele.linkmuangay)
                 }
 
                 function addproduct(name, price, img, alt, promo, dis, linkmuangay) {
-                    var promotion = promo
-                        ? '<div class="product-promotion">' + dis + '</div>'
-                        : "";
+                  var promotion
+            if(promo==true)
+                promotion='<div class="product-promotion">'+dis+'</div>'
+            else
+                promotion=''
                     var li = document.createElement("li");
                     var li_content =
                         '<div class="product-item">' +
