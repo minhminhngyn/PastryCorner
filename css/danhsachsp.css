@@ -34,9 +34,9 @@ header .help
     /* định dạng cho sort và filter ở cột dọc (flext-direction) */
     /* vị trí ở đầu phần help :flex-start */
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    margin-left: 10px;
+    flex-direction: row; 
+    align-items: center;
+    margin-left: 90px;
     background-color: aqua;
 }
 
@@ -386,4 +386,176 @@ ul.products ul.product-buttons i.fa-solid {
         display: flex; /* Hiển thị các liên kết điều hướng */
     }
 }
+.cart
+{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    color: #4f3222;
 
+    position: fixed;
+    height: 700px;
+    width: 500px;
+    background-color:#dbceb0;
+    padding: 10px 20px;
+    z-index: 1001; /*giỏ hàng xếp đè lên các phần tử khác*/
+    overflow-y: scroll;
+    right: -100%;
+    transition: 0.2s ease ;
+    border:solid 0.5px #3a2b07;
+}
+.cart-header
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.cart .cart-header h2
+{
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+.cart .cart-header i
+{
+    position: absolute;
+    left: 20px; /* Đặt biểu tượng ở phía bên phải của header */
+    font-size: 20px;
+    color: #4f3222;
+}
+.cart table
+{
+    align-items: center;
+    width: 100%;
+    font-size: 1.5em;
+    color: #4f3222;
+}
+.cart table td
+{
+    border-bottom: 1px solid #3a2b07;
+}
+.cart table thead th:last-child
+{
+    text-align: right;
+}
+.cart table thead th:first-child
+{
+    text-align: left;
+}
+.cart table tbody tr td
+{
+    align-items: center;
+}
+.cart table tbody tr td:first-child
+{
+    text-align: left;
+}
+.cart table tbody tr td:last-child
+{
+    text-align: right;
+}
+
+.cart table tbody tr td input
+{
+    width: 50%;
+    height: 30px;
+    border: 1px solid #4f3222;
+    background-color: #dbceb0;
+}
+
+.cart .cost-total
+{
+    font-size: 1.5em;
+    text-align: right;
+    font-weight: bolder;
+}
+
+
+.cart .cart-promotion
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    color: #4f3222;
+    margin-top: 30px;
+}
+.cart .cart-promotion label
+{
+    text-align: left;
+    color: #4f3222;
+    font-weight: bold;
+}
+
+.cart .cart-promotion .promo-input
+{
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+.cart .cart-promotion .promo-input select {
+    flex: 1; /* Chiếm tối đa không gian có thể */
+    margin-right: 10px; /* Khoảng cách giữa select và button */
+    height: 100%;
+    border-radius: 15px;
+    background-color:#e7dfcd ;
+}
+
+.cart .cart-promotion .promo-input button 
+{
+    white-space: nowrap; /* Ngăn văn bản trong button bị xuống dòng */
+    box-sizing: border-box; 
+    padding: 0px 10px;
+    /* border: solid 0.3px #3a2b07; */
+    border-radius: 25px;
+    background-color:#f4d58c;
+    font-weight: bolder;
+    color: #4f3222;
+    text-align: center;
+    cursor: pointer;
+    height: 100%;
+}
+
+.cart .cart-promotion .promo-input button:hover
+{
+    background-color: #fff;
+}
+
+.cart .cost-final
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: right;
+    font-size: 1.5em;
+    color: #4f3222;
+    font-weight: bold;
+}
+
+
+.cart .icon-thanhtoan
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.cart .icon-thanhtoan .thanhtoan
+{
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-color:#f4d58c;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: #4f3222;
+    text-decoration: none;
+    text-align: center;
+    width: 70%;
+    cursor: pointer;
+}
+.cart .icon-thanhtoan .thanhtoan:hover
+{
+    background-color: #fff;
+}

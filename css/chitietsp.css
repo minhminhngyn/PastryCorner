@@ -199,11 +199,12 @@ body {
   }
   
   .products-relate .headline p {
-    font-size: 3em;
-    font-weight: bold;
+    font-size: 2.5em;
+    font-weight: 600;
     color: #3a2b07;
     text-align: center;
     margin-bottom: 30px;
+    font-family: "Josefin Sans", sans-serif;
   }
   
   .products-relate .product {
@@ -287,6 +288,7 @@ body {
     font-weight: bold;
     margin-top: 5px; /* Khoảng cách giữa giá và tên sản phẩm */
     display: block; /* Hiển thị giá ở dòng mới */
+    font-family: "Josefin Sans", sans-serif;
   }
   
   .products-relate .product .product-item .product-button {

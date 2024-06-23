@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet2" href="../scss/style.scss" />
     <link rel="stylesheet" href="../css/chitietsp.css" />
+    <link rel="stylesheet" href="../css/danhsachsp.css" />
     <!-------------------------------------------------------------------------------------------------------------->
   </head>
   <body>
@@ -163,98 +164,150 @@
       </div>
     </section>
 
-    <section class="products-relate">
-      <div class="headline">
-        <p>Có thể bạn cũng thích</p>
-      </div>
-      <div class="product">
-        <ul class="list_pro"></ul>
-        <script>
-          const product_infor_relate = [
-            {
-              id: "2",
-              name: "Strawberry Croissant",
-              price: "45.000đ",
-              image: "../images/Strawberry Croissant.jpg",
-              alt: "Strawberry Croissant",
-              promo: true,
-              dis: "-10%",
-            },
-            {
-              id: "3",
-            name: "Apple Danish",
-            price: "38.000đ",
-            image: "../images/Apple Danish.jpg",
-            alt: "Apple Danish",
-            promo: false,
-            dis: "",
-            },
-            {
-              id: "4",
-            name: "Fondant Chocolate",
-            price: "60.000đ",
-            image: "../images/Fondant Chocolate.jpg",
-            alt: "Fondant Chocolate",
-            promo: false,
-            },
-            {
-              id: "5",
-            name: "Paris Brest",
-            price: "55.000đ",
-            image: "../images/Paris Brest.JPG",
-            alt: "Paris Brest",
-            promo: true,
-            dis: "-15%",
-            },
-          ];
-          for (var i = 0; i < product_infor_relate.length; i++) {
-            product_ele = product_infor_relate[i];
-            addproduct(
-              product_ele.name,
-              product_ele.price,
-              product_ele.image,
-              product_ele.alt
-            );
-          }
-          function addproduct(name, price, img, alt) {
-            var li = document.createElement("li");
-            var li_content =
-              '<div class="product-item">' +
-              '<div class="product-top">' +
-              '<a href="" class="product-image">' +
-              '<img src="' +
-              img +
-              '" alt="' +
-              alt +
-              '">' +
-              "</a>" +
-              '<a href="" class="buy-now">Mua ngay</a>' +
-              "</div>" +
-              '<div class="product-infor">' +
-              "<!-- tên sản phẩm + giá -->" +
-              '<a href="" class="product-name">' +
-              name +
-              "</a>" +
-              '<a href="" class="product-price">' +
-              price +
-              "</a> " +
-              "</div>" +
-              '<ul class="product-button">' +
-              "<li>" +
-              '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>' +
-              "</li>" +
-              "<li>" +
-              '<a class="search-product" href="">' +
-              '<i class="fa-regular fa-heart"></i></button>' +
-              "</li>" +
-              "</ul>" +
-              "</div>";
-            li.innerHTML = li_content;
-            var ul = document.querySelector(".list_pro");
-            ul.append(li);
-          }
-        </script>
-      </div>
+      <section class="products-relate">
+        <div class="headline">
+            <p>Có thể bạn cũng thích</p>
+        </div>
+        <div id="wrapper">
+            <ul class="products"></ul>
+            <script>
+                const product_infor = [
+                    {
+                        id: "1",
+                        name: "Peach Danish",
+                        price: "50.000đ",
+                        image: "../images/Peach Danish.jpg",
+                        alt: "Peach Danish",
+                        promo: false,
+                        dis: "",
+                        linkmuangay: "../html/chitietsp.html",
+                    },
+                    {
+                        id: "2",
+                        name: "Strawberry Croissant",
+                        price: "45.000đ",
+                        image: "../images/Strawberry Croissant.jpg",
+                        alt: "Strawberry Croissant",
+                        promo: true,
+                        dis: "-10%",
+                        linkmuangay: "../html/chitietsp.html",
+                    },
+                    {
+                        id: "3",
+                        name: "Apple Danish",
+                        price: "38.000đ",
+                        image: "../images/Apple Danish.jpg",
+                        alt: "Apple Danish",
+                        promo: false,
+                        dis: "",
+                        linkmuangay: "../html/chitietsp.html",
+                    },
+                    {
+                        id: "4",
+                        name: "Fondant Chocolate",
+                        price: "60.000đ",
+                        image: "../images/Fondant Chocolate.jpg",
+                        alt: "Fondant Chocolate",
+                        promo: false,
+                        linkmuangay: "../html/chitietsp.html",
+                    },
+                    {
+                        id: "5",
+                        name: "Millefeuille Caramel",
+                        price: "80.000đ",
+                        image: "../images/Millefeuille Caramel.jpg",
+                        alt: "Millefeuille Caramel",
+                        promo: true,
+                        dis: "-20%",
+                        linkmuangay: "../html/chitietsp.html",
+                    },
+                    {
+                        id: "6",
+                        name: "Paris Brest",
+                        price: "55.000đ",
+                        image: "../images/Paris Brest.JPG",
+                        alt: "Paris Brest",
+                        promo: true,
+                        dis: "-15%",
+                        linkmuangay: "../html/chitietsp.html",
+                    },
+                    {
+                        id: "7",
+                        name: "Scone",
+                        price: "70.000đ",
+                        image: "../images/Scone.jpg",
+                        alt: "Scone",
+                        promo: false,
+                        linkmuangay: "../html/chitietsp.html",
+                    },
+                    {
+                        id: "8",
+                        name: "Cinnamon Rolls",
+                        price: "65.000đ",
+                        image: "../images/Cinnamon Raisin Danish.jpg",
+                        alt: "Almond Biscotti",
+                        promo: true,
+                        dis: "-10%",
+                        linkmuangay: "../html/chitietsp.html",
+                    },
+                ];
+
+                for (var i = 0; i < product_infor.length; i++) {
+                    const product_ele = product_infor[i];
+                    addproduct(
+                        product_ele.name,
+                        product_ele.price,
+                        product_ele.image,
+                        product_ele.alt,
+                        product_ele.promo,
+                        product_ele.dis,
+                        product_ele.linkmuangay
+                    );
+                }
+
+                function addproduct(name, price, img, alt, promo, dis, linkmuangay) {
+                    var promotion = promo
+                        ? '<div class="product-promotion">' + dis + '</div>'
+                        : "";
+                    var li = document.createElement("li");
+                    var li_content =
+                        '<div class="product-item">' +
+                        promotion +
+                        '<div class="product-top">' +
+                        '<a href="" class="product-image">' +
+                        '<img src="' +
+                        img +
+                        '" alt="' +
+                        alt +
+                        '">' +
+                        "</a>" +
+                        '<a href="' +
+                        linkmuangay +
+                        '" class="buy-now">Mua ngay</a>' +
+                        "</div>" +
+                        '<div class="product-info">' +
+                        '<a href="" class="product-name">' +
+                        name +
+                        "</a>" +
+                        '<a href="" class="product-price">' +
+                        price +
+                        "</a>" +
+                        "</div>" +
+                        '<ul class="product-buttons">' +
+                        "<li>" +
+                        '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>' +
+                        "</li>" +
+                        "<li>" +
+                        '<button class="product-favor"><i class="fa-regular fa-heart"></i></button>' +
+                        "</li>" +
+                        "</ul>" +
+                        "</div>";
+                    li.innerHTML = li_content;
+                    var ul = document.querySelector(".products");
+                    ul.append(li);
+                }
+            </script>
+        </div>
     </section>
     <script src="../js/product_details.js"></script>
   </body>

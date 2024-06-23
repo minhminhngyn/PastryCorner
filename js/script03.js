@@ -1,12 +1,10 @@
 
 
 //.................................hiện giỏ hàng.................................
-icon=document.querySelector(".icons")
+icon=document.querySelector(".nav_icons")
 btncartopen=icon.querySelector(".icon-cart")
 btncartopen.addEventListener('click',function(){
-    document.querySelector(".cart").style.right="0";
-   
-    
+    document.querySelector(".cart").style.right="0"; 
 })
 
 //.................................ẩn giỏ hàng.................................
