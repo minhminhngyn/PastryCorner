@@ -35,8 +35,9 @@ header .help
     /* vị trí ở đầu phần help :flex-start */
     display: flex;
     flex-direction: row; 
+    margin-left: 10px;
+    background-color: aqua;
     align-items: center;
-    margin-left: 90px;
     background-color: aqua;
 }
 
@@ -51,6 +52,7 @@ header.help .filter, .sort
 {
     /* đặt position:relative, khoảng cách filter và sort là 20px */
     display: flex;
+    flex-direction: row; 
     align-items: center;
     margin-bottom: 20px; 
     position: relative; 
@@ -58,7 +60,7 @@ header.help .filter, .sort
 
 header.help .filter
 {
-    display: flex;
+    display: flex;  
    
 }
 header.help .sort

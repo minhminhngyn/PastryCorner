@@ -17,7 +17,6 @@ btncartclose.addEventListener('click',function(){
 })
 //.................................sự kiện kích hoạt khi click.................................
 const btnaddcart=document.querySelectorAll('.add-to-cart')
-
 btnaddcart.forEach(button => {
     button.addEventListener('click',function(event){
         document.querySelector(".cart").style.right="0"
@@ -27,7 +26,11 @@ btnaddcart.forEach(button => {
 
         var price=productitem.querySelector('.product-price').textContent
         var name=productitem.querySelector('.product-name').textContent
-        //var image = productitem.querySelector('.product-image img').src
+
+
+        var image = productitem.querySelector('.product-image img').src
+
+
         if(check(name)==true)
             {
                 alert("Đã có sản phẩm trong giỏ hàng");
@@ -35,7 +38,7 @@ btnaddcart.forEach(button => {
             }
 
 
-        addtocart(name,price)//thêm sản phẩm vào giỏ hàng
+        addtocart(name,price,image)//thêm sản phẩm vào giỏ hàng
         total()//tính tổng
         delproduct()//xóa sản phẩm khỏi giỏ hàng
         changeinput()//thay đổi số lượng
@@ -46,12 +49,19 @@ btnaddcart.forEach(button => {
 
 //...........................................thêm vào giỏ hàng.....................................
 
-function addtocart(productname,productprice){
+function addtocart(productname,productprice,productimage){
     var tr=document.createElement('tr')
 
-    var trcontent = '<tr><td><span class="tl">'+productname+'</span></td>'+
-    '<td><p class="product-price">'+productprice+'</p></td>'+
-    '<td><input type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="del">Xóa</span></td>'
+    // var trcontent = '<tr><td><span class="tl">'+productname+'</span></td>'+
+    // '<td><p class="product-price">'+productprice+'</p></td>'+
+    // '<td><input type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="del">Xóa</span></td>'
+
+
+    var trcontent = '<tr><td><img src="' + productimage + '" alt="' + productname + '" class="product-img" style="display:none"><span class="tl">' 
+    + productname + '</span></td>' +
+    '<td><p class="product-price">' + productprice + '</p></td>' +
+    '<td><input type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="del">Xóa</span></td>';
+
     tr.innerHTML=trcontent
     var tb=document.querySelector("tbody")
     tb.append(tr)
@@ -165,9 +175,11 @@ function saveCart() {
         var productname = row.querySelector(".tl").textContent;
         var productprice = row.querySelector('.product-price').textContent;
         var quantity = row.querySelector('input').value;
-        //var productimage = row.querySelector('.product-img').src; // Lấy thông tin ảnh sản phẩm
-        cartData.push({ name: productname, price: productprice, quantity: quantity, image: productimage });
+        var productimage = row.querySelector('.product-image img').src; // Lấy thông tin ảnh sản phẩm
+        cartData.push({ name: productname, price: productprice, quantity: quantity, image: productimage});
+        
     });
+
     localStorage.setItem('cart', JSON.stringify(cartData));
 }
 
@@ -349,9 +361,9 @@ sortid.addEventListener("change",function(){
         {
             product_ele=pro_new[i]
             //console.log(product_ele);
-            addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis,product_ele.linkmuangay)
+            addproduct(product_ele.name,product_ele.price,product_ele.image,product_ele.alt,product_ele.promo,product_ele.dis)
         }
-    function addproduct(name, price, img, alt, promo, dis, linkmuangay){
+    function addproduct(name,price,img,alt,promo,dis){
         var promotion
         if(promo==true)
             promotion='<div class="product-promotion">'+dis+'</div>'
@@ -359,38 +371,29 @@ sortid.addEventListener("change",function(){
             promotion=''
         var priceformat=price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })
         var li=document.createElement('li')
-        var li_content =
-                        '<div class="product-item">' +
-                        promotion +
-                        '<div class="product-top">' +
-                        '<a href="" class="product-image">' +
-                        '<img src="' +
-                        img +
-                        '" alt="' +
-                        alt +
-                        '">' +
-                        "</a>" +
-                        '<a href="' +
-                        linkmuangay +
-                        '" class="buy-now">Mua ngay</a>' +
-                        "</div>" +
-                        '<div class="product-info">' +
-                        '<a href="" class="product-name">' +
-                        name +
-                        "</a>" +
-                        '<a href="" class="product-price">' +
-                        priceformat +
-                        "</a>" +
-                        "</div>" +
-                        '<ul class="product-buttons">' +
-                        "<li>" +
-                        '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>' +
-                        "</li>" +
-                        "<li>" +
-                        '<button class="product-favor"><i class="fa-regular fa-heart"></i></button>' +
-                        "</li>" +
-                        "</ul>" +
-                        "</div>";
+        var li_content='<div class="product-item">'+
+                    promotion+
+                    '<div class="product-top">'+
+                        '<a href="" class="product-image">'+
+                            '<img src="'+img+'" alt="'+alt+'">'+
+                        '</a>'+
+                        '<a href="" class="buy-now">Mua ngay</a>'+
+                    '</div>'+
+                    '<div class="product-infor">'+
+                        '<!-- tên sản phẩm + giá -->'+
+                        '<a href="" class="product-name">'+name+'</a>'+
+                        '<a href="" class="product-price">'+priceformat+'</a> '+
+                    '</div>'+
+                    '<ul class="product-button">'+
+                        '<li>'+
+                            '<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>'+
+                        '</li>'+
+                        '<li>'+
+                            '<button class="product-favor"><i class="fa-regular fa-heart"></i></button>'+
+                                
+                        '</li>'+
+                    '</ul>'+
+                '</div>'
         li.innerHTML=li_content
         ul.append(li)
 }
