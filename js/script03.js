@@ -160,7 +160,7 @@ function saveCart() {
 }
 
 // Load giỏ hàng từ localStorage khi trang được tải lại
-window.onload = function () {
+/*window.onload = function () {
     var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartItems.forEach(function (item) {
         addtocart(item.name, item.price, item.image);
@@ -168,7 +168,24 @@ window.onload = function () {
     total();
     delproduct();
     changeinput();
-};
+};*/
+function loadCart() {
+    var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    cartData.forEach(product => {
+        addtocart(product.name, product.price, product.image);
+        var rows = document.querySelectorAll('tbody tr');
+        rows[rows.length - 1].querySelector('input').value = product.quantity;
+    });
+    total();
+    delproduct();
+    changeinput();
+}
+
+// .....................Tải dữ liệu giỏ hàng khi trang được tải.................................
+window.addEventListener('load', loadCart);
+
+
+
 
 // Hàm tính toán giảm giá
 function addpromotion(total, discount_apply) {
